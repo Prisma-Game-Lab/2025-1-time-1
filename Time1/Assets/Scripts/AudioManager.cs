@@ -47,4 +47,61 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField]
     Sound[] sounds;
+
+    void Start()
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
+            sounds[i].SetSource(_go.AddComponent<AudioSource>());
+        }
+    }
+    public void PlaySound(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name)
+            {
+                sounds[i].Play();
+                return;
+            }
+        }
+        Debug.LogWarning("AudioManager: Sound " + name + " not found!");
+    }
+    public void StopSound(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name)
+            {
+                sounds[i].Stop();
+                return;
+            }
+        }
+        Debug.LogWarning("AudioManager: Sound " + name + " not found!");
+    }
+    public void PauseSound(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name)
+            {
+                sounds[i].Pause();
+                return;
+            }
+        }
+        Debug.LogWarning("AudioManager: Sound " + name + " not found!");
+    }
+    public void UnPauseSound(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name)
+            {
+                sounds[i].UnPause();
+                return;
+            }
+        }
+        Debug.LogWarning("AudioManager: Sound " + name + " not found!");
+    }
 }

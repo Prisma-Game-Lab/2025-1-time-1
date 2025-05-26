@@ -45,14 +45,34 @@ public class Sound
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
     [SerializeField]
     Sound[] sounds;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            if (instance == this)
+            {
+                Destroy(this.gameObject);
+                Debug.LogWarning("AudioManager: Another instance already exists, destroying this one.");
+            }
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+    }
 
     void Start()
     {
         for (int i = 0; i < sounds.Length; i++)
         {
             GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
+            _go.transform.SetParent(this.transform);
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
     }

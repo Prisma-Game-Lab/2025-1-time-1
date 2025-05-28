@@ -9,6 +9,10 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private GameObject sprite;
     [SerializeField] private TextMeshProUGUI dialogue;
     [SerializeField] private TextMeshProUGUI charName;
+    [SerializeField] private TextMeshProUGUI option1;
+    [SerializeField] private TextMeshProUGUI option2;
+    [SerializeField] private TextMeshProUGUI option3;
+    [SerializeField] private GameObject options;
     [SerializeField] private DialogueBox[] dialogues;
     private int dialogueIndex = 0;
 
@@ -17,6 +21,9 @@ public class DialogueHandler : MonoBehaviour
         sprite.GetComponent<Image>().sprite = dialogues[dialogueIndex].char_sprite;
         dialogue.text = dialogues[dialogueIndex].text;
         charName.text = dialogues[dialogueIndex].char_name;
+        option1.text = dialogues[dialogueIndex].op1;
+        option2.text = dialogues[dialogueIndex].op2;
+        option3.text = dialogues[dialogueIndex].op3;
         dialogueIndex = dialogues[dialogueIndex].next;
     }
 
@@ -27,11 +34,20 @@ public class DialogueHandler : MonoBehaviour
             sprite.GetComponent<Image>().sprite = dialogues[dialogueIndex].char_sprite;
             dialogue.text = dialogues[dialogueIndex].text;
             charName.text = dialogues[dialogueIndex].char_name;
+            option1.text = dialogues[dialogueIndex].op1;
+            option2.text = dialogues[dialogueIndex].op2;
+            option3.text = dialogues[dialogueIndex].op3;
+            if (dialogues[dialogueIndex].options)
+            {
+                options.SetActive(true);
+                return;
+            }
             dialogueIndex = dialogues[dialogueIndex].next;
         }
-        else
-        {
-            Debug.Log("acabou");
-        }
+    }
+
+    public void Option(int index)
+    {
+        dialogueIndex = dialogues[dialogueIndex].opIds[index];
     }
 }

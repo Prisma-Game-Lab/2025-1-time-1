@@ -25,21 +25,30 @@ public class Sound
 
     public void Play()
     {
+        if (source == null)
+        {
+            Debug.LogWarning("Sound.Play() called but source is null for sound: " + name);
+            return;
+        }
+
         source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
         source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomPitch / 2f));
         source.Play();
     }
     public void Stop()
     {
-        source.Stop();
+        if (source != null)
+            source.Stop();
     }
     public void Pause()
     {
-        source.Pause();
+        if (source != null)
+            source.Pause();
     }
     public void UnPause()
     {
-        source.UnPause();
+        if (source != null)
+            source.UnPause();
     }
 }
 
@@ -54,7 +63,7 @@ public class AudioManager : MonoBehaviour
     {
         if (instance != null)
         {
-            if (instance == this)
+            if (instance != this)  // só destrói se for outra instância diferente
             {
                 Destroy(this.gameObject);
                 Debug.LogWarning("AudioManager: Another instance already exists, destroying this one.");
@@ -63,19 +72,18 @@ public class AudioManager : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(this.gameObject);
+
+            // cria as fontes de áudio
+            for (int i = 0; i < sounds.Length; i++)
+            {
+                GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
+                _go.transform.SetParent(this.transform);
+                sounds[i].SetSource(_go.AddComponent<AudioSource>());
+            }
         }
     }
 
-    void Start()
-    {
-        for (int i = 0; i < sounds.Length; i++)
-        {
-            GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
-            _go.transform.SetParent(this.transform);
-            sounds[i].SetSource(_go.AddComponent<AudioSource>());
-        }
-    }
     public void PlaySound(string _name)
     {
         for (int i = 0; i < sounds.Length; i++)
@@ -86,7 +94,7 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
-        Debug.LogWarning("AudioManager: Sound " + name + " not found!");
+        Debug.LogWarning("AudioManager: Sound " + _name + " not found!");
     }
     public void StopSound(string _name)
     {
@@ -98,7 +106,7 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
-        Debug.LogWarning("AudioManager: Sound " + name + " not found!");
+        Debug.LogWarning("AudioManager: Sound " + _name + " not found!");
     }
     public void PauseSound(string _name)
     {
@@ -110,7 +118,7 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
-        Debug.LogWarning("AudioManager: Sound " + name + " not found!");
+        Debug.LogWarning("AudioManager: Sound " + _name + " not found!");
     }
     public void UnPauseSound(string _name)
     {
@@ -122,6 +130,6 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
-        Debug.LogWarning("AudioManager: Sound " + name + " not found!");
+        Debug.LogWarning("AudioManager: Sound " + _name + " not found!");
     }
 }

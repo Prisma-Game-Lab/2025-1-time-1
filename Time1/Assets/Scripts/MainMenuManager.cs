@@ -28,7 +28,7 @@ public class MainMenuManager : MonoBehaviour
     // Funções dos botões do menu principal
     public void StartNewGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(1);
     }
 
     public void LoadGame()

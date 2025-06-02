@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
+  m_Name: Dialogue4
+  m_EditorClassIdentifier: 
+  text: "Op\xE7\xE3o 2"
+  char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
+  char_name: Henrique Teste
+  next: 1
+  op1: 
+  op2: 
+  op3: 
+  opIds: 
+  options: 0

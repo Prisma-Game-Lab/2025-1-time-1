@@ -1672,78 +1672,11 @@ MonoBehaviour:
   option3: {fileID: 1303943201}
   options: {fileID: 631037835}
   dialogues:
-  - text: "Ol\xE1, eu sou o Prisma Game Lab"
-    char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
-    char_name: Henrique
-    next: 1
-    op1: 
-    op2: 
-    op3: 
-    opIds: 
-    options: 0
-  - text: John Michael, Marcelo, Vagner, Lope...
-    char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
-    char_name: Henrique
-    next: 2
-    op1: 
-    op2: 
-    op3: 
-    opIds: 
-    options: 0
-  - text: Eu expulsei todos eles...
-    char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
-    char_name: Henrique(?)
-    next: 3
-    op1: 
-    op2: 
-    op3: 
-    opIds: 
-    options: 0
-  - text: "E agora \xE9 a sua vez"
-    char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
-    char_name: Henrique(?)
-    next: 4
-    op1: "Voc\xEA que ser\xE1 expulso"
-    op2: Ok...
-    op3: "N\xE3o farei o loldle ent\xE3o"
-    opIds: 040000000600000007000000
-    options: 1
-  - text: Nunca pensei que seria desafiado assim
-    char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
-    char_name: Henrique(?)
-    next: 5
-    op1: "Voc\xEA que ser\xE1 expulso"
-    op2: Ok...
-    op3: "N\xE3o farei o loldle ent\xE3o"
-    opIds: 040000000500000006000000
-    options: 0
-  - text: Acho que fiquei apaixonado S2
-    char_sprite: {fileID: 21300000, guid: 459613ba98eac4241ba3e333070dd96b, type: 3}
-    char_name: Henrique(?)
-    next: 3
-    op1: "Voc\xEA que ser\xE1 expulso"
-    op2: Ok...
-    op3: "N\xE3o farei o loldle ent\xE3o"
-    opIds: 040000000500000006000000
-    options: 0
-  - text: "Esperava mais de voc\xEA"
-    char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
-    char_name: Henrique(?)
-    next: 3
-    op1: "Voc\xEA que ser\xE1 expulso"
-    op2: Ok...
-    op3: "N\xE3o farei o loldle ent\xE3o"
-    opIds: 040000000500000006000000
-    options: 0
-  - text: "ENT\xC3O MORRA!!!!!!"
-    char_sprite: {fileID: 21300000, guid: 83f9334917b81d8489494506d7f29f51, type: 3}
-    char_name: Henrique(?)
-    next: 3
-    op1: "Voc\xEA que ser\xE1 expulso"
-    op2: Ok...
-    op3: "N\xE3o farei o loldle ent\xE3o"
-    opIds: 040000000500000006000000
-    options: 0
+  - {fileID: 11400000, guid: 329ed5ad660d8c34dae40790330072bd, type: 2}
+  - {fileID: 11400000, guid: eba51580b9d8bdf4aa85b8d747074d52, type: 2}
+  - {fileID: 11400000, guid: e1fe4e4d905d9144daa1bf4fe7f7d93f, type: 2}
+  - {fileID: 11400000, guid: 899070e6d7e54644eb2d6ecacd96dbc2, type: 2}
+  - {fileID: 11400000, guid: edde20b13c53b1946bbcced72b488c5c, type: 2}
 --- !u!114 &1393582396
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class DialogueBox
+[CreateAssetMenu]
+public class DialogueBox: ScriptableObject
 {
     public string text;
     public Sprite char_sprite;

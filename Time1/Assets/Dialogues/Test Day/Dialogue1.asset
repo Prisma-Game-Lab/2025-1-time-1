@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "Isso \xE9 um teste"
   char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
-  char_name: Henrique Teste
+  char_name: Henrique
   next: 1
   op1: 
   op2: 

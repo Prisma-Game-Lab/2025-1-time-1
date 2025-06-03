@@ -12,9 +12,10 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option1;
     [SerializeField] private TextMeshProUGUI option2;
     [SerializeField] private TextMeshProUGUI option3;
-    [SerializeField] private GameObject options;
+    public GameObject options;
     [SerializeField] private DialogueBox[] dialogues;
-    private int dialogueIndex = 0;
+    public int dialogueIndex = 0;
+    public int currIndex = 0;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class DialogueHandler : MonoBehaviour
         option1.text = dialogues[dialogueIndex].op1;
         option2.text = dialogues[dialogueIndex].op2;
         option3.text = dialogues[dialogueIndex].op3;
+        currIndex = dialogueIndex;
         dialogueIndex = dialogues[dialogueIndex].next;
     }
 
@@ -37,6 +39,7 @@ public class DialogueHandler : MonoBehaviour
             option1.text = dialogues[dialogueIndex].op1;
             option2.text = dialogues[dialogueIndex].op2;
             option3.text = dialogues[dialogueIndex].op3;
+            currIndex = dialogueIndex;
             if (dialogues[dialogueIndex].options)
             {
                 options.SetActive(true);

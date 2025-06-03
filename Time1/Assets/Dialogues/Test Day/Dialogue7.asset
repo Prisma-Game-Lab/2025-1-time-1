@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: Dialogue2
+  m_Name: Dialogue7
   m_EditorClassIdentifier: 
-  text: "Agora com op\xE7\xF5es"
-  char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
+  text: BBBBBBBBBBB
+  char_sprite: {fileID: 21300000, guid: 83f9334917b81d8489494506d7f29f51, type: 3}
   char_name: Henrique
-  next: 0
-  op1: Vai pra 1
-  op2: Vai pra 2
-  op3: Vai pra 3
-  opIds: 020000000300000004000000
-  options: 1
+  next: 6
+  op1: 
+  op2: 
+  op3: 
+  opIds: 
+  options: 0

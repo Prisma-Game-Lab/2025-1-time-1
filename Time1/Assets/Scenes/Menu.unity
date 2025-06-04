@@ -2462,7 +2462,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1500215706}
-  - component: {fileID: 1500215705}
   - component: {fileID: 1500215707}
   m_Layer: 0
   m_Name: MainMenuManager
@@ -2471,18 +2470,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1500215705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500215704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c31d2423ab8014134be7bfa4e654f254, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1500215706
 Transform:
   m_ObjectHideFlags: 0
@@ -2512,7 +2499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 776801445}
   optionsPanel: {fileID: 290974432}
-  volumeSlider: {fileID: 1970053378}
+  musicSlider: {fileID: 1970053378}
   fullscreenToggle: {fileID: 119781243}
 --- !u!1 &1532794013
 GameObject:
@@ -2763,7 +2750,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1500215707}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetMusicVolume
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2975,6 +2962,26 @@ PrefabInstance:
     - target: {fileID: 2056751876867063902, guid: d1f382713b3e741c09058a9a76e038f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569279174986070771, guid: d1f382713b3e741c09058a9a76e038f6, type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4063b636d4c007a479f05328019b3766, type: 3}
+    - target: {fileID: 7569279174986070771, guid: d1f382713b3e741c09058a9a76e038f6, type: 3}
+      propertyPath: sounds.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569279174986070771, guid: d1f382713b3e741c09058a9a76e038f6, type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: MenuMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569279174986070771, guid: d1f382713b3e741c09058a9a76e038f6, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569279174986070771, guid: d1f382713b3e741c09058a9a76e038f6, type: 3}
+      propertyPath: sounds.Array.data[0].randomPitch
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 8469581976411926242, guid: d1f382713b3e741c09058a9a76e038f6, type: 3}
       propertyPath: m_Name

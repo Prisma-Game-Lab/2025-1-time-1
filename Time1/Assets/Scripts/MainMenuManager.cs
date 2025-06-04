@@ -9,23 +9,23 @@ public class MainMenuManager : MonoBehaviour
     public GameObject optionsPanel;
 
     [Header("Options Controls")]
-    public Slider volumeSlider;
+    public Slider musicSlider;
     public Toggle fullscreenToggle;
-
-    private float currentVolume = 1f;
 
     void Start()
     {
         // Inicializa os controles com os valores atuais
         AudioManager.instance.PlaySound("MenuMusic");
-        volumeSlider.value = currentVolume;
+        musicSlider.value = 0.4f; // valor inicial padrÃ£o (igual ao volume do Sound no Inspector)
         fullscreenToggle.isOn = Screen.fullScreen;
+
+        musicSlider.onValueChanged.AddListener(SetMusicVolume);
 
         optionsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
 
-    // Funções dos botões do menu principal
+    // Funï¿½ï¿½es dos botï¿½es do menu principal
     public void StartNewGame()
     {
         SceneManager.LoadScene(1);
@@ -48,11 +48,10 @@ public class MainMenuManager : MonoBehaviour
         mainMenuPanel.SetActive(true);
     }
 
-    // Funções dos controles do painel opções
-    public void SetVolume(float volume)
+    // Funï¿½ï¿½es dos controles do painel opï¿½ï¿½es
+    public void SetMusicVolume(float value)
     {
-        currentVolume = volume;
-        AudioListener.volume = volume;
+        AudioManager.instance.SetMusicVolume(value);
     }
 
     public void SetFullscreen(bool isFullscreen)

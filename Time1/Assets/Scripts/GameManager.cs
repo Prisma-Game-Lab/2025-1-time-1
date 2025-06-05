@@ -12,8 +12,28 @@ public class GameManager : MonoBehaviour
     public bool[] itemsAcquired; // index representa cada item
     public int[] lovePoints; // índice representa cada pretendente
 
+    [Header("Sistema de Batalha")]
+    public int maxTurnsPerBattle = 4;
+    public int currentTurnNumber = 0;
+    public float playerHealth = 100f;
+    public float enemyHealth = 100f;
+    public float basePositiveDamage = 25f;
+    public float baseNegativeDamage = 35f; // Dano que o jogador recebe ao escolher opção negativa
+    public float bonusDamageMultiplier = 1.5f; // Multiplicador de dano após reação negativa do oponente
+    
+    [Header("Configurações de Diálogo em Batalha")]
+    public int positiveDialoguesPerBattle = 4;
+    public int neutralDialoguesPerBattle = 4;
+    public int negativeDialoguesPerBattle = 4;
+    public int enemyDialoguesPerType = 3; // 3 diálogos por tipo (positivo, neutro, negativo) = 9 total
+    
+    [Header("Personagens")]
+    public CharacterType currentOpponent;
+    public CharacterType chosenLoveInterest;
+
     [Header("Estado Atual do Jogo")]
     public GameState currentState = GameState.Dialogue;
+    public BattleState currentBattleState = BattleState.None;
 
     [Header("Configurações Gerais")]
     public string sceneDialogue = "DialogueScene";
@@ -72,5 +92,38 @@ public class GameManager : MonoBehaviour
         Choice,
         Combat,
         Cutscene
+    }
+
+    public enum BattleState
+    {
+        None,
+        PlayerTurn,
+        EnemyTurn,
+        Victory,
+        Defeat
+    }
+
+    public enum CharacterType
+    {
+        None,
+        Tutorial,
+        Nerdola,
+        Rebelde,
+        Ator,
+        FinalBoss
+    }
+
+    public enum DialogueType
+    {
+        Positive,
+        Neutral,
+        Negative
+    }
+
+    public enum BattleRewardType
+    {
+        Item,
+        LovePoints,
+        Both
     }
 }

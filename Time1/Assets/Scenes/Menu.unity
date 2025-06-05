@@ -3044,6 +3044,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6630355639625603372, guid: c9c0f5b9b4092490c8b1cfc30cdf4105, type: 3}
+      propertyPath: lovePoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630355639625603372, guid: c9c0f5b9b4092490c8b1cfc30cdf4105, type: 3}
+      propertyPath: itemsAcquired.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

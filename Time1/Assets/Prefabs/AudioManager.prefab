@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: dialogoLetras
-    clip: {fileID: 0}
-    volume: 0
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 4063b636d4c007a479f05328019b3766, type: 3}
+    volume: 1
     pitch: 0
     randomVolume: 0
     randomPitch: 0

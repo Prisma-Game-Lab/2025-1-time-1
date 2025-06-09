@@ -1,6 +1,7 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections; // ‚Üê necess√°rio para Coroutine
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -14,18 +15,26 @@ public class MainMenuManager : MonoBehaviour
 
     private float currentVolume = 1f;
 
-    void Start()
+    void Awake()
     {
-        // Inicializa os controles com os valores atuais
+        StartCoroutine(Start());
+    }
+
+    IEnumerator Start()
+    {
+        yield return new WaitForSeconds(0.1f); // espera o AudioManager inicializar
         AudioManager.instance.PlaySound("MenuMusic");
-        volumeSlider.value = currentVolume;
+
+        volumeSlider.value = currentVolume = 1f; // for√ßa o slider a come√ßar no 1
+        SetVolume(currentVolume);
+
         fullscreenToggle.isOn = Screen.fullScreen;
 
         optionsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
 
-    // FunÁıes dos botıes do menu principal
+    // Fun√ß√µes dos bot√µes do menu principal
     public void StartNewGame()
     {
         SceneManager.LoadScene(1);
@@ -48,7 +57,6 @@ public class MainMenuManager : MonoBehaviour
         mainMenuPanel.SetActive(true);
     }
 
-    // FunÁıes dos controles do painel opÁıes
     public void SetVolume(float volume)
     {
         currentVolume = volume;

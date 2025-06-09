@@ -16,12 +16,24 @@ public class Sound
     [Range(0f, 1f)]
     public float randomPitch = 0.1f;
 
+    public bool loop = false;
+
     private AudioSource source;
     public void SetSource(AudioSource audioSource)
     {
         source = audioSource;
         source.clip = clip;
+        source.volume = volume;
+        source.pitch = pitch;
+        source.loop = loop;
     }
+    public void UpdateVolume(float newVolume)
+    {
+        volume = newVolume;
+        if (source != null)
+            source.volume = newVolume;
+    }
+
 
     public void Play()
     {
@@ -63,7 +75,7 @@ public class AudioManager : MonoBehaviour
     {
         if (instance != null)
         {
-            if (instance != this)  // só destrói se for outra instância diferente
+            if (instance != this)  // sï¿½ destrï¿½i se for outra instï¿½ncia diferente
             {
                 Destroy(this.gameObject);
                 Debug.LogWarning("AudioManager: Another instance already exists, destroying this one.");
@@ -74,12 +86,23 @@ public class AudioManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
 
-            // cria as fontes de áudio
+            // cria as fontes de ï¿½udio
             for (int i = 0; i < sounds.Length; i++)
             {
                 GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
                 _go.transform.SetParent(this.transform);
                 sounds[i].SetSource(_go.AddComponent<AudioSource>());
+            }
+        }
+    }
+    private void Start()
+    {
+        // Inicia todos os sons
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].loop)
+            {
+                sounds[i].Play();
             }
         }
     }
@@ -133,4 +156,12 @@ public class AudioManager : MonoBehaviour
         }
         Debug.LogWarning("AudioManager: Sound " + _name + " not found!");
     }
+    public void SetMusicVolume(float volume)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            sounds[i].UpdateVolume(volume);
+        }
+    }
+
 }

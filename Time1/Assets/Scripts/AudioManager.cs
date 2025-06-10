@@ -31,7 +31,10 @@ public class Sound
     {
         volume = newVolume;
         if (source != null)
-            source.volume = newVolume;
+        {
+            Debug.Log($"Sound: Updating volume for {name} to {newVolume}");
+            source.volume = newVolume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
+        }
     }
 
 
@@ -43,8 +46,12 @@ public class Sound
             return;
         }
 
-        source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
-        source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomPitch / 2f));
+        float randomVolumeModifier = 1 + Random.Range(-randomVolume / 2f, randomVolume / 2f);
+        float randomPitchModifier = 1 + Random.Range(-randomPitch / 2f, randomPitch / 2f);
+        
+        source.volume = volume * randomVolumeModifier;
+        source.pitch = pitch * randomPitchModifier;
+        Debug.Log($"Sound: Playing {name} with final volume {source.volume} (base: {volume}, modifier: {randomVolumeModifier}) and pitch {source.pitch}");
         source.Play();
     }
     public void Stop()
@@ -75,7 +82,7 @@ public class AudioManager : MonoBehaviour
     {
         if (instance != null)
         {
-            if (instance != this)  // s� destr�i se for outra inst�ncia diferente
+            if (instance != this)  // só destrói se for outra instância diferente
             {
                 Destroy(this.gameObject);
                 Debug.LogWarning("AudioManager: Another instance already exists, destroying this one.");
@@ -86,13 +93,16 @@ public class AudioManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
 
-            // cria as fontes de �udio
+            Debug.Log("AudioManager: Initializing audio sources...");
+            // cria as fontes de áudio
             for (int i = 0; i < sounds.Length; i++)
             {
                 GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
                 _go.transform.SetParent(this.transform);
                 sounds[i].SetSource(_go.AddComponent<AudioSource>());
+                Debug.Log($"AudioManager: Created audio source for {sounds[i].name} with volume {sounds[i].volume} and pitch {sounds[i].pitch}");
             }
+            Debug.Log("AudioManager: Initialization complete.");
         }
     }
     private void Start()
@@ -113,7 +123,7 @@ public class AudioManager : MonoBehaviour
         {
             if (sounds[i].name == _name)
             {
-                Debug.Log("Playing sound: " + _name);
+                Debug.Log($"AudioManager: Playing sound {_name} with volume {sounds[i].volume} and pitch {sounds[i].pitch}");
                 sounds[i].Play();
                 return;
             }
@@ -158,6 +168,7 @@ public class AudioManager : MonoBehaviour
     }
     public void SetMusicVolume(float volume)
     {
+        Debug.Log($"AudioManager: Setting volume to {volume}");
         for (int i = 0; i < sounds.Length; i++)
         {
             sounds[i].UpdateVolume(volume);

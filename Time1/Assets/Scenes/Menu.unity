@@ -1958,6 +1958,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 101305010}
     m_Modifications:
     - target: {fileID: 2639003749873846884, guid: e6b03ff14699b6242b29c29d4ee6ec97, type: 3}
+      propertyPath: m_Value
+      value: 0.712
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639003749873846884, guid: e6b03ff14699b6242b29c29d4ee6ec97, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1500215707}
@@ -2121,6 +2125,10 @@ PrefabInstance:
       propertyPath: sounds.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: 4063b636d4c007a479f05328019b3766, type: 3}
+    - target: {fileID: 7569279174986070771, guid: d1f382713b3e741c09058a9a76e038f6, type: 3}
+      propertyPath: sounds.Array.data[0].loop
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7569279174986070771, guid: d1f382713b3e741c09058a9a76e038f6, type: 3}
       propertyPath: sounds.Array.data[0].name
       value: MenuMusic

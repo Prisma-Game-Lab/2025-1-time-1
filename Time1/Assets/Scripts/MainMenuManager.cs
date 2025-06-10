@@ -22,10 +22,13 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(0.1f); // espera o AudioManager inicializar
+        yield return new WaitForSeconds(0.5f); // espera o AudioManager inicializar
         AudioManager.instance.PlaySound("MenuMusic");
 
-        volumeSlider.value = currentVolume = 1f; // força o slider a começar no 1
+        // Configura o slider para começar no valor atual do volume
+        currentVolume = 1f;
+        volumeSlider.value = currentVolume;
+        volumeSlider.onValueChanged.AddListener(SetVolume); // Adiciona o listener aqui
         SetVolume(currentVolume);
 
         fullscreenToggle.isOn = Screen.fullScreen;
@@ -59,8 +62,9 @@ public class MainMenuManager : MonoBehaviour
 
     public void SetVolume(float volume)
     {
+        Debug.Log($"MainMenuManager: Volume slider changed to {volume}"); // Debug para verificar o valor recebido
         currentVolume = volume;
-        AudioListener.volume = volume;
+        AudioManager.instance.SetMusicVolume(volume);
     }
 
     public void SetFullscreen(bool isFullscreen)

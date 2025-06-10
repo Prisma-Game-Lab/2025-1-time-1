@@ -47,7 +47,6 @@ public class SaveManager : MonoBehaviour
     {
         int index = dialogueScene.GetComponent<DialogueHandler>().currIndex;
         string chapterLine = "chapter: " + SceneManager.GetActiveScene().name + "\n";
-        Debug.Log(chapterLine);
         writeSave(0, chapterLine, save);
         string indexLine = "scene: " + index + "\n";
         writeSave(1, indexLine, save);

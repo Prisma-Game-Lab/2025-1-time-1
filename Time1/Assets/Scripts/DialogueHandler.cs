@@ -17,6 +17,10 @@ public class DialogueHandler : MonoBehaviour
     public int dialogueIndex = 0;
     public int currIndex = 0;
 
+    [Header("Item Viewer")]
+    [SerializeField] private Item3DViewer itemViewer;
+    [SerializeField] public GameObject itemViewerPanel;
+
     void Start()
     {
         sprite.GetComponent<Image>().sprite = dialogues[dialogueIndex].char_sprite;
@@ -27,6 +31,11 @@ public class DialogueHandler : MonoBehaviour
         option3.text = dialogues[dialogueIndex].op3;
         currIndex = dialogueIndex;
         dialogueIndex = dialogues[dialogueIndex].next;
+
+        if (itemViewerPanel != null)
+        {
+            itemViewerPanel.SetActive(false);
+        }
     }
 
     public void NextDialogue()
@@ -52,5 +61,24 @@ public class DialogueHandler : MonoBehaviour
     public void Option(int index)
     {
         dialogueIndex = dialogues[dialogueIndex].opIds[index];
+
+        // Se a opção selecionada tiver um item associado, mostra o visualizador
+        if (dialogues[currIndex].hasReward && itemViewer != null && itemViewerPanel != null)
+        {
+            itemViewerPanel.SetActive(true);
+            itemViewer.ShowItem();
+        }
+    }
+
+    public void CloseItemViewer()
+    {
+        if (itemViewer != null)
+        {
+            itemViewer.HideItem();
+        }
+        if (itemViewerPanel != null)
+        {
+            itemViewerPanel.SetActive(false);
+        }
     }
 }

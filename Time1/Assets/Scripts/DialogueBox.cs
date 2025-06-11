@@ -14,4 +14,5 @@ public class DialogueBox: ScriptableObject
     public string op3;
     public int[] opIds;
     public bool options;
+    public bool hasReward; // Indica se este diálogo tem uma recompensa
 }

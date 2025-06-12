@@ -229,15 +229,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -253,19 +253,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5620667
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.64370203
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.39994395
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.33132097
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1216,13 +1216,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
-  rotationSpeed: 30
-  autoRotationSpeed: 20
+  rotationSpeed: 20
+  autoRotationSpeed: 10
   initialPosition: {x: 0, y: 0, z: 0}
   initialRotation: {x: 0, y: 0, z: 0}
-  initialScale: {x: 1, y: 1, z: 1}
+  initialScale: {x: 100, y: 100, z: 100}
   useCustomCamera: 1
-  itemCamera: {fileID: 0}
+  itemCamera: {fileID: 2137212087}
+  itemLayerIndex: 8
 --- !u!1 &1002687866
 GameObject:
   m_ObjectHideFlags: 0

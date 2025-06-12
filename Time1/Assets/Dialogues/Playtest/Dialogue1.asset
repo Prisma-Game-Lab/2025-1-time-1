@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: Dialogue1
   m_EditorClassIdentifier: 
-  text: Teste da rebelde
-  char_sprite: {fileID: 21300000, guid: aef3400d6985d4c4897172a74636acf7, type: 3}
-  char_name: Rebelde
+  text: "(Voc\xEA Termina de guardar as coisas e se levanta em dire\xE7\xE3o \xE0
+    porta)"
+  char_sprite: {fileID: 21300000, guid: 3558c141fd53c3c4a8e32f301705a3ff, type: 3}
+  char_name: "Voc\xEA"
   next: 1
   op1: 
   op2: 
   op3: 
   opIds: 
   options: 0
+  hasReward: 0

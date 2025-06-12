@@ -352,6 +352,39 @@ MonoBehaviour:
   - {fileID: 171122851}
   - {fileID: 1704814493}
   - {fileID: 99291656}
+  itemViewer: {fileID: 1001730141}
+  itemViewerPanel: {fileID: 1749021502}
+  itemPrefab: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
+  falasPositivas:
+  - "Voc\xEA elogiou o visual do oponente."
+  - "Voc\xEA disse que adoraria v\xEA-lo de novo."
+  - "Voc\xEA fez um elogio honesto sobre o jeito dele."
+  - "Voc\xEA disse que se sentia bem ao lado dele."
+  - "Voc\xEA destacou algo gentil no comportamento dele."
+  - "Voc\xEA comentou que ele parece algu\xE9m confi\xE1vel."
+  - "Voc\xEA sorriu e fez um elogio inesperado."
+  - "Voc\xEA demonstrou interesse genu\xEDno pelo que ele dizia."
+  - "Voc\xEA mencionou que ele tem uma presen\xE7a acolhedora."
+  falasNeutras:
+  - "Voc\xEA comentou sobre o tempo."
+  - "Voc\xEA perguntou se ele gosta de pizza."
+  - "Voc\xEA falou sobre o barulho na rua."
+  - "Voc\xEA perguntou quantas horas ele dormiu."
+  - "Voc\xEA comentou que esqueceu de alimentar o gato."
+  - "Voc\xEA perguntou se ele j\xE1 viu um pato correndo."
+  - "Voc\xEA mencionou um sonho estranho sem contexto."
+  - "Voc\xEA falou sobre cereal com leite ou sem."
+  - "Voc\xEA ficou em sil\xEAncio por alguns segundos e sorriu."
+  falasNegativas:
+  - "Voc\xEA criticou o estilo dele."
+  - "Voc\xEA fez uma piada meio \xE1cida."
+  - "Voc\xEA questionou as escolhas dele."
+  - "Voc\xEA insinuou que ele se leva a s\xE9rio demais."
+  - "Voc\xEA disse que ele tenta parecer algu\xE9m que n\xE3o \xE9."
+  - "Voc\xEA revirou os olhos enquanto ele falava."
+  - "Voc\xEA zombou de algo que ele gosta."
+  - "Voc\xEA fez uma compara\xE7\xE3o que o colocou pra baixo."
+  - "Voc\xEA deixou claro que n\xE3o est\xE1 impressionado."
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0
@@ -750,6 +783,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7403432661970520711, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 15891904}
+    - targetCorrespondingSourceObject: {fileID: 7403432661970520711, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1001730140}
     - targetCorrespondingSourceObject: {fileID: 4250912132770753862, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 403030815}
@@ -1051,6 +1087,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1001730139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001730140}
+  - component: {fileID: 1001730141}
+  m_Layer: 0
+  m_Name: item3DViewer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1001730140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001730139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1749021505}
+  m_Father: {fileID: 467907318}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1001730141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001730139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cfd642da3c054b878ac2eb9e3910907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
+  rotationSpeed: 30
+  autoRotationSpeed: 20
+  initialPosition: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0}
+  initialScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1002687866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1572,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712232705}
   m_CullTransparentMesh: 1
+--- !u!1 &1749021502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749021505}
+  - component: {fileID: 1749021504}
+  - component: {fileID: 1749021503}
+  m_Layer: 0
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1749021503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749021502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.1981132, g: 0.13550195, b: 0.13550195, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1749021504
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749021502}
+  m_CullTransparentMesh: 1
+--- !u!224 &1749021505
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749021502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1001730140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -14.926, y: -1.454}
+  m_SizeDelta: {x: 1296.744, y: 735.364}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1778986008
 GameObject:
   m_ObjectHideFlags: 0

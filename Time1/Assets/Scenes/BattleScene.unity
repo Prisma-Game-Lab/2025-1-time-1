@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523af05aefca26b4f8ed667cecfd5584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winScene: 
   playerHPBar: {fileID: 403030816}
   enemyHPBar: {fileID: 1366211398}
   feedbackText: {fileID: 465612277}
@@ -276,6 +277,40 @@ MonoBehaviour:
   - {fileID: 171122851}
   - {fileID: 1704814493}
   - {fileID: 99291656}
+  itemViewer: {fileID: 0}
+  itemViewerPanel: {fileID: 0}
+  itemPrefab: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
+  returnToMenuButton: {fileID: 171122851}
+  falasPositivas:
+  - "Voc\xEA elogiou o visual do oponente."
+  - "Voc\xEA disse que adoraria v\xEA-lo de novo."
+  - "Voc\xEA fez um elogio honesto sobre o jeito dele."
+  - "Voc\xEA disse que se sentia bem ao lado dele."
+  - "Voc\xEA destacou algo gentil no comportamento dele."
+  - "Voc\xEA comentou que ele parece algu\xE9m confi\xE1vel."
+  - "Voc\xEA sorriu e fez um elogio inesperado."
+  - "Voc\xEA demonstrou interesse genu\xEDno pelo que ele dizia."
+  - "Voc\xEA mencionou que ele tem uma presen\xE7a acolhedora."
+  falasNeutras:
+  - "Voc\xEA comentou sobre o tempo."
+  - "Voc\xEA perguntou se ele gosta de pizza."
+  - "Voc\xEA falou sobre o barulho na rua."
+  - "Voc\xEA perguntou quantas horas ele dormiu."
+  - "Voc\xEA comentou que esqueceu de alimentar o gato."
+  - "Voc\xEA perguntou se ele j\xE1 viu um pato correndo."
+  - "Voc\xEA mencionou um sonho estranho sem contexto."
+  - "Voc\xEA falou sobre cereal com leite ou sem."
+  - "Voc\xEA ficou em sil\xEAncio por alguns segundos e sorriu."
+  falasNegativas:
+  - "Voc\xEA criticou o estilo dele."
+  - "Voc\xEA fez uma piada meio \xE1cida."
+  - "Voc\xEA questionou as escolhas dele."
+  - "Voc\xEA insinuou que ele se leva a s\xE9rio demais."
+  - "Voc\xEA disse que ele tenta parecer algu\xE9m que n\xE3o \xE9."
+  - "Voc\xEA revirou os olhos enquanto ele falava."
+  - "Voc\xEA zombou de algo que ele gosta."
+  - "Voc\xEA fez uma compara\xE7\xE3o que o colocou pra baixo."
+  - "Voc\xEA deixou claro que n\xE3o est\xE1 impressionado."
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0

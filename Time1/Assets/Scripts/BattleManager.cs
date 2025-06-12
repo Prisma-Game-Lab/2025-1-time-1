@@ -16,6 +16,11 @@ public class BattleManager : MonoBehaviour
     public GameObject dialogueButtonsPanel;
     public Button[] dialogueButtons;
 
+    [Header("Reward System")]
+    [SerializeField] private Item3DViewer itemViewer;
+    [SerializeField] private GameObject itemViewerPanel;
+    [SerializeField] private Transform itemPrefab;
+
     private TextMeshProUGUI[] buttonTexts;
 
     private int playerHP = 100;
@@ -33,52 +38,58 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] private List<string> falasPositivas = new List<string>
     {
-        "Você elogiou o visual do oponente.",
-        "Você disse que adoraria vê-lo de novo.",
-        "Você fez um elogio honesto sobre o jeito dele.",
-        "Você disse que se sentia bem ao lado dele.",
-        "Você destacou algo gentil no comportamento dele.",
-        "Você comentou que ele parece alguém confiável.",
-        "Você sorriu e fez um elogio inesperado.",
-        "Você demonstrou interesse genuíno pelo que ele dizia.",
-        "Você mencionou que ele tem uma presença acolhedora."
+        "VocÃª elogiou o visual do oponente.",
+        "VocÃª disse que adoraria vÃª-lo de novo.",
+        "VocÃª fez um elogio honesto sobre o jeito dele.",
+        "VocÃª disse que se sentia bem ao lado dele.",
+        "VocÃª destacou algo gentil no comportamento dele.",
+        "VocÃª comentou que ele parece alguÃ©m confiÃ¡vel.",
+        "VocÃª sorriu e fez um elogio inesperado.",
+        "VocÃª demonstrou interesse genuÃ­no pelo que ele dizia.",
+        "VocÃª mencionou que ele tem uma presenÃ§a acolhedora."
     };
 
     [SerializeField] private List<string> falasNeutras = new List<string>
     {
-        "Você comentou sobre o tempo.",
-        "Você perguntou se ele gosta de pizza.",
-        "Você falou sobre o barulho na rua.",
-        "Você perguntou quantas horas ele dormiu.",
-        "Você comentou que esqueceu de alimentar o gato.",
-        "Você perguntou se ele já viu um pato correndo.",
-        "Você mencionou um sonho estranho sem contexto.",
-        "Você falou sobre cereal com leite ou sem.",
-        "Você ficou em silêncio por alguns segundos e sorriu."
+        "VocÃª comentou sobre o tempo.",
+        "VocÃª perguntou se ele gosta de pizza.",
+        "VocÃª falou sobre o barulho na rua.",
+        "VocÃª perguntou quantas horas ele dormiu.",
+        "VocÃª comentou que esqueceu de alimentar o gato.",
+        "VocÃª perguntou se ele jÃ¡ viu um pato correndo.",
+        "VocÃª mencionou um sonho estranho sem contexto.",
+        "VocÃª falou sobre cereal com leite ou sem.",
+        "VocÃª ficou em silÃªncio por alguns segundos e sorriu."
     };
 
 
     [SerializeField] private List<string> falasNegativas = new List<string>
     {
-        "Você criticou o estilo dele.",
-        "Você fez uma piada meio ácida.",
-        "Você questionou as escolhas dele.",
-        "Você insinuou que ele se leva a sério demais.",
-        "Você disse que ele tenta parecer alguém que não é.",
-        "Você revirou os olhos enquanto ele falava.",
-        "Você zombou de algo que ele gosta.",
-        "Você fez uma comparação que o colocou pra baixo.",
-        "Você deixou claro que não está impressionado."
+        "VocÃª criticou o estilo dele.",
+        "VocÃª fez uma piada meio Ã¡cida.",
+        "VocÃª questionou as escolhas dele.",
+        "VocÃª insinuou que ele se leva a sÃ©rio demais.",
+        "VocÃª disse que ele tenta parecer alguÃ©m que nÃ£o Ã©.",
+        "VocÃª revirou os olhos enquanto ele falava.",
+        "VocÃª zombou de algo que ele gosta.",
+        "VocÃª fez uma comparaÃ§Ã£o que o colocou pra baixo.",
+        "VocÃª deixou claro que nÃ£o estÃ¡ impressionado."
     };
 
 
     void Start()
     {
         AtualizarHP();
-        feedbackText.text = "A batalha começou!";
+        feedbackText.text = "A batalha comeÃ§ou!";
         RegistrarBotoes();
         AtualizarFalasNosBotoes();
         dialogueButtonsPanel.SetActive(true);
+
+        // Garantir que o painel de item comeÃ§a desativado
+        if (itemViewerPanel != null)
+        {
+            itemViewerPanel.SetActive(false);
+        }
     }
 
     void RegistrarBotoes()
@@ -127,19 +138,28 @@ public class BattleManager : MonoBehaviour
         {
             int autoDano = 10;
             playerHP -= autoDano;
-            feedbackText.text += $"Foi uma fala neutra. Você sofreu {autoDano} de dano por hesitação.\n";
+            feedbackText.text += $"Foi uma fala neutra. VocÃª sofreu {autoDano} de dano por hesitaÃ§Ã£o.\n";
         }
         else if (tipo == "negativo")
         {
             int danoRecebido = 30;
             playerHP -= danoRecebido;
-            feedbackText.text += $"Foi uma fala negativa! Você levou {danoRecebido} de dano no mini combo do oponente.\n";
+            feedbackText.text += $"Foi uma fala negativa! VocÃª levou {danoRecebido} de dano no mini combo do oponente.\n";
         }
 
         AtualizarHP();
+        
+        // Verifica se alguÃ©m perdeu apÃ³s o ataque do jogador
+        if (enemyHP <= 0 || playerHP <= 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+            FinalizarBatalhaPorTurno();
+            yield break;
+        }
+
         yield return new WaitForSeconds(1.5f);
 
-        // Reação do oponente
+        // ReaÃ§Ã£o do oponente
         string[] reacoes = { "atacar", "neutro", "esquisita" };
         string reacao = reacoes[Random.Range(0, reacoes.Length)];
 
@@ -147,21 +167,30 @@ public class BattleManager : MonoBehaviour
         {
             int dano = 25;
             playerHP -= dano;
-            feedbackText.text += $"O oponente contra-atacou! Você perdeu {dano} de vida.\n";
+            feedbackText.text += $"O oponente contra-atacou! VocÃª perdeu {dano} de vida.\n";
             opponentVulnerable = false;
         }
         else if (reacao == "neutro")
         {
-            feedbackText.text += "O oponente ficou em silêncio...\n";
+            feedbackText.text += "O oponente ficou em silÃªncio...\n";
             opponentVulnerable = false;
         }
         else if (reacao == "esquisita")
         {
-            feedbackText.text += "O oponente teve uma reação esquisita... parece vulnerável!\n";
+            feedbackText.text += "O oponente teve uma reaÃ§Ã£o esquisita... parece vulnerÃ¡vel!\n";
             opponentVulnerable = true;
         }
 
         AtualizarHP();
+
+        // Verifica se alguÃ©m perdeu apÃ³s a reaÃ§Ã£o do oponente
+        if (enemyHP <= 0 || playerHP <= 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+            FinalizarBatalhaPorTurno();
+            yield break;
+        }
+
         yield return new WaitForSeconds(1.5f);
 
         turn++;
@@ -170,14 +199,11 @@ public class BattleManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             FinalizarBatalhaPorTurno();
-            yield return new WaitForSeconds(1f);
-            //playtest, mudar
-            SceneManager.LoadScene(winScene);
             yield break;
         }
 
         AtualizarFalasNosBotoes();
-        feedbackText.text = "Seu turno! Escolha uma nova opção.";
+        feedbackText.text = "Seu turno! Escolha uma nova opÃ§Ã£o.";
         dialogueButtonsPanel.SetActive(true);
     }
 
@@ -222,25 +248,65 @@ public class BattleManager : MonoBehaviour
 
     void AtualizarHP()
     {
+        // Garante que o HP nÃ£o fique negativo
+        playerHP = Mathf.Max(0, playerHP);
+        enemyHP = Mathf.Max(0, enemyHP);
+        
         playerHPBar.value = playerHP;
         enemyHPBar.value = enemyHP;
     }
 
     void FinalizarBatalhaPorTurno()
     {
-        if (playerHP > enemyHP)
+        dialogueButtonsPanel.SetActive(false);
+
+        if (playerHP <= 0)
+        {
+            feedbackText.text = "VocÃª perdeu a batalha!";
+            StartCoroutine(ReturnToMenuAfterDelay());
+        }
+        else if (enemyHP <= 0)
+        {
+            feedbackText.text = "VocÃª venceu a batalha!";
+            StartCoroutine(ShowRewardAfterDelay());
+        }
+        else if (playerHP > enemyHP)
         {
             enemyHP = 0;
             AtualizarHP();
-            feedbackText.text = "Você venceu a batalha!";
+            feedbackText.text = "VocÃª venceu a batalha!";
+            StartCoroutine(ShowRewardAfterDelay());
         }
         else
         {
             playerHP = 0;
             AtualizarHP();
-            feedbackText.text = "Você perdeu a batalha!";
+            feedbackText.text = "VocÃª perdeu a batalha!";
+            StartCoroutine(ReturnToMenuAfterDelay());
         }
+    }
 
-        dialogueButtonsPanel.SetActive(false);
+    IEnumerator ShowRewardAfterDelay()
+    {
+        yield return new WaitForSeconds(3f); // Aumentado para dar tempo de ler o feedback
+        
+        if (itemViewer != null && itemPrefab != null && itemViewerPanel != null)
+        {
+            itemViewerPanel.SetActive(true);
+            itemViewer.ShowItem();
+            // NÃ£o carrega a cena do menu automaticamente, espera o jogador fechar o painel de item
+        }
+        else
+        {
+            Debug.LogWarning("Item3DViewer, itemPrefab or itemViewerPanel not set in BattleManager!");
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(winScene);
+        }
+    }
+
+    IEnumerator ReturnToMenuAfterDelay()
+    {
+        yield return new WaitForSeconds(3f); // Aumentado para dar tempo de ler o feedback
+        SceneManager.LoadScene(winScene);
     }
 }

@@ -434,9 +434,9 @@ MonoBehaviour:
   - {fileID: 171122851}
   - {fileID: 1704814493}
   - {fileID: 99291656}
-  itemViewer: {fileID: 1001730141}
-  itemViewerPanel: {fileID: 1749021502}
-  itemPrefab: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
+  itemViewer: {fileID: 0}
+  itemViewerPanel: {fileID: 0}
+  itemPrefab: {fileID: 0}
   falasPositivas:
   - "Voc\xEA elogiou o visual do oponente."
   - "Voc\xEA disse que adoraria v\xEA-lo de novo."
@@ -1185,7 +1185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1001730140
 Transform:
   m_ObjectHideFlags: 0

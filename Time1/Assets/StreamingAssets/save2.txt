@@ -1,4 +1,6 @@
-chapter: DialogueTest
+chapter: DialoguePlaytest
+scene: 0
+
 scene: 4
 
 scene: 4

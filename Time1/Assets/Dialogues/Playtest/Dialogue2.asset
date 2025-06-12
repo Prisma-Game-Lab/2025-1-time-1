@@ -15,9 +15,10 @@ MonoBehaviour:
   text: Teste da rebelde sprite 2
   char_sprite: {fileID: 21300000, guid: 4694593d1e4f3174089da89d2919faf0, type: 3}
   char_name: Rebelde
-  next: 1
+  next: 100
   op1: 
   op2: 
   op3: 
   opIds: 
   options: 0
+  hasReward: 0

@@ -3,9 +3,12 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
+    [SerializeField] private string winScene;
+
     public Slider playerHPBar;
     public Slider enemyHPBar;
 
@@ -28,7 +31,7 @@ public class BattleManager : MonoBehaviour
 
     private Dictionary<string, string> opcoesAtuais = new Dictionary<string, string>();
 
-    private List<string> falasPositivas = new List<string>
+    [SerializeField] private List<string> falasPositivas = new List<string>
     {
         "Você elogiou o visual do oponente.",
         "Você disse que adoraria vê-lo de novo.",
@@ -41,7 +44,7 @@ public class BattleManager : MonoBehaviour
         "Você mencionou que ele tem uma presença acolhedora."
     };
 
-    private List<string> falasNeutras = new List<string>
+    [SerializeField] private List<string> falasNeutras = new List<string>
     {
         "Você comentou sobre o tempo.",
         "Você perguntou se ele gosta de pizza.",
@@ -55,7 +58,7 @@ public class BattleManager : MonoBehaviour
     };
 
 
-    private List<string> falasNegativas = new List<string>
+    [SerializeField] private List<string> falasNegativas = new List<string>
     {
         "Você criticou o estilo dele.",
         "Você fez uma piada meio ácida.",
@@ -167,6 +170,9 @@ public class BattleManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             FinalizarBatalhaPorTurno();
+            yield return new WaitForSeconds(1f);
+            //playtest, mudar
+            SceneManager.LoadScene(winScene);
             yield break;
         }
 

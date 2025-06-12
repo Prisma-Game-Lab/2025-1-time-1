@@ -294,19 +294,25 @@ public class BattleManager : MonoBehaviour
         {
             itemViewerPanel.SetActive(true);
             itemViewer.ShowItem();
-            // Não carrega a cena do menu automaticamente, espera o jogador fechar o painel de item
+            Debug.Log("Reward shown");
+            yield return new WaitForSeconds(2f);
+            StartCoroutine(ReturnToMenuAfterDelay());
         }
         else
         {
             Debug.LogWarning("Item3DViewer, itemPrefab or itemViewerPanel not set in BattleManager!");
-            yield return new WaitForSeconds(2f);
-            SceneManager.LoadScene(winScene);
+            StartCoroutine(ReturnToMenuAfterDelay());
         }
     }
 
     IEnumerator ReturnToMenuAfterDelay()
     {
         yield return new WaitForSeconds(3f); // Aumentado para dar tempo de ler o feedback
+        if (string.IsNullOrEmpty(winScene))
+        {
+            Debug.LogWarning("winScene not set in BattleManager! Defaulting to 'Menu'");
+            winScene = "Menu";
+        }
         SceneManager.LoadScene(winScene);
     }
 }

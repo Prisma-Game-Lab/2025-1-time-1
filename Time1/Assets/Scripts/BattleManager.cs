@@ -288,19 +288,28 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator ShowRewardAfterDelay()
     {
-        yield return new WaitForSeconds(3f); // Aumentado para dar tempo de ler o feedback
+        yield return new WaitForSeconds(2f); // Reduzido para melhor fluidez
         
         if (itemViewer != null && itemPrefab != null && itemViewerPanel != null)
         {
+            Debug.Log("Showing reward...");
             itemViewerPanel.SetActive(true);
+            
+            // Garante que o item viewer está ativo antes de mostrar o item
+            itemViewer.gameObject.SetActive(true);
             itemViewer.ShowItem();
-            Debug.Log("Reward shown");
-            yield return new WaitForSeconds(2f);
+            
+            Debug.Log("Reward shown, waiting before return to menu...");
+            yield return new WaitForSeconds(3f); // Tempo para ver o item
+            
+            // Esconde o item antes de retornar ao menu
+            itemViewer.HideItem();
+            itemViewerPanel.SetActive(false);
             StartCoroutine(ReturnToMenuAfterDelay());
         }
         else
         {
-            Debug.LogWarning("Item3DViewer, itemPrefab or itemViewerPanel not set in BattleManager!");
+            Debug.LogWarning($"Missing references - itemViewer: {itemViewer}, itemPrefab: {itemPrefab}, itemViewerPanel: {itemViewerPanel}");
             StartCoroutine(ReturnToMenuAfterDelay());
         }
     }

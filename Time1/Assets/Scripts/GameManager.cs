@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [Header("Progresso do Jogo")]
     public int currentChapter = 1;
     public int currentDay = 1;
+    public int index = 0;
     public bool[] battlesCompleted; // índice representa cada batalha
     public bool[] itemsAcquired; // index representa cada item
     public int[] lovePoints; // índice representa cada pretendente

@@ -25,6 +25,7 @@ public class DialogueHandler : MonoBehaviour
 
     void Start()
     {
+        dialogueIndex = GameManager.instance.index;
         sprite.GetComponent<Image>().sprite = dialogues[dialogueIndex].char_sprite;
         dialogue.text = dialogues[dialogueIndex].text;
         charName.text = dialogues[dialogueIndex].char_name;

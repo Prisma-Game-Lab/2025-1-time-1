@@ -58,12 +58,13 @@ public class SaveManager : MonoBehaviour
     {
         string[] saveText = readSave(save);
         string sceneName = saveText[0].Split(": ")[1];
-        if (sceneName != SceneManager.GetActiveScene().name)
-        {
-            SceneManager.LoadScene(sceneName);
-        }
         int index = 0;
         Int32.TryParse(saveText[1].Split(':')[1], out index);
+        if (sceneName != SceneManager.GetActiveScene().name)
+        {
+            GameManager.instance.index = index;
+            SceneManager.LoadScene(sceneName);
+        }
         dialogueScene.GetComponent<DialogueHandler>().dialogueIndex = index;
         dialogueScene.GetComponent<DialogueHandler>().options.SetActive(false);
         dialogueScene.GetComponent<DialogueHandler>().NextDialogue();

@@ -40,6 +40,7 @@ public class MainMenuManager : MonoBehaviour
     // Funções dos botões do menu principal
     public void StartNewGame()
     {
+        GameManager.instance.index = 0;
         SceneManager.LoadScene(1);
     }
 

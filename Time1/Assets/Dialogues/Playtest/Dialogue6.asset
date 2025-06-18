@@ -16,9 +16,15 @@ MonoBehaviour:
   char_sprite: {fileID: 21300000, guid: 7cdc398b84eadd745b7152cdf2bb9bfb, type: 3}
   char_name: Rebelde
   next: 6
-  op1: " Foi mal, \xE9 que tinha uma muralha na minha frente"
-  op2: " \xC9 que voc\xEA \xE9 t\xE3o feia que eu n\xE3o consegui olhar."
-  op3: "Err\u2026 F-Foi mal, eu sou muito desastrado."
-  opIds: 060000000700000008000000
   options: 1
+  option:
+  - opText: 
+    next: 6
+    reaction: 1
+  - opText: 
+    next: 7
+    reaction: 0
+  - opText: 
+    next: 8
+    reaction: -1
   hasReward: 0

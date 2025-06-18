@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public int neutralDialoguesPerBattle = 4;
     public int negativeDialoguesPerBattle = 4;
     public int enemyDialoguesPerType = 3; // 3 diálogos por tipo (positivo, neutro, negativo) = 9 total
-    
+
     [Header("Personagens")]
     public CharacterType currentOpponent;
     public CharacterType chosenLoveInterest;

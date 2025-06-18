@@ -29,9 +29,12 @@ public class DialogueHandler : MonoBehaviour
         sprite.GetComponent<Image>().sprite = dialogues[dialogueIndex].char_sprite;
         dialogue.text = dialogues[dialogueIndex].text;
         charName.text = dialogues[dialogueIndex].char_name;
-        option1.text = dialogues[dialogueIndex].op1;
-        option2.text = dialogues[dialogueIndex].op2;
-        option3.text = dialogues[dialogueIndex].op3;
+        if (dialogues[dialogueIndex].options)
+        {
+            option1.text = dialogues[dialogueIndex].option[0].opText;
+            option2.text = dialogues[dialogueIndex].option[1].opText;
+            option3.text = dialogues[dialogueIndex].option[2].opText;
+        }
         currIndex = dialogueIndex;
         dialogueIndex = dialogues[dialogueIndex].next;
 
@@ -48,12 +51,12 @@ public class DialogueHandler : MonoBehaviour
             sprite.GetComponent<Image>().sprite = dialogues[dialogueIndex].char_sprite;
             dialogue.text = dialogues[dialogueIndex].text;
             charName.text = dialogues[dialogueIndex].char_name;
-            option1.text = dialogues[dialogueIndex].op1;
-            option2.text = dialogues[dialogueIndex].op2;
-            option3.text = dialogues[dialogueIndex].op3;
             currIndex = dialogueIndex;
             if (dialogues[dialogueIndex].options)
             {
+                option1.text = dialogues[dialogueIndex].option[0].opText;
+                option2.text = dialogues[dialogueIndex].option[1].opText;
+                option3.text = dialogues[dialogueIndex].option[2].opText;
                 options.SetActive(true);
                 return;
             }
@@ -67,7 +70,8 @@ public class DialogueHandler : MonoBehaviour
 
     public void Option(int index)
     {
-        dialogueIndex = dialogues[dialogueIndex].opIds[index];
+        dialogueIndex = dialogues[dialogueIndex].option[index].next;
+        addPoints(index);
 
         // Se a opção selecionada tiver um item associado, mostra o visualizador
         if (dialogues[currIndex].hasReward && itemViewer != null && itemViewerPanel != null)
@@ -87,5 +91,23 @@ public class DialogueHandler : MonoBehaviour
         {
             itemViewerPanel.SetActive(false);
         }
+    }
+
+    public void addPoints(int index)
+    {
+        int idPretendente = 0;
+        switch(dialogues[currIndex].char_name)
+        {
+            case "Rebelde":
+                idPretendente = 0;
+                break;
+            case "Nerd":
+                idPretendente = 1;
+                break;
+            case "Ator":
+                idPretendente = 2;
+                break;
+        }
+        GameManager.instance.AddLovePoints(idPretendente, (int) dialogues[currIndex].option[index].reaction);
     }
 }

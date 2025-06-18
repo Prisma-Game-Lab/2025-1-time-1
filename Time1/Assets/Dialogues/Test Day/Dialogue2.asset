@@ -15,9 +15,7 @@ MonoBehaviour:
   text: "Agora com op\xE7\xF5es"
   char_sprite: {fileID: 21300000, guid: 5fbc0ea16e243724c816788c2cc5db51, type: 3}
   char_name: Henrique
-  next: 0
-  op1: Vai pra 1
-  op2: Vai pra 2
-  op3: Vai pra 3
-  opIds: 020000000300000004000000
-  options: 1
+  next: 2
+  options: 0
+  option: []
+  hasReward: 0

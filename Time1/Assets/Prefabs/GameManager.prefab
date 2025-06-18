@@ -46,10 +46,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentChapter: 1
   currentDay: 1
+  index: 0
   battlesCompleted: 
   itemsAcquired: 
-  lovePoints: 
+  lovePoints: 000000000000000000000000
+  maxTurnsPerBattle: 4
+  currentTurnNumber: 0
+  playerHealth: 100
+  enemyHealth: 100
+  basePositiveDamage: 25
+  baseNegativeDamage: 35
+  bonusDamageMultiplier: 1.5
+  positiveDialoguesPerBattle: 4
+  neutralDialoguesPerBattle: 4
+  negativeDialoguesPerBattle: 4
+  enemyDialoguesPerType: 3
+  currentOpponent: 0
+  chosenLoveInterest: 0
   currentState: 0
+  currentBattleState: 0
   sceneDialogue: DialogueScene
   sceneCombat: CombatScene
   sceneMainMenu: MainMenuScene

@@ -16,9 +16,6 @@ MonoBehaviour:
   char_sprite: {fileID: 21300000, guid: 04d6ee3b07c31ba4ebbce129f47619af, type: 3}
   char_name: Rebelde
   next: 100
-  op1: 
-  op2: 
-  op3: 
-  opIds: 
   options: 0
+  option: []
   hasReward: 0

@@ -268,14 +268,14 @@ public class BattleManager : MonoBehaviour
         else if (enemyHP <= 0)
         {
             feedbackText.text = "Você venceu a batalha!";
-            StartCoroutine(ShowRewardAfterDelay());
+            ShowRewardItem();
         }
         else if (playerHP > enemyHP)
         {
             enemyHP = 0;
             AtualizarHP();
             feedbackText.text = "Você venceu a batalha!";
-            StartCoroutine(ShowRewardAfterDelay());
+            ShowRewardItem();
         }
         else
         {
@@ -286,32 +286,29 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    IEnumerator ShowRewardAfterDelay()
+    void ShowRewardItem()
     {
-        yield return new WaitForSeconds(2f); // Reduzido para melhor fluidez
-        
         if (itemViewer != null && itemPrefab != null && itemViewerPanel != null)
         {
-            Debug.Log("Showing reward...");
             itemViewerPanel.SetActive(true);
-            
-            // Garante que o item viewer está ativo antes de mostrar o item
             itemViewer.gameObject.SetActive(true);
-            itemViewer.ShowItem();
-            
-            Debug.Log("Reward shown, waiting before return to menu...");
-            yield return new WaitForSeconds(3f); // Tempo para ver o item
-            
-            // Esconde o item antes de retornar ao menu
-            itemViewer.HideItem();
-            itemViewerPanel.SetActive(false);
-            StartCoroutine(ReturnToMenuAfterDelay());
+            // Remove listeners antigos para evitar múltiplas chamadas
+            itemViewer.onViewFinished.RemoveAllListeners();
+            itemViewer.onViewFinished.AddListener(OnRewardViewFinished);
+            itemViewer.ShowItem(itemPrefab.gameObject);
         }
         else
         {
             Debug.LogWarning($"Missing references - itemViewer: {itemViewer}, itemPrefab: {itemPrefab}, itemViewerPanel: {itemViewerPanel}");
             StartCoroutine(ReturnToMenuAfterDelay());
         }
+    }
+
+    void OnRewardViewFinished()
+    {
+        if (itemViewerPanel != null)
+            itemViewerPanel.SetActive(false);
+        StartCoroutine(ReturnToMenuAfterDelay());
     }
 
     IEnumerator ReturnToMenuAfterDelay()

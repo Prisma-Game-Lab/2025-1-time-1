@@ -1,191 +1,95 @@
 using UnityEngine;
-using System.Collections;
+using UnityEngine.Events;
 
 public class Item3DViewer : MonoBehaviour
 {
-    [SerializeField] private Transform itemPrefab;
-    [SerializeField] private float rotationSpeed = 30f;
-    [SerializeField] private float autoRotationSpeed = 20f;
-    [SerializeField] private Vector3 initialPosition = new Vector3(0, 0, -2);
-    [SerializeField] private Vector3 initialRotation = new Vector3(0, 0, 0);
-    [SerializeField] private Vector3 initialScale = new Vector3(5, 5, 5);
-    
-    // Camera settings
-    [SerializeField] private bool useCustomCamera = true;
-    [SerializeField] private Camera itemCamera;
-    [SerializeField] private int itemLayerIndex = 8; // Layer 8 is the first free user layer
-    
-    private Transform currentItem;
-    private bool isDragging = false;
-    private Vector3 previousMousePosition;
-    private bool isAutoRotating = true;
-    private Vector3 originalCameraPosition;
-    private bool originalCameraOrthographic;
-    private float originalCameraFOV;
+    [Header("Visualização do Item 3D")]
+    public Camera viewerCamera; // Câmera auxiliar para RenderTexture
+    public RenderTexture renderTexture; // RenderTexture exibida no RawImage
+    public Transform itemHolder; // Empty no centro da cena/câmera
+    public GameObject itemPrefab; // Prefab do item a ser exibido
+    public float rotationSpeed = 100f;
+    public float viewDuration = 7f; // Tempo de exibição (padrão 7s)
+    public UnityEvent onViewFinished; // Evento chamado ao terminar
 
-    private void Start()
-    {
-        SetupCamera();
-    }
+    private GameObject currentItemInstance;
+    private Vector3 lastMousePosition;
+    private float timer;
+    private bool isViewing = false;
 
-    private void SetupCamera()
+    void Awake()
     {
-        if (useCustomCamera)
+        if (viewerCamera != null && renderTexture != null)
         {
-            if (itemCamera == null)
-            {
-                // Create a dedicated camera for the item viewer
-                GameObject cameraObj = new GameObject("ItemViewerCamera");
-                itemCamera = cameraObj.AddComponent<Camera>();
-                itemCamera.transform.parent = transform;
-                itemCamera.transform.localPosition = new Vector3(0, 0, -10);
-                itemCamera.orthographic = false;
-                itemCamera.fieldOfView = 60f;
-                itemCamera.depth = Camera.main ? Camera.main.depth + 1 : 1; // Render on top of main camera
-                itemCamera.clearFlags = CameraClearFlags.Depth; // Only render the item
-                itemCamera.cullingMask = 1 << itemLayerIndex;
-            }
+            viewerCamera.targetTexture = renderTexture;
         }
-        else
+        if (itemHolder != null && itemHolder.childCount > 0)
         {
-            itemCamera = Camera.main;
-            if (itemCamera != null)
-            {
-                // Store original camera settings
-                originalCameraPosition = itemCamera.transform.position;
-                originalCameraOrthographic = itemCamera.orthographic;
-                originalCameraFOV = itemCamera.fieldOfView;
-            }
+            foreach (Transform child in itemHolder)
+                Destroy(child.gameObject);
         }
     }
 
-    public void ShowItem()
+    public void ShowItem(GameObject prefab = null)
     {
-        // Cleanup any existing item first
-        if (currentItem != null)
+        if (itemHolder == null || viewerCamera == null || renderTexture == null)
         {
-            Destroy(currentItem.gameObject);
-            currentItem = null;
+            Debug.LogError("Item3DViewer: Referências não atribuídas!");
+            return;
         }
-
-        // Make sure camera is set up
-        SetupCamera();
-
-        // Create new item
-        if (itemPrefab != null)
-        {
-            currentItem = Instantiate(itemPrefab, transform);
-            currentItem.localPosition = initialPosition;
-            currentItem.localRotation = Quaternion.Euler(initialRotation);
-            currentItem.localScale = initialScale;
-            
-            // Set the item to the correct layer
-            SetLayerRecursively(currentItem.gameObject, itemLayerIndex);
-
-            // Position camera to view item
-            if (itemCamera != null)
-            {
-                // Calculate bounds of the object
-                Bounds bounds = new Bounds(currentItem.position, Vector3.one);
-                Renderer[] renderers = currentItem.GetComponentsInChildren<Renderer>();
-                foreach (Renderer renderer in renderers)
-                {
-                    if (renderer != null)
-                    {
-                        bounds.Encapsulate(renderer.bounds);
-                    }
-                }
-
-                // Adjust camera to fit object
-                float objectSize = Mathf.Max(bounds.size.x, bounds.size.y, bounds.size.z);
-                float distance = objectSize / Mathf.Tan(itemCamera.fieldOfView * 0.5f * Mathf.Deg2Rad);
-                itemCamera.transform.position = bounds.center - itemCamera.transform.forward * distance;
-            }
-
-            isAutoRotating = true;
-            Debug.Log($"Item shown: Position={currentItem.position}, Scale={currentItem.localScale}, Layer={currentItem.gameObject.layer}");
-        }
-        else
-        {
-            Debug.LogWarning("Item3DViewer: No item prefab assigned!");
-        }
+        if (currentItemInstance != null)
+            Destroy(currentItemInstance);
+        GameObject toSpawn = prefab != null ? prefab : itemPrefab;
+        currentItemInstance = Instantiate(toSpawn, itemHolder);
+        currentItemInstance.transform.localPosition = Vector3.zero;
+        currentItemInstance.transform.localRotation = Quaternion.identity;
+        currentItemInstance.transform.localScale = Vector3.one;
+        timer = 0f;
+        isViewing = true;
+        gameObject.SetActive(true);
     }
 
-    private void SetLayerRecursively(GameObject obj, int layer)
+    void Update()
     {
-        if (obj == null) return;
-        
-        try
+        if (!isViewing) return;
+        timer += Time.unscaledDeltaTime;
+        if (timer >= viewDuration)
         {
-            obj.layer = layer;
-            foreach (Transform child in obj.transform)
-            {
-                if (child != null)
-                {
-                    SetLayerRecursively(child.gameObject, layer);
-                }
-            }
+            isViewing = false;
+            HideItem();
+            onViewFinished?.Invoke();
+            return;
         }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"Error setting layer for object {obj.name}: {e.Message}");
-        }
+        HandleRotation();
     }
 
-    private void Update()
+    void HandleRotation()
     {
-        if (currentItem == null) return;
-
         if (Input.GetMouseButtonDown(0))
         {
-            isDragging = true;
-            isAutoRotating = false;
-            previousMousePosition = Input.mousePosition;
+            lastMousePosition = Input.mousePosition;
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButton(0))
         {
-            isDragging = false;
-            isAutoRotating = true;
-        }
-
-        if (isDragging)
-        {
-            Vector3 delta = Input.mousePosition - previousMousePosition;
-            currentItem.Rotate(Vector3.up, -delta.x * rotationSpeed * Time.deltaTime, Space.World);
-            currentItem.Rotate(Vector3.right, delta.y * rotationSpeed * Time.deltaTime, Space.World);
-            previousMousePosition = Input.mousePosition;
-        }
-        else if (isAutoRotating)
-        {
-            currentItem.Rotate(Vector3.up, autoRotationSpeed * Time.deltaTime, Space.World);
+            Vector3 delta = Input.mousePosition - lastMousePosition;
+            float rotX = delta.y * rotationSpeed * Time.unscaledDeltaTime;
+            float rotY = -delta.x * rotationSpeed * Time.unscaledDeltaTime;
+            if (currentItemInstance != null)
+            {
+                currentItemInstance.transform.Rotate(viewerCamera.transform.up, rotY, Space.World);
+                currentItemInstance.transform.Rotate(viewerCamera.transform.right, rotX, Space.World);
+            }
+            lastMousePosition = Input.mousePosition;
         }
     }
 
     public void HideItem()
     {
-        if (currentItem != null)
+        if (currentItemInstance != null)
         {
-            Destroy(currentItem.gameObject);
-            currentItem = null;
+            Destroy(currentItemInstance);
         }
-
-        // Restore original camera settings if using main camera
-        if (!useCustomCamera && itemCamera != null)
-        {
-            itemCamera.transform.position = originalCameraPosition;
-            itemCamera.orthographic = originalCameraOrthographic;
-            itemCamera.fieldOfView = originalCameraFOV;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        // Cleanup: restore camera settings if using main camera
-        if (!useCustomCamera && itemCamera != null)
-        {
-            itemCamera.transform.position = originalCameraPosition;
-            itemCamera.orthographic = originalCameraOrthographic;
-            itemCamera.fieldOfView = originalCameraFOV;
-        }
+        isViewing = false;
+        gameObject.SetActive(false);
     }
 } 

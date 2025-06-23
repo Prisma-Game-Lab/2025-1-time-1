@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class BattleManager : MonoBehaviour
 {
     [SerializeField] private string winScene;
+    [SerializeField] private Camera mainCamera;
 
     public Slider playerHPBar;
     public Slider enemyHPBar;
@@ -20,6 +21,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private Item3DViewer itemViewer;
     [SerializeField] private GameObject itemViewerPanel;
     [SerializeField] private Transform itemPrefab;
+    [SerializeField] private Camera itemViewerCamera;
 
     private TextMeshProUGUI[] buttonTexts;
 
@@ -89,6 +91,7 @@ public class BattleManager : MonoBehaviour
         if (itemViewerPanel != null)
         {
             itemViewerPanel.SetActive(false);
+            itemViewerCamera.enabled = false;
         }
     }
 
@@ -292,10 +295,12 @@ public class BattleManager : MonoBehaviour
         {
             itemViewerPanel.SetActive(true);
             itemViewer.gameObject.SetActive(true);
+            mainCamera.enabled = false;
+            itemViewerCamera.enabled = true;
             // Remove listeners antigos para evitar múltiplas chamadas
             itemViewer.onViewFinished.RemoveAllListeners();
             itemViewer.onViewFinished.AddListener(OnRewardViewFinished);
-            itemViewer.ShowItem(itemPrefab.gameObject);
+            itemViewer.ShowItem();
         }
         else
         {
@@ -319,6 +324,8 @@ public class BattleManager : MonoBehaviour
             Debug.LogWarning("winScene not set in BattleManager! Defaulting to 'Menu'");
             winScene = "Menu";
         }
+        mainCamera.enabled = true;
+        itemViewerCamera.enabled = false;
         SceneManager.LoadScene(winScene);
     }
 }

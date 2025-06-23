@@ -4,13 +4,12 @@ using UnityEngine.Events;
 public class Item3DViewer : MonoBehaviour
 {
     [Header("Visualização do Item 3D")]
-    public Camera viewerCamera; // Câmera auxiliar para RenderTexture
-    public RenderTexture renderTexture; // RenderTexture exibida no RawImage
+    public Camera viewerCamera; // Câmera auxiliar
     public Transform itemHolder; // Empty no centro da cena/câmera
-    public GameObject itemPrefab; // Prefab do item a ser exibido
-    public float rotationSpeed = 100f;
+    public float rotationSpeed = 500f;
     public float viewDuration = 7f; // Tempo de exibição (padrão 7s)
     public UnityEvent onViewFinished; // Evento chamado ao terminar
+    public GameObject mainCanvas; // Referência ao Canvas principal (Canvas 1)
 
     private GameObject currentItemInstance;
     private Vector3 lastMousePosition;
@@ -19,34 +18,31 @@ public class Item3DViewer : MonoBehaviour
 
     void Awake()
     {
-        if (viewerCamera != null && renderTexture != null)
-        {
-            viewerCamera.targetTexture = renderTexture;
-        }
+        // Garante que todos os filhos estejam desativados ao iniciar
         if (itemHolder != null && itemHolder.childCount > 0)
         {
             foreach (Transform child in itemHolder)
-                Destroy(child.gameObject);
+                child.gameObject.SetActive(false);
         }
     }
 
-    public void ShowItem(GameObject prefab = null)
+    public void ShowItem()
     {
-        if (itemHolder == null || viewerCamera == null || renderTexture == null)
+        if (itemHolder == null || viewerCamera == null || mainCanvas == null)
         {
             Debug.LogError("Item3DViewer: Referências não atribuídas!");
             return;
         }
-        if (currentItemInstance != null)
-            Destroy(currentItemInstance);
-        GameObject toSpawn = prefab != null ? prefab : itemPrefab;
-        currentItemInstance = Instantiate(toSpawn, itemHolder);
-        currentItemInstance.transform.localPosition = Vector3.zero;
-        currentItemInstance.transform.localRotation = Quaternion.identity;
-        currentItemInstance.transform.localScale = Vector3.one;
+        // Ativa o primeiro filho do itemHolder
+        if (itemHolder.childCount > 0)
+        {
+            currentItemInstance = itemHolder.GetChild(0).gameObject;
+            currentItemInstance.SetActive(true);
+        }
         timer = 0f;
         isViewing = true;
         gameObject.SetActive(true);
+        mainCanvas.SetActive(false); // Desativa o Canvas principal
     }
 
     void Update()
@@ -87,9 +83,11 @@ public class Item3DViewer : MonoBehaviour
     {
         if (currentItemInstance != null)
         {
-            Destroy(currentItemInstance);
+            currentItemInstance.SetActive(false);
         }
         isViewing = false;
         gameObject.SetActive(false);
+        if (mainCanvas != null)
+            mainCanvas.SetActive(true); // Reativa o Canvas principal
     }
 } 

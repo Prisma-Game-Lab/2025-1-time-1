@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winScene: 
+  mainCamera: {fileID: 0}
   playerHPBar: {fileID: 403030816}
   enemyHPBar: {fileID: 1366211398}
   feedbackText: {fileID: 465612277}
@@ -280,6 +281,19 @@ MonoBehaviour:
   itemViewer: {fileID: 0}
   itemViewerPanel: {fileID: 0}
   itemPrefab: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
+  itemViewerCamera: {fileID: 0}
+  filterBackgroundImage: {fileID: 975686505}
+  iconPrefab: {fileID: 7780794242681910549, guid: e8af20497adc1ce4ba8ec1c6d946580f, type: 3}
+  iconsContainer: {fileID: 459537157}
+  nerdIcons:
+  - {fileID: 21300000, guid: ea8fdde7074d7fa48930d838d794ca92, type: 3}
+  - {fileID: 21300000, guid: fd647f345fab1944da3284b670d752af, type: 3}
+  - {fileID: 21300000, guid: 1c2b16599973f61458be80660b836a4f, type: 3}
+  - {fileID: 21300000, guid: 23ff0b6cd5fca3c42afad968d4ef953a, type: 3}
+  rebelIcons:
+  - {fileID: 21300000, guid: 210cfcf6d0cb12940843ef44cdd65bf9, type: 3}
+  actorIcons:
+  - {fileID: 21300000, guid: 1f60cebf5c8d6a84094f43f65ef74db8, type: 3}
   falasPositivas:
   - "Voc\xEA elogiou o visual do oponente."
   - "Voc\xEA disse que adoraria v\xEA-lo de novo."
@@ -310,6 +324,36 @@ MonoBehaviour:
   - "Voc\xEA zombou de algo que ele gosta."
   - "Voc\xEA fez uma compara\xE7\xE3o que o colocou pra baixo."
   - "Voc\xEA deixou claro que n\xE3o est\xE1 impressionado."
+  respostasPositivas:
+  - "O oponente sorriu de volta, um pouco sem gra\xE7a."
+  - Ele pareceu surpreso com o elogio.
+  - Ele desviou o olhar, mas estava sorrindo.
+  - Ele agradeceu, ainda que desconfiado.
+  - "Ele balan\xE7ou a cabe\xE7a, rindo de leve."
+  - "Ele murmurou um 'valeu' t\xEDmido."
+  - Ele pareceu se animar um pouco.
+  - "Ele ficou quieto, mas voc\xEA viu que gostou."
+  - Ele corou discretamente.
+  respostasNeutras:
+  - O oponente soltou um 'aham' educado.
+  - Ele franziu a testa, confuso.
+  - Ele apenas assentiu, sem muito interesse.
+  - Ele olhou para o lado, esperando algo mais.
+  - "Ele respondeu com um 'sei l\xE1'."
+  - Ele mexeu no celular.
+  - "Ele n\xE3o entendeu muito bem a pergunta."
+  - "Ele pareceu perdido nos pr\xF3prios pensamentos."
+  - "Ele respondeu com um 't\xE1 certo' seco."
+  respostasNegativas:
+  - "O oponente cruzou os bra\xE7os, visivelmente incomodado."
+  - Ele revirou os olhos.
+  - "Ele rebateu com uma piada ainda mais \xE1cida."
+  - "Ele ficou em sil\xEAncio, com express\xE3o dura."
+  - Ele pareceu se fechar na hora.
+  - Ele deu um sorriso falso.
+  - Ele respondeu com sarcasmo.
+  - Ele olhou nos seus olhos, desafiador.
+  - "Ele disse: '\xC9 isso que voc\xEA acha, ent\xE3o?'"
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0
@@ -330,6 +374,41 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4250912132770753862, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
   m_PrefabInstance: {fileID: 471430132}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &459537156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 459537157}
+  m_Layer: 5
+  m_Name: IconsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &459537157
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459537156}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 420750083}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465612277 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7039499788365277865, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
@@ -645,6 +724,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 514.60254
       objectReference: {fileID: 0}
+    - target: {fileID: 8297908942157019202, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8372899967302576379, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -704,6 +787,12 @@ PrefabInstance:
     - {fileID: 5501887272309277318, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
     - {fileID: 7199422576473060041, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4250912132770753862, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 459537157}
+    - targetCorrespondingSourceObject: {fileID: 4250912132770753862, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 975686503}
     - targetCorrespondingSourceObject: {fileID: 4250912132770753862, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 403030815}
@@ -862,6 +951,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803982979}
   m_CullTransparentMesh: 1
+--- !u!1 &975686502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975686503}
+  - component: {fileID: 975686504}
+  - component: {fileID: 975686505}
+  m_Layer: 5
+  m_Name: FilterBackground
+  m_TagString: filterBackgroundImage
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &975686503
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975686502}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 420750083}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &975686504
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975686502}
+  m_CullTransparentMesh: 1
+--- !u!114 &975686505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975686502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &983969309
 GameObject:
   m_ObjectHideFlags: 0

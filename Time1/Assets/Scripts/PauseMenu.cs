@@ -12,19 +12,20 @@ public class PauseMenu : MonoBehaviour
     public Toggle fullscreenToggle;
 
     private bool isPaused = false;
-    private float currentVolume = 1f;
 
     void Start()
     {
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
 
-        currentVolume = AudioListener.volume;
-        volumeSlider.value = currentVolume;
+        float volume = AudioManager.globalVolume;
+        volumeSlider.value = volume;
         fullscreenToggle.isOn = Screen.fullScreen;
 
         volumeSlider.onValueChanged.AddListener(SetVolume);
         fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
+
+        AudioManager.instance.SetMusicVolume(volume);
     }
 
     void Update()
@@ -37,10 +38,8 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
-                if (isPaused)
-                    ResumeGame();
-                else
-                    PauseGame();
+                if (isPaused) ResumeGame();
+                else PauseGame();
             }
         }
     }
@@ -80,8 +79,7 @@ public class PauseMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        currentVolume = volume;
-        AudioListener.volume = volume;
+        AudioManager.instance.SetMusicVolume(volume);
     }
 
     public void SetFullscreen(bool isFullscreen)

@@ -38,8 +38,22 @@ public class BattleManager : MonoBehaviour
 
     private Dictionary<string, string> opcoesAtuais = new Dictionary<string, string>();
 
-    [SerializeField] private List<string> falasPositivas = new List<string>
-    {
+    [Header("Battle Filter")]
+    public Image filterBackgroundImage;
+    public GameObject iconPrefab;
+    public Transform iconsContainer;
+
+    public Sprite[] nerdIcons;
+    public Sprite[] rebelIcons;
+    public Sprite[] actorIcons;
+
+    private List<GameObject> activeIcons = new List<GameObject>();
+
+    private enum Pretendente { Nerd, Rebelde, Ator }
+    private Pretendente pretendenteAtual;
+
+    [SerializeField]
+    private List<string> falasPositivas = new List<string> {
         "Você elogiou o visual do oponente.",
         "Você disse que adoraria vê-lo de novo.",
         "Você fez um elogio honesto sobre o jeito dele.",
@@ -51,8 +65,8 @@ public class BattleManager : MonoBehaviour
         "Você mencionou que ele tem uma presença acolhedora."
     };
 
-    [SerializeField] private List<string> falasNeutras = new List<string>
-    {
+    [SerializeField]
+    private List<string> falasNeutras = new List<string> {
         "Você comentou sobre o tempo.",
         "Você perguntou se ele gosta de pizza.",
         "Você falou sobre o barulho na rua.",
@@ -64,9 +78,8 @@ public class BattleManager : MonoBehaviour
         "Você ficou em silêncio por alguns segundos e sorriu."
     };
 
-
-    [SerializeField] private List<string> falasNegativas = new List<string>
-    {
+    [SerializeField]
+    private List<string> falasNegativas = new List<string> {
         "Você criticou o estilo dele.",
         "Você fez uma piada meio ácida.",
         "Você questionou as escolhas dele.",
@@ -78,6 +91,44 @@ public class BattleManager : MonoBehaviour
         "Você deixou claro que não está impressionado."
     };
 
+    [SerializeField]
+    private List<string> respostasPositivas = new List<string> {
+        "O oponente sorriu de volta, um pouco sem graça.",
+        "Ele pareceu surpreso com o elogio.",
+        "Ele desviou o olhar, mas estava sorrindo.",
+        "Ele agradeceu, ainda que desconfiado.",
+        "Ele balançou a cabeça, rindo de leve.",
+        "Ele murmurou um 'valeu' tímido.",
+        "Ele pareceu se animar um pouco.",
+        "Ele ficou quieto, mas você viu que gostou.",
+        "Ele corou discretamente."
+    };
+
+    [SerializeField]
+    private List<string> respostasNeutras = new List<string> {
+        "O oponente soltou um 'aham' educado.",
+        "Ele franziu a testa, confuso.",
+        "Ele apenas assentiu, sem muito interesse.",
+        "Ele olhou para o lado, esperando algo mais.",
+        "Ele respondeu com um 'sei lá'.",
+        "Ele mexeu no celular.",
+        "Ele não entendeu muito bem a pergunta.",
+        "Ele pareceu perdido nos próprios pensamentos.",
+        "Ele respondeu com um 'tá certo' seco."
+    };
+
+    [SerializeField]
+    private List<string> respostasNegativas = new List<string> {
+        "O oponente cruzou os braços, visivelmente incomodado.",
+        "Ele revirou os olhos.",
+        "Ele rebateu com uma piada ainda mais ácida.",
+        "Ele ficou em silêncio, com expressão dura.",
+        "Ele pareceu se fechar na hora.",
+        "Ele deu um sorriso falso.",
+        "Ele respondeu com sarcasmo.",
+        "Ele olhou nos seus olhos, desafiador.",
+        "Ele disse: 'É isso que você acha, então?'"
+    };
 
     void Start()
     {
@@ -87,11 +138,92 @@ public class BattleManager : MonoBehaviour
         AtualizarFalasNosBotoes();
         dialogueButtonsPanel.SetActive(true);
 
-        // Garantir que o painel de item começa desativado
         if (itemViewerPanel != null)
         {
             itemViewerPanel.SetActive(false);
             itemViewerCamera.enabled = false;
+        }
+
+        pretendenteAtual = Pretendente.Rebelde;
+        SetBattleFilter(pretendenteAtual);
+    }
+
+    void Update()
+    {
+        AtualizarIcones();
+    }
+
+    private void SetBattleFilter(Pretendente tipo)
+    {
+        Color cor = Color.clear;
+        Sprite[] iconsArray = null;
+
+        switch (tipo)
+        {
+            case Pretendente.Nerd:
+                cor = new Color(1f, 0.5f, 0f, 0.25f);
+                iconsArray = nerdIcons;
+                break;
+            case Pretendente.Rebelde:
+                cor = new Color(1f, 0f, 0f, 0.25f);
+                iconsArray = rebelIcons;
+                break;
+            case Pretendente.Ator:
+                cor = new Color(0.6f, 0f, 1f, 0.25f);
+                iconsArray = actorIcons;
+                break;
+        }
+
+        filterBackgroundImage.color = cor;
+
+        foreach (var icon in activeIcons)
+        {
+            Destroy(icon);
+        }
+        activeIcons.Clear();
+
+        int quantidade = 10;
+        for (int i = 0; i < quantidade; i++)
+        {
+            GameObject iconGO = Instantiate(iconPrefab, iconsContainer);
+            Image iconImage = iconGO.GetComponent<Image>();
+            iconImage.sprite = iconsArray[Random.Range(0, iconsArray.Length)];
+
+            iconGO.transform.localPosition = new Vector3(
+                Random.Range(-800f, 800f),
+                Random.Range(-400f, 400f),
+                0f
+            );
+
+            activeIcons.Add(iconGO);
+        }
+    }
+
+    private void AtualizarIcones()
+    {
+        float velocidadeMin = 5f;
+        float velocidadeMax = 20f;
+
+        foreach (var icon in activeIcons)
+        {
+            Vector3 dir = new Vector3(
+                Mathf.Sin(Time.time * 0.5f + icon.GetInstanceID()),
+                Mathf.Cos(Time.time * 0.5f + icon.GetInstanceID()),
+                0f
+            );
+
+            float speed = Mathf.PingPong(Time.time, velocidadeMax - velocidadeMin) + velocidadeMin;
+
+            icon.transform.localPosition += dir.normalized * speed * Time.deltaTime;
+
+            Vector3 pos = icon.transform.localPosition;
+            if (pos.x > 900) pos.x = -900;
+            else if (pos.x < -900) pos.x = 900;
+
+            if (pos.y > 500) pos.y = -500;
+            else if (pos.y < -500) pos.y = 500;
+
+            icon.transform.localPosition = pos;
         }
     }
 
@@ -126,75 +258,81 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator ExecutarTurno(string tipo)
     {
-        feedbackText.text = $"{falaEscolhida}\n";
+       
+        feedbackText.text = falaEscolhida;
         yield return new WaitForSeconds(1.5f);
 
-        // Player age
+       
+        string resposta = ObterRespostaDoOponente(tipo);
+        feedbackText.text += "\n" + resposta;
+        yield return new WaitForSeconds(2.5f);
+
+    
+        feedbackText.text = "";
+        yield return new WaitForSeconds(0.2f);
+
+        string efeitoTexto = "";
+
         if (tipo == "positivo")
         {
             int dano = opponentVulnerable ? 50 : 35;
             enemyHP -= dano;
-            feedbackText.text += $"Foi uma fala positiva! Causou {dano} de dano ao oponente.\n";
+            efeitoTexto = $"Foi uma fala positiva! Causou {dano} de dano ao oponente.";
             opponentVulnerable = false;
         }
         else if (tipo == "neutro")
         {
             int autoDano = 10;
             playerHP -= autoDano;
-            feedbackText.text += $"Foi uma fala neutra. Você sofreu {autoDano} de dano por hesitação.\n";
+            efeitoTexto = $"Foi uma fala neutra. Você sofreu {autoDano} de dano por hesitação.";
         }
         else if (tipo == "negativo")
         {
             int danoRecebido = 30;
             playerHP -= danoRecebido;
-            feedbackText.text += $"Foi uma fala negativa! Você levou {danoRecebido} de dano no mini combo do oponente.\n";
+            efeitoTexto = $"Foi uma fala negativa! Você levou {danoRecebido} de dano no mini combo do oponente.";
         }
 
         AtualizarHP();
+
+        feedbackText.text = efeitoTexto;
+        yield return new WaitForSeconds(2.5f);
+
         
-        // Verifica se alguém perdeu após o ataque do jogador
-        if (enemyHP <= 0 || playerHP <= 0)
-        {
-            yield return new WaitForSeconds(1.5f);
-            FinalizarBatalhaPorTurno();
-            yield break;
-        }
-
-        yield return new WaitForSeconds(1.5f);
-
-        // Reação do oponente
         string[] reacoes = { "atacar", "neutro", "esquisita" };
         string reacao = reacoes[Random.Range(0, reacoes.Length)];
+
+        string textoReacao = "";
 
         if (reacao == "atacar")
         {
             int dano = 25;
             playerHP -= dano;
-            feedbackText.text += $"O oponente contra-atacou! Você perdeu {dano} de vida.\n";
+            textoReacao = $"O oponente contra-atacou! Você perdeu {dano} de vida.";
             opponentVulnerable = false;
         }
         else if (reacao == "neutro")
         {
-            feedbackText.text += "O oponente ficou em silêncio...\n";
+            textoReacao = "O oponente ficou em silêncio...";
             opponentVulnerable = false;
         }
         else if (reacao == "esquisita")
         {
-            feedbackText.text += "O oponente teve uma reação esquisita... parece vulnerável!\n";
+            textoReacao = "O oponente teve uma reação esquisita... parece vulnerável!";
             opponentVulnerable = true;
         }
 
         AtualizarHP();
 
-        // Verifica se alguém perdeu após a reação do oponente
+        feedbackText.text += "\n" + textoReacao;
+        yield return new WaitForSeconds(2.5f);
+
+        // Verifica vitória/derrota
         if (enemyHP <= 0 || playerHP <= 0)
         {
-            yield return new WaitForSeconds(1.5f);
             FinalizarBatalhaPorTurno();
             yield break;
         }
-
-        yield return new WaitForSeconds(1.5f);
 
         turn++;
 
@@ -210,6 +348,21 @@ public class BattleManager : MonoBehaviour
         dialogueButtonsPanel.SetActive(true);
     }
 
+    string ObterRespostaDoOponente(string tipo)
+    {
+        switch (tipo)
+        {
+            case "positivo":
+                return RemoverUmaAleatoria(respostasPositivas);
+            case "neutro":
+                return RemoverUmaAleatoria(respostasNeutras);
+            case "negativo":
+                return RemoverUmaAleatoria(respostasNegativas);
+            default:
+                return "...";
+        }
+    }
+
     void AtualizarFalasNosBotoes()
     {
         string positiva = RemoverUmaAleatoria(falasPositivas);
@@ -223,7 +376,6 @@ public class BattleManager : MonoBehaviour
             ("negativo", negativa)
         };
 
-        // Embaralha
         for (int i = 0; i < opcoes.Count; i++)
         {
             var temp = opcoes[i];
@@ -251,10 +403,9 @@ public class BattleManager : MonoBehaviour
 
     void AtualizarHP()
     {
-        // Garante que o HP não fique negativo
         playerHP = Mathf.Max(0, playerHP);
         enemyHP = Mathf.Max(0, enemyHP);
-        
+
         playerHPBar.value = playerHP;
         enemyHPBar.value = enemyHP;
     }
@@ -297,7 +448,6 @@ public class BattleManager : MonoBehaviour
             itemViewer.gameObject.SetActive(true);
             mainCamera.enabled = false;
             itemViewerCamera.enabled = true;
-            // Remove listeners antigos para evitar múltiplas chamadas
             itemViewer.onViewFinished.RemoveAllListeners();
             itemViewer.onViewFinished.AddListener(OnRewardViewFinished);
             itemViewer.ShowItem();
@@ -318,7 +468,7 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator ReturnToMenuAfterDelay()
     {
-        yield return new WaitForSeconds(3f); // Aumentado para dar tempo de ler o feedback
+        yield return new WaitForSeconds(3f);
         if (string.IsNullOrEmpty(winScene))
         {
             Debug.LogWarning("winScene not set in BattleManager! Defaulting to 'Menu'");

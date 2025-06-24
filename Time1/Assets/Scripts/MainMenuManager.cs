@@ -28,10 +28,13 @@ public class MainMenuManager : MonoBehaviour
         // Configura o slider para começar no valor atual do volume
         currentVolume = 1f;
         volumeSlider.value = currentVolume;
-        volumeSlider.onValueChanged.AddListener(SetVolume); // Adiciona o listener aqui
+        volumeSlider.onValueChanged.AddListener(SetVolume);
         SetVolume(currentVolume);
 
+        // Remove listeners antes de alterar para evitar triggers desnecessários
+        fullscreenToggle.onValueChanged.RemoveAllListeners();
         fullscreenToggle.isOn = Screen.fullScreen;
+        fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
 
         optionsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
@@ -41,6 +44,8 @@ public class MainMenuManager : MonoBehaviour
     public void StartNewGame()
     {
         GameManager.instance.index = 0;
+        AudioManager.instance.SetMusicVolume(volumeSlider.value);
+
         SceneManager.LoadScene(1);
     }
 
@@ -63,13 +68,14 @@ public class MainMenuManager : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        Debug.Log($"MainMenuManager: Volume slider changed to {volume}"); // Debug para verificar o valor recebido
+        Debug.Log($"MainMenuManager: Volume slider changed to {volume}");
         currentVolume = volume;
         AudioManager.instance.SetMusicVolume(volume);
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
+        Debug.Log($"Fullscreen toggled to: {isFullscreen}");
         Screen.fullScreen = isFullscreen;
     }
 

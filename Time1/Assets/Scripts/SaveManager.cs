@@ -5,6 +5,7 @@ using System.IO;
 using System;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class SaveManager : MonoBehaviour
 {
@@ -21,10 +22,12 @@ public class SaveManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             string[] saveText = readSave(i);
-            saveName[i].text = saveText[0].Split(": ")[1];
-            loadName[i].text = saveText[0].Split(": ")[1];
+            float savePlayed = 0;
+            Single.TryParse(saveText[2].Split(':')[1], out savePlayed);
+            TimeSpan totalTime = TimeSpan.FromSeconds(savePlayed);
+            saveName[i].text = saveText[0].Split(": ")[1] + " - " + totalTime.Hours + ":" + totalTime.Minutes + ":" + totalTime.Seconds;
+            loadName[i].text = saveText[0].Split(": ")[1] + " - " + totalTime.Hours + ":" + totalTime.Minutes + ":" + totalTime.Seconds;
         }
-
     }
 
     public string[] readSave(int save)
@@ -33,12 +36,12 @@ public class SaveManager : MonoBehaviour
         return saveText;
     }
 
-    public void writeSave(int index, string line, int save)
+    public void writeSave(string[] line, int save)
     {
         string[] saveText = readSave(save);
-        if (saveText.Length > index)
+        for (int i = 0; i < 3; ++i)
         {
-            saveText[index] = line;
+            saveText[i] = line[i];
         }
         File.WriteAllLines(filePath[save], saveText);
     }
@@ -46,16 +49,20 @@ public class SaveManager : MonoBehaviour
     public void save(int save)
     {
         int index = dialogueScene.GetComponent<DialogueHandler>().currIndex;
-        string chapterLine = "chapter: " + SceneManager.GetActiveScene().name + "\n";
-        writeSave(0, chapterLine, save);
-        string indexLine = "scene: " + index + "\n";
-        writeSave(1, indexLine, save);
-        saveName[save].text = chapterLine.Split(": ")[1];
-        loadName[save].text = chapterLine.Split(": ")[1];
+        string[] saveLines = new string[3];
+        saveLines[0] = "chapter: " + SceneManager.GetActiveScene().name;
+        saveLines[1] = "scene: " + index;
+        float savePlayed = updateSaveTime(save);
+        saveLines[2] = "time: " + savePlayed;
+        writeSave(saveLines, save);
+        TimeSpan totalTime = TimeSpan.FromSeconds(savePlayed);
+        saveName[save].text = saveLines[0].Split(": ")[1] + " - " + totalTime.Hours + ":" + totalTime.Minutes + ":" + totalTime.Seconds;
+        loadName[save].text = saveLines[0].Split(": ")[1] + " - " + totalTime.Hours + ":" + totalTime.Minutes + ":" + totalTime.Seconds;
     }
 
     public void load(int save)
     {
+        GameManager.instance.timePlayed = Time.time;
         string[] saveText = readSave(save);
         string sceneName = saveText[0].Split(": ")[1];
         int index = 0;
@@ -68,5 +75,17 @@ public class SaveManager : MonoBehaviour
         dialogueScene.GetComponent<DialogueHandler>().dialogueIndex = index;
         dialogueScene.GetComponent<DialogueHandler>().options.SetActive(false);
         dialogueScene.GetComponent<DialogueHandler>().NextDialogue();
+    }
+
+    private float updateSaveTime(int save)
+    {
+        float currTime = Time.time;
+        float saveTime = currTime - GameManager.instance.timePlayed;
+        GameManager.instance.timePlayed = Time.time;
+        string[] saveText = readSave(save);
+        float savePlayed = 0;
+        Single.TryParse(saveText[2].Split(':')[1], out savePlayed);
+        savePlayed += saveTime;
+        return savePlayed;
     }
 }

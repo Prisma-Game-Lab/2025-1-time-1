@@ -1,21 +1,6 @@
-chapter: DialoguePlaytest
-scene: 0
-
-scene: 4
-
-scene: 4
-
-scene: 6
-
-
-
-
-
-
-
-
-
-
+chapter: 
+scene: 
+time: 0
 
 
 

@@ -45,7 +45,7 @@ public class MainMenuManager : MonoBehaviour
     {
         GameManager.instance.index = 0;
         AudioManager.instance.SetMusicVolume(volumeSlider.value);
-
+        GameManager.instance.timePlayed = Time.time;
         SceneManager.LoadScene(1);
     }
 

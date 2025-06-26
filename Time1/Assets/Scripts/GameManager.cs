@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("Progresso do Jogo")]
+    public float timePlayed = 0;
     public int currentChapter = 1;
     public int currentDay = 1;
     public int index = 0;

@@ -1,6 +1,7 @@
 chapter: 
 scene: 
 time: 0
+lovePts: 0: 0: 0
 
 
 

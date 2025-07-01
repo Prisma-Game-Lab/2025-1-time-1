@@ -25,8 +25,9 @@ public class SaveManager : MonoBehaviour
             float savePlayed = 0;
             Single.TryParse(saveText[2].Split(':')[1], out savePlayed);
             TimeSpan totalTime = TimeSpan.FromSeconds(savePlayed);
-            saveName[i].text = saveText[0].Split(": ")[1] + " - " + totalTime.Hours + ":" + totalTime.Minutes + ":" + totalTime.Seconds;
-            loadName[i].text = saveText[0].Split(": ")[1] + " - " + totalTime.Hours + ":" + totalTime.Minutes + ":" + totalTime.Seconds;
+            string time = totalTime.ToString(@"hh\:mm\:ss");
+            saveName[i].text = saveText[0].Split(": ")[1] + " " + time;
+            loadName[i].text = saveText[0].Split(": ")[1] + " " + time;
         }
     }
 
@@ -39,7 +40,7 @@ public class SaveManager : MonoBehaviour
     public void writeSave(string[] line, int save)
     {
         string[] saveText = readSave(save);
-        for (int i = 0; i < 3; ++i)
+        for (int i = 0; i < 4; ++i)
         {
             saveText[i] = line[i];
         }
@@ -49,15 +50,17 @@ public class SaveManager : MonoBehaviour
     public void save(int save)
     {
         int index = dialogueScene.GetComponent<DialogueHandler>().currIndex;
-        string[] saveLines = new string[3];
+        string[] saveLines = new string[4];
         saveLines[0] = "chapter: " + SceneManager.GetActiveScene().name;
         saveLines[1] = "scene: " + index;
         float savePlayed = updateSaveTime(save);
         saveLines[2] = "time: " + savePlayed;
+        saveLines[3] = "lovePts: " + GameManager.instance.lovePoints[0] + ": " + GameManager.instance.lovePoints[1] + ": " + GameManager.instance.lovePoints[2];
         writeSave(saveLines, save);
         TimeSpan totalTime = TimeSpan.FromSeconds(savePlayed);
-        saveName[save].text = saveLines[0].Split(": ")[1] + " - " + totalTime.Hours + ":" + totalTime.Minutes + ":" + totalTime.Seconds;
-        loadName[save].text = saveLines[0].Split(": ")[1] + " - " + totalTime.Hours + ":" + totalTime.Minutes + ":" + totalTime.Seconds;
+        string time = totalTime.ToString(@"hh\:mm\:ss");
+        saveName[save].text = saveLines[0].Split(": ")[1] + " " + time;
+        loadName[save].text = saveLines[0].Split(": ")[1] + " " + time;
     }
 
     public void load(int save)
@@ -65,6 +68,10 @@ public class SaveManager : MonoBehaviour
         GameManager.instance.timePlayed = Time.time;
         string[] saveText = readSave(save);
         string sceneName = saveText[0].Split(": ")[1];
+        for (int i = 0; i < 3; i++)
+        {
+            Int32.TryParse(saveText[3].Split(':')[i + 1], out GameManager.instance.lovePoints[i]);
+        }
         int index = 0;
         Int32.TryParse(saveText[1].Split(':')[1], out index);
         if (sceneName != SceneManager.GetActiveScene().name)

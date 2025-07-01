@@ -5,6 +5,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
+public class IconData
+{
+    public GameObject gameObject;
+    public Vector3 direction;
+    public float speed;
+
+    public IconData(GameObject go, Vector3 dir, float spd)
+    {
+        gameObject = go;
+        direction = dir.normalized;
+        speed = spd;
+    }
+}
+
 public class BattleManager : MonoBehaviour
 {
     [SerializeField] private string winScene;
@@ -16,6 +30,14 @@ public class BattleManager : MonoBehaviour
     public TextMeshProUGUI feedbackText;
     public GameObject dialogueButtonsPanel;
     public Button[] dialogueButtons;
+
+    [Header("Timer UI")]
+    [SerializeField] private GameObject timerBarContainer;
+    [SerializeField] private Image leftBarFill;
+    [SerializeField] private Image rightBarFill;
+
+    private Coroutine turnTimerCoroutine;
+    private bool escolhaFeita = false;
 
     [Header("Reward System")]
     [SerializeField] private Item3DViewer itemViewer;
@@ -47,7 +69,7 @@ public class BattleManager : MonoBehaviour
     public Sprite[] rebelIcons;
     public Sprite[] actorIcons;
 
-    private List<GameObject> activeIcons = new List<GameObject>();
+    private List<IconData> activeIcons = new List<IconData>();
 
     private enum Pretendente { Nerd, Rebelde, Ator }
     private Pretendente pretendenteAtual;
@@ -145,7 +167,9 @@ public class BattleManager : MonoBehaviour
         }
 
         pretendenteAtual = Pretendente.Rebelde;
-        SetBattleFilter(pretendenteAtual);
+
+        
+        AdicionarIcones(6);
     }
 
     void Update()
@@ -153,12 +177,13 @@ public class BattleManager : MonoBehaviour
         AtualizarIcones();
     }
 
-    private void SetBattleFilter(Pretendente tipo)
+    
+    private void AdicionarIcones(int quantidade)
     {
-        Color cor = Color.clear;
         Sprite[] iconsArray = null;
+        Color cor = Color.clear;
 
-        switch (tipo)
+        switch (pretendenteAtual)
         {
             case Pretendente.Nerd:
                 cor = new Color(1f, 0.5f, 0f, 0.25f);
@@ -174,56 +199,61 @@ public class BattleManager : MonoBehaviour
                 break;
         }
 
+        // Atualiza a cor do filtro (background)
         filterBackgroundImage.color = cor;
 
-        foreach (var icon in activeIcons)
-        {
-            Destroy(icon);
-        }
-        activeIcons.Clear();
+        float minDistance = 100f; // Distância mínima entre ícones
+        int tentativasMax = 10;
 
-        int quantidade = 10;
         for (int i = 0; i < quantidade; i++)
         {
             GameObject iconGO = Instantiate(iconPrefab, iconsContainer);
             Image iconImage = iconGO.GetComponent<Image>();
             iconImage.sprite = iconsArray[Random.Range(0, iconsArray.Length)];
 
-            iconGO.transform.localPosition = new Vector3(
-                Random.Range(-800f, 800f),
-                Random.Range(-400f, 400f),
-                0f
-            );
+            Vector3 posicao = Vector3.zero;
+            bool posicaoValida = false;
 
-            activeIcons.Add(iconGO);
+            for (int tentativa = 0; tentativa < tentativasMax && !posicaoValida; tentativa++)
+            {
+                float startX = Random.Range(-800f, 800f);
+                float startY = -600f - Random.Range(0f, 400f);
+                posicao = new Vector3(startX, startY, 0f);
+
+                posicaoValida = true;
+                foreach (var icone in activeIcons)
+                {
+                    if (Vector3.Distance(icone.gameObject.transform.localPosition, posicao) < minDistance)
+                    {
+                        posicaoValida = false;
+                        break;
+                    }
+                }
+            }
+
+            iconGO.transform.localPosition = posicao;
+
+            Vector3 direction = new Vector3(Random.Range(-0.1f, 0.1f), 1f, 0f).normalized;
+            float speed = Random.Range(30f, 70f);
+
+            activeIcons.Add(new IconData(iconGO, direction, speed));
         }
     }
 
     private void AtualizarIcones()
     {
-        float velocidadeMin = 5f;
-        float velocidadeMax = 20f;
-
         foreach (var icon in activeIcons)
         {
-            Vector3 dir = new Vector3(
-                Mathf.Sin(Time.time * 0.5f + icon.GetInstanceID()),
-                Mathf.Cos(Time.time * 0.5f + icon.GetInstanceID()),
-                0f
-            );
+            icon.gameObject.transform.localPosition += icon.direction * icon.speed * Time.deltaTime;
 
-            float speed = Mathf.PingPong(Time.time, velocidadeMax - velocidadeMin) + velocidadeMin;
+            Vector3 pos = icon.gameObject.transform.localPosition;
 
-            icon.transform.localPosition += dir.normalized * speed * Time.deltaTime;
-
-            Vector3 pos = icon.transform.localPosition;
-            if (pos.x > 900) pos.x = -900;
-            else if (pos.x < -900) pos.x = 900;
-
-            if (pos.y > 500) pos.y = -500;
-            else if (pos.y < -500) pos.y = 500;
-
-            icon.transform.localPosition = pos;
+            if (pos.y > 700f)
+            {
+                pos.y = -600f - Random.Range(0f, 400f);
+                pos.x = Random.Range(-800f, 800f);
+                icon.gameObject.transform.localPosition = pos;
+            }
         }
     }
 
@@ -240,6 +270,8 @@ public class BattleManager : MonoBehaviour
 
     void Escolher(int index)
     {
+        escolhaFeita = true;
+
         string textoBotao = buttonTexts[index].text;
 
         foreach (var kvp in opcoesAtuais)
@@ -258,16 +290,13 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator ExecutarTurno(string tipo)
     {
-       
         feedbackText.text = falaEscolhida;
         yield return new WaitForSeconds(1.5f);
 
-       
         string resposta = ObterRespostaDoOponente(tipo);
         feedbackText.text += "\n" + resposta;
         yield return new WaitForSeconds(2.5f);
 
-    
         feedbackText.text = "";
         yield return new WaitForSeconds(0.2f);
 
@@ -295,10 +324,11 @@ public class BattleManager : MonoBehaviour
 
         AtualizarHP();
 
+        AdicionarIcones(3);
+
         feedbackText.text = efeitoTexto;
         yield return new WaitForSeconds(2.5f);
 
-        
         string[] reacoes = { "atacar", "neutro", "esquisita" };
         string reacao = reacoes[Random.Range(0, reacoes.Length)];
 
@@ -390,6 +420,48 @@ public class BattleManager : MonoBehaviour
             buttonTexts[i].text = opcoes[i].fala;
             opcoesAtuais[opcoes[i].tipo] = opcoes[i].fala;
         }
+
+        if (turnTimerCoroutine != null)
+            StopCoroutine(turnTimerCoroutine);
+        turnTimerCoroutine = StartCoroutine(IniciarContagemRegressiva());
+    }
+
+    IEnumerator IniciarContagemRegressiva()
+    {
+        float duracao = 10f;
+        float tempoRestante = duracao;
+        escolhaFeita = false;
+
+        timerBarContainer.SetActive(true);
+
+        while (tempoRestante > 0f)
+        {
+            if (escolhaFeita)
+            {
+                leftBarFill.fillAmount = 0f;
+                rightBarFill.fillAmount = 0f;
+                timerBarContainer.SetActive(false);
+                yield break;
+            }
+
+            tempoRestante -= Time.deltaTime;
+            float progress = tempoRestante / duracao;
+
+            leftBarFill.fillAmount = progress;
+            rightBarFill.fillAmount = progress;
+
+            yield return null;
+        }
+
+        tipoEscolhido = "neutro";
+        falaEscolhida = "Você ficou em silêncio...";
+        dialogueButtonsPanel.SetActive(false);
+
+        leftBarFill.fillAmount = 0f;
+        rightBarFill.fillAmount = 0f;
+        timerBarContainer.SetActive(false);
+
+        StartCoroutine(ExecutarTurno(tipoEscolhido));
     }
 
     string RemoverUmaAleatoria(List<string> lista)

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,18 +22,27 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private Item3DViewer itemViewer;
     [SerializeField] public GameObject itemViewerPanel;
 
+    private int selectedOptionIndex = 0;
+    private Sprite lastSprite;
+
     void Start()
     {
         dialogueIndex = GameManager.instance.index;
-        sprite.GetComponent<Image>().sprite = dialogues[dialogueIndex].char_sprite;
+        Sprite newSprite = dialogues[dialogueIndex].char_sprite;
+        sprite.GetComponent<Image>().sprite = newSprite;
+        lastSprite = newSprite;
+        StartCoroutine(FadeInSprite());
+
         dialogue.text = dialogues[dialogueIndex].text;
         charName.text = dialogues[dialogueIndex].char_name;
+
         if (dialogues[dialogueIndex].options)
         {
             option1.text = dialogues[dialogueIndex].option[0].opText;
             option2.text = dialogues[dialogueIndex].option[1].opText;
             option3.text = dialogues[dialogueIndex].option[2].opText;
         }
+
         currIndex = dialogueIndex;
         dialogueIndex = dialogues[dialogueIndex].next;
 
@@ -42,24 +50,79 @@ public class DialogueHandler : MonoBehaviour
         {
             itemViewerPanel.SetActive(false);
         }
+
+        AtualizarSelecao();
+    }
+
+    void Update()
+    {
+        if (options.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                selectedOptionIndex = (selectedOptionIndex - 1 + 3) % 3;
+                AtualizarSelecao();
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                selectedOptionIndex = (selectedOptionIndex + 1) % 3;
+                AtualizarSelecao();
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                options.SetActive(false);
+                Option(selectedOptionIndex);
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            NextDialogue();
+        }
+    }
+
+    void AtualizarSelecao()
+    {
+        Color amarelo = new Color(1f, 0.85f, 0.3f);
+        Color branco = Color.white;
+
+        option1.color = (selectedOptionIndex == 0) ? amarelo : branco;
+        option2.color = (selectedOptionIndex == 1) ? amarelo : branco;
+        option3.color = (selectedOptionIndex == 2) ? amarelo : branco;
     }
 
     public void NextDialogue()
     {
         if (dialogueIndex < dialogues.Length)
         {
-            sprite.GetComponent<Image>().sprite = dialogues[dialogueIndex].char_sprite;
+            Sprite newSprite = dialogues[dialogueIndex].char_sprite;
+
+            // Só faz fade se o sprite mudou
+            if (newSprite != lastSprite)
+            {
+                sprite.GetComponent<Image>().sprite = newSprite;
+                StartCoroutine(FadeInSprite());
+                lastSprite = newSprite;
+            }
+            else
+            {
+                sprite.GetComponent<Image>().sprite = newSprite;
+            }
+
             dialogue.text = dialogues[dialogueIndex].text;
             charName.text = dialogues[dialogueIndex].char_name;
             currIndex = dialogueIndex;
+
             if (dialogues[dialogueIndex].options)
             {
                 option1.text = dialogues[dialogueIndex].option[0].opText;
                 option2.text = dialogues[dialogueIndex].option[1].opText;
                 option3.text = dialogues[dialogueIndex].option[2].opText;
                 options.SetActive(true);
+                selectedOptionIndex = 0;
+                AtualizarSelecao();
                 return;
             }
+
             dialogueIndex = dialogues[dialogueIndex].next;
         }
         else
@@ -70,10 +133,9 @@ public class DialogueHandler : MonoBehaviour
 
     public void Option(int index)
     {
-        dialogueIndex = dialogues[dialogueIndex].option[index].next;
+        dialogueIndex = dialogues[currIndex].option[index].next;
         addPoints(index);
 
-        // Se a opção selecionada tiver um item associado, mostra o visualizador
         if (dialogues[currIndex].hasReward && itemViewer != null && itemViewerPanel != null)
         {
             itemViewerPanel.SetActive(true);
@@ -87,6 +149,7 @@ public class DialogueHandler : MonoBehaviour
         {
             itemViewer.HideItem();
         }
+
         if (itemViewerPanel != null)
         {
             itemViewerPanel.SetActive(false);
@@ -96,7 +159,7 @@ public class DialogueHandler : MonoBehaviour
     public void addPoints(int index)
     {
         int idPretendente = 0;
-        switch(dialogues[currIndex].char_name)
+        switch (dialogues[currIndex].char_name)
         {
             case "Rebelde":
                 idPretendente = 0;
@@ -108,6 +171,28 @@ public class DialogueHandler : MonoBehaviour
                 idPretendente = 2;
                 break;
         }
-        GameManager.instance.AddLovePoints(idPretendente, (int) dialogues[currIndex].option[index].reaction);
+
+        GameManager.instance.AddLovePoints(idPretendente, (int)dialogues[currIndex].option[index].reaction);
+    }
+
+    IEnumerator FadeInSprite(float duration = 0.75f)
+    {
+        if (sprite == null) yield break;
+
+        CanvasGroup cg = sprite.GetComponent<CanvasGroup>();
+        if (cg == null)
+            cg = sprite.AddComponent<CanvasGroup>();
+
+        cg.alpha = 0f;
+
+        float t = 0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(0f, 1f, t / duration);
+            yield return null;
+        }
+
+        cg.alpha = 1f;
     }
 }

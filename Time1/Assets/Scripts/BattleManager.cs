@@ -74,6 +74,10 @@ public class BattleManager : MonoBehaviour
     private enum Pretendente { Nerd, Rebelde, Ator }
     private Pretendente pretendenteAtual;
 
+    private int botaoSelecionado = 0;
+    private bool aguardandoAvanco = false;
+    private bool avancarTexto = false;
+
     [SerializeField]
     private List<string> falasPositivas = new List<string> {
         "Você elogiou o visual do oponente.",
@@ -169,15 +173,52 @@ public class BattleManager : MonoBehaviour
         pretendenteAtual = Pretendente.Rebelde;
 
         
-        AdicionarIcones(6);
+        AdicionarIcones(5);
     }
 
     void Update()
     {
         AtualizarIcones();
+        DetectarEntradaDeTeclado();
     }
 
-    
+    void DetectarEntradaDeTeclado()
+    {
+        if (dialogueButtonsPanel.activeSelf && !escolhaFeita)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                botaoSelecionado = (botaoSelecionado - 1 + dialogueButtons.Length) % dialogueButtons.Length;
+                AtualizarSelecaoVisual();
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                botaoSelecionado = (botaoSelecionado + 1) % dialogueButtons.Length;
+                AtualizarSelecaoVisual();
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Escolher(botaoSelecionado);
+            }
+        }
+
+        if (aguardandoAvanco && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+        {
+            avancarTexto = true;
+        }
+    }
+
+    void AtualizarSelecaoVisual()
+    {
+        for (int i = 0; i < dialogueButtons.Length; i++)
+        {
+            ColorBlock colors = dialogueButtons[i].colors;
+            colors.normalColor = (i == botaoSelecionado) ? Color.yellow : Color.white;
+            dialogueButtons[i].colors = colors;
+        }
+    }
+
+
     private void AdicionarIcones(int quantidade)
     {
         Sprite[] iconsArray = null;
@@ -234,7 +275,7 @@ public class BattleManager : MonoBehaviour
             iconGO.transform.localPosition = posicao;
 
             Vector3 direction = new Vector3(Random.Range(-0.1f, 0.1f), 1f, 0f).normalized;
-            float speed = Random.Range(30f, 70f);
+            float speed = Random.Range(80f, 120f);
 
             activeIcons.Add(new IconData(iconGO, direction, speed));
         }
@@ -270,6 +311,8 @@ public class BattleManager : MonoBehaviour
 
     void Escolher(int index)
     {
+        if (escolhaFeita) return;
+
         escolhaFeita = true;
 
         string textoBotao = buttonTexts[index].text;
@@ -291,14 +334,14 @@ public class BattleManager : MonoBehaviour
     IEnumerator ExecutarTurno(string tipo)
     {
         feedbackText.text = falaEscolhida;
-        yield return new WaitForSeconds(1.5f);
+        yield return EsperarAvanco();
 
         string resposta = ObterRespostaDoOponente(tipo);
         feedbackText.text += "\n" + resposta;
-        yield return new WaitForSeconds(2.5f);
+        yield return EsperarAvanco();
 
         feedbackText.text = "";
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.2f); // espera técnica, mantém
 
         string efeitoTexto = "";
 
@@ -327,7 +370,7 @@ public class BattleManager : MonoBehaviour
         AdicionarIcones(3);
 
         feedbackText.text = efeitoTexto;
-        yield return new WaitForSeconds(2.5f);
+        yield return EsperarAvanco();
 
         string[] reacoes = { "atacar", "neutro", "esquisita" };
         string reacao = reacoes[Random.Range(0, reacoes.Length)];
@@ -355,9 +398,8 @@ public class BattleManager : MonoBehaviour
         AtualizarHP();
 
         feedbackText.text += "\n" + textoReacao;
-        yield return new WaitForSeconds(2.5f);
+        yield return EsperarAvanco();
 
-        // Verifica vitória/derrota
         if (enemyHP <= 0 || playerHP <= 0)
         {
             FinalizarBatalhaPorTurno();
@@ -376,6 +418,17 @@ public class BattleManager : MonoBehaviour
         AtualizarFalasNosBotoes();
         feedbackText.text = "Seu turno! Escolha uma nova opção.";
         dialogueButtonsPanel.SetActive(true);
+    }
+
+    IEnumerator EsperarAvanco()
+    {
+        aguardandoAvanco = true;
+        avancarTexto = false;
+
+        while (!avancarTexto)
+            yield return null;
+
+        aguardandoAvanco = false;
     }
 
     string ObterRespostaDoOponente(string tipo)

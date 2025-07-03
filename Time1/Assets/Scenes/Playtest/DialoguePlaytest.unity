@@ -478,6 +478,23 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2669259652064119615, guid: 2f984cc88153c2d41bee23320877ef0b, type: 3}
   m_PrefabInstance: {fileID: 197558544}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &567878328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8509682465591373224, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+  m_PrefabInstance: {fileID: 5746280129723768425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &567878332
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567878328}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &614442047 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7771906673606757011, guid: e6b03ff14699b6242b29c29d4ee6ec97, type: 3}
@@ -1325,6 +1342,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8979481643888529573, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1690902151}
+    - targetCorrespondingSourceObject: {fileID: 8509682465591373224, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 567878332}
   m_SourcePrefab: {fileID: 100100000, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: Dialogue19
+  m_Name: Dialogue20
   m_EditorClassIdentifier: 
-  text: Hm...Me convence a sair daqui
-  char_sprite: {fileID: 21300000, guid: 04d6ee3b07c31ba4ebbce129f47619af, type: 3}
-  char_name: Rebelde
-  next: 19
-  chapter_end: 0
+  text: 
+  char_sprite: {fileID: 0}
+  char_name: 
+  next: 100
+  chapter_end: 1
   options: 0
   option: []
   hasReward: 0

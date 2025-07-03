@@ -14,6 +14,8 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option1;
     [SerializeField] private TextMeshProUGUI option2;
     [SerializeField] private TextMeshProUGUI option3;
+    [SerializeField] private GameObject endScreen;
+    [SerializeField] private TextMeshProUGUI[] LPtext;
     public GameObject options;
     [SerializeField] private DialogueBox[] dialogues;
     public int dialogueIndex = 0;
@@ -59,6 +61,14 @@ public class DialogueHandler : MonoBehaviour
                 option3.text = dialogues[dialogueIndex].option[2].opText;
                 options.SetActive(true);
                 return;
+            }
+            if (dialogues[dialogueIndex].chapter_end)
+            {
+                endScreen.SetActive(true);
+                for (int i = 0; i < 3; ++i)
+                {
+                    LPtext[i].text = GameManager.instance.lovePoints[i].ToString();
+                }
             }
             dialogueIndex = dialogues[dialogueIndex].next;
         }

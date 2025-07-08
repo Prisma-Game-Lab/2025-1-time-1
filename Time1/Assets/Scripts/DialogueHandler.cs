@@ -14,7 +14,7 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option2;
     [SerializeField] private TextMeshProUGUI option3;
     [SerializeField] private GameObject endScreen;
-    [SerializeField] private TextMeshProUGUI[] LPtext;
+    [SerializeField] private GameObject[] LPbar;
     public GameObject options;
     [SerializeField] private DialogueBox[] dialogues;
     public int dialogueIndex = 0;
@@ -129,7 +129,16 @@ public class DialogueHandler : MonoBehaviour
                 endScreen.SetActive(true);
                 for (int i = 0; i < 3; ++i)
                 {
-                    LPtext[i].text = GameManager.instance.lovePoints[i].ToString();
+                    int lp = GameManager.instance.lovePoints[i];
+                    RectTransform bar = LPbar[i].GetComponent<RectTransform>();
+                    if (lp > 0)
+                    {
+                        LPbar[i].GetComponent<RectTransform>().sizeDelta = new Vector2 ((bar.sizeDelta.x * lp / 10), bar.sizeDelta.y);
+                    }
+                    else
+                    {
+                        LPbar[i].GetComponent<RectTransform>().sizeDelta = new Vector2(0, bar.sizeDelta.y);
+                    }
                 }
             }
 

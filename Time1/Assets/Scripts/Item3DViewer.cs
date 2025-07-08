@@ -56,26 +56,15 @@ public class Item3DViewer : MonoBehaviour
             onViewFinished?.Invoke();
             return;
         }
-        HandleRotation();
+        RotateAutomatically();
     }
 
-    void HandleRotation()
+    void RotateAutomatically()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (currentItemInstance != null)
         {
-            lastMousePosition = Input.mousePosition;
-        }
-        else if (Input.GetMouseButton(0))
-        {
-            Vector3 delta = Input.mousePosition - lastMousePosition;
-            float rotX = delta.y * rotationSpeed * Time.unscaledDeltaTime;
-            float rotY = -delta.x * rotationSpeed * Time.unscaledDeltaTime;
-            if (currentItemInstance != null)
-            {
-                currentItemInstance.transform.Rotate(viewerCamera.transform.up, rotY, Space.World);
-                currentItemInstance.transform.Rotate(viewerCamera.transform.right, rotX, Space.World);
-            }
-            lastMousePosition = Input.mousePosition;
+            // Rotaciona continuamente no eixo Y
+            currentItemInstance.transform.Rotate(Vector3.up, rotationSpeed * Time.unscaledDeltaTime, Space.World);
         }
     }
 

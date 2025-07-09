@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DialogueHandler : MonoBehaviour
 {
     [SerializeField] private string nextScene;
+    [SerializeField] private GameObject saveManager;
     [SerializeField] private GameObject sprite;
     [SerializeField] private TextMeshProUGUI dialogue;
     [SerializeField] private TextMeshProUGUI charName;
@@ -140,6 +141,7 @@ public class DialogueHandler : MonoBehaviour
                         LPbar[i].GetComponent<RectTransform>().sizeDelta = new Vector2(0, bar.sizeDelta.y);
                     }
                 }
+                saveManager.GetComponent<SaveManager>().chapterEnd = true;
             }
 
             dialogueIndex = dialogues[dialogueIndex].next;

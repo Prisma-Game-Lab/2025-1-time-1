@@ -12,7 +12,9 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private GameObject dialogueScene;
     [SerializeField] private TextMeshProUGUI[] saveName;
     [SerializeField] private TextMeshProUGUI[] loadName;
+    [SerializeField] private string nextChapter;
     private string[] filePath = new string[3];
+    public bool chapterEnd = false;
 
     void Start()
     {
@@ -45,14 +47,26 @@ public class SaveManager : MonoBehaviour
             saveText[i] = line[i];
         }
         File.WriteAllLines(filePath[save], saveText);
+        if (chapterEnd)
+        {
+            dialogueScene.GetComponent<DialogueHandler>().NextDialogue();
+        }
     }
 
     public void save(int save)
     {
         int index = dialogueScene.GetComponent<DialogueHandler>().currIndex;
         string[] saveLines = new string[4];
-        saveLines[0] = "chapter: " + SceneManager.GetActiveScene().name;
-        saveLines[1] = "scene: " + index;
+        if (chapterEnd)
+        {
+            saveLines[0] = "chapter: " + nextChapter;
+            saveLines[1] = "scene: " + 0;
+        }
+        else
+        {
+            saveLines[0] = "chapter: " + SceneManager.GetActiveScene().name;
+            saveLines[1] = "scene: " + index;
+        }
         float savePlayed = updateSaveTime(save);
         saveLines[2] = "time: " + savePlayed;
         saveLines[3] = "lovePts: " + GameManager.instance.lovePoints[0] + ": " + GameManager.instance.lovePoints[1] + ": " + GameManager.instance.lovePoints[2];

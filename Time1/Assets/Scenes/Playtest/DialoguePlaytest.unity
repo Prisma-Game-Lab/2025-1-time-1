@@ -1008,6 +1008,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4880636666608544142, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: nextChapter
+      value: DialoguePlaytest
+      objectReference: {fileID: 0}
     - target: {fileID: 5500091950710987293, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,12 @@ public class PauseMenu : MonoBehaviour
     [Header("Options Controls")]
     public Slider volumeSlider;
     public Toggle fullscreenToggle;
+
+    [Header("Item Menu")]
+    public RawImage[] itemIcons;
+    public RawImage[] itemImages;
+    public TextMeshProUGUI[] itemTexts;
+    public string[] itemNames;
 
     private bool isPaused = false;
 
@@ -49,6 +56,26 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        string itemText;
+        Texture2D texture;
+        for (int i = 0; i < itemImages.Length; i++)
+        {
+            if (GameManager.instance.itemsAcquired[i])
+            {
+                string texturePath = "Textures/texture" + (i + 1);
+                itemText = itemNames[i] + " - encontrado no capitulo " + (i + 1);
+                texture = Resources.Load<Texture2D>(texturePath);
+            }
+            else
+            {
+                string texturePath = "Textures/textureAlt" + (i + 1);
+                itemText = "?????? - encontrado no capitulo " + (i + 1);
+                texture = Resources.Load<Texture2D>(texturePath);
+            }
+            itemIcons[i].texture = texture;
+            itemImages[i].texture = texture;
+            itemTexts[i].text = itemText;
+        }
     }
 
     public void ResumeGame()

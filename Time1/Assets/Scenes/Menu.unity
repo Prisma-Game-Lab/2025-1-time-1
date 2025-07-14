@@ -251,6 +251,8 @@ MonoBehaviour:
   - {fileID: 1858663051}
   - {fileID: 1858663051}
   - {fileID: 156612362}
+  nextChapter: 
+  chapterEnd: 0
 --- !u!1 &118210342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4366,6 +4368,10 @@ PrefabInstance:
     - target: {fileID: 6630355639625603372, guid: c9c0f5b9b4092490c8b1cfc30cdf4105, type: 3}
       propertyPath: lovePoints.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630355639625603372, guid: c9c0f5b9b4092490c8b1cfc30cdf4105, type: 3}
+      propertyPath: itemsAcquired.Array.size
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

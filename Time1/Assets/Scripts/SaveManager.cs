@@ -42,7 +42,7 @@ public class SaveManager : MonoBehaviour
     public void writeSave(string[] line, int save)
     {
         string[] saveText = readSave(save);
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 5; ++i)
         {
             saveText[i] = line[i];
         }
@@ -56,7 +56,7 @@ public class SaveManager : MonoBehaviour
     public void save(int save)
     {
         int index = dialogueScene.GetComponent<DialogueHandler>().currIndex;
-        string[] saveLines = new string[4];
+        string[] saveLines = new string[5];
         if (chapterEnd)
         {
             saveLines[0] = "chapter: " + nextChapter;
@@ -70,6 +70,7 @@ public class SaveManager : MonoBehaviour
         float savePlayed = updateSaveTime(save);
         saveLines[2] = "time: " + savePlayed;
         saveLines[3] = "lovePts: " + GameManager.instance.lovePoints[0] + ": " + GameManager.instance.lovePoints[1] + ": " + GameManager.instance.lovePoints[2];
+        saveLines[4] = "items: " + (GameManager.instance.itemsAcquired[0]? 1 : 0) + ": " + (GameManager.instance.itemsAcquired[1] ? 1 : 0) + ": " + (GameManager.instance.itemsAcquired[2] ? 1 : 0) + ": " + (GameManager.instance.itemsAcquired[3] ? 1 : 0) + ": " + (GameManager.instance.itemsAcquired[4] ? 1 : 0);
         writeSave(saveLines, save);
         TimeSpan totalTime = TimeSpan.FromSeconds(savePlayed);
         string time = totalTime.ToString(@"hh\:mm\:ss");
@@ -85,6 +86,12 @@ public class SaveManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Int32.TryParse(saveText[3].Split(':')[i + 1], out GameManager.instance.lovePoints[i]);
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            int hasItem;
+            Int32.TryParse(saveText[4].Split(':')[i + 1], out hasItem);
+            GameManager.instance.itemsAcquired[i] = Convert.ToBoolean(hasItem);
         }
         int index = 0;
         Int32.TryParse(saveText[1].Split(':')[1], out index);

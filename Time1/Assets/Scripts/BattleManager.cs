@@ -40,6 +40,7 @@ public class BattleManager : MonoBehaviour
     private bool escolhaFeita = false;
 
     [Header("Reward System")]
+    [SerializeField] private int itemNumber;
     [SerializeField] private Item3DViewer itemViewer;
     [SerializeField] private GameObject itemViewerPanel;
     [SerializeField] private Transform itemPrefab;
@@ -569,6 +570,7 @@ public class BattleManager : MonoBehaviour
     {
         if (itemViewer != null && itemPrefab != null && itemViewerPanel != null)
         {
+            GameManager.instance.itemsAcquired[itemNumber - 1] = true;
             itemViewerPanel.SetActive(true);
             itemViewer.gameObject.SetActive(true);
             mainCamera.enabled = false;

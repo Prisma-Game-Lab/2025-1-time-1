@@ -65,20 +65,24 @@ public class DialogueHandler : MonoBehaviour
             {
                 selectedOptionIndex = (selectedOptionIndex - 1 + 3) % 3;
                 AtualizarSelecao();
+                AudioManager.instance.PlaySound("Click");
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 selectedOptionIndex = (selectedOptionIndex + 1) % 3;
                 AtualizarSelecao();
+                AudioManager.instance.PlaySound("Click");
             }
             else if (Input.GetKeyDown(KeyCode.Space))
             {
                 options.SetActive(false);
                 Option(selectedOptionIndex);
+                AudioManager.instance.PlaySound("Click");
             }
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
+            AudioManager.instance.PlaySound("Avancar");
             NextDialogue();
         }
     }

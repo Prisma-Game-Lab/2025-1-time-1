@@ -85,6 +85,7 @@ public class MainMenuManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space))
             {
+                AudioManager.instance.PlaySound("Click");
                 CloseCredits();
                 lastInputTime = Time.time;
             }
@@ -99,11 +100,13 @@ public class MainMenuManager : MonoBehaviour
         {
             selectedIndex = (selectedIndex - 1 + botoes.Length) % botoes.Length;
             AtualizarSelecao(botoes, selectedIndex);
+            AudioManager.instance.PlaySound("Click");
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             selectedIndex = (selectedIndex + 1) % botoes.Length;
             AtualizarSelecao(botoes, selectedIndex);
+            AudioManager.instance.PlaySound("Click");
         }
     }
 

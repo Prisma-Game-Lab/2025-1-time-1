@@ -202,6 +202,7 @@ MonoBehaviour:
   timerBarContainer: {fileID: 1860999054}
   leftBarFill: {fileID: 498404537}
   rightBarFill: {fileID: 1594281282}
+  itemNumber: 0
   itemViewer: {fileID: 0}
   itemViewerPanel: {fileID: 0}
   itemPrefab: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
@@ -218,66 +219,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 210cfcf6d0cb12940843ef44cdd65bf9, type: 3}
   actorIcons:
   - {fileID: 21300000, guid: 1f60cebf5c8d6a84094f43f65ef74db8, type: 3}
-  falasPositivas:
-  - "Voc\xEA elogiou o visual do oponente."
-  - "Voc\xEA disse que adoraria v\xEA-lo de novo."
-  - "Voc\xEA fez um elogio honesto sobre o jeito dele."
-  - "Voc\xEA disse que se sentia bem ao lado dele."
-  - "Voc\xEA destacou algo gentil no comportamento dele."
-  - "Voc\xEA comentou que ele parece algu\xE9m confi\xE1vel."
-  - "Voc\xEA sorriu e fez um elogio inesperado."
-  - "Voc\xEA demonstrou interesse genu\xEDno pelo que ele dizia."
-  - "Voc\xEA mencionou que ele tem uma presen\xE7a acolhedora."
-  falasNeutras:
-  - "Voc\xEA comentou sobre o tempo."
-  - "Voc\xEA perguntou se ele gosta de pizza."
-  - "Voc\xEA falou sobre o barulho na rua."
-  - "Voc\xEA perguntou quantas horas ele dormiu."
-  - "Voc\xEA comentou que esqueceu de alimentar o gato."
-  - "Voc\xEA perguntou se ele j\xE1 viu um pato correndo."
-  - "Voc\xEA mencionou um sonho estranho sem contexto."
-  - "Voc\xEA falou sobre cereal com leite ou sem."
-  - "Voc\xEA ficou em sil\xEAncio por alguns segundos e sorriu."
-  falasNegativas:
-  - "Voc\xEA criticou o estilo dele."
-  - "Voc\xEA fez uma piada meio \xE1cida."
-  - "Voc\xEA questionou as escolhas dele."
-  - "Voc\xEA insinuou que ele se leva a s\xE9rio demais."
-  - "Voc\xEA disse que ele tenta parecer algu\xE9m que n\xE3o \xE9."
-  - "Voc\xEA revirou os olhos enquanto ele falava."
-  - "Voc\xEA zombou de algo que ele gosta."
-  - "Voc\xEA fez uma compara\xE7\xE3o que o colocou pra baixo."
-  - "Voc\xEA deixou claro que n\xE3o est\xE1 impressionado."
-  respostasPositivas:
-  - "O oponente sorriu de volta, um pouco sem gra\xE7a."
-  - Ele pareceu surpreso com o elogio.
-  - Ele desviou o olhar, mas estava sorrindo.
-  - Ele agradeceu, ainda que desconfiado.
-  - "Ele balan\xE7ou a cabe\xE7a, rindo de leve."
-  - "Ele murmurou um 'valeu' t\xEDmido."
-  - Ele pareceu se animar um pouco.
-  - "Ele ficou quieto, mas voc\xEA viu que gostou."
-  - Ele corou discretamente.
-  respostasNeutras:
-  - O oponente soltou um 'aham' educado.
-  - Ele franziu a testa, confuso.
-  - Ele apenas assentiu, sem muito interesse.
-  - Ele olhou para o lado, esperando algo mais.
-  - "Ele respondeu com um 'sei l\xE1'."
-  - Ele mexeu no celular.
-  - "Ele n\xE3o entendeu muito bem a pergunta."
-  - "Ele pareceu perdido nos pr\xF3prios pensamentos."
-  - "Ele respondeu com um 't\xE1 certo' seco."
-  respostasNegativas:
-  - "O oponente cruzou os bra\xE7os, visivelmente incomodado."
-  - Ele revirou os olhos.
-  - "Ele rebateu com uma piada ainda mais \xE1cida."
-  - "Ele ficou em sil\xEAncio, com express\xE3o dura."
-  - Ele pareceu se fechar na hora.
-  - Ele deu um sorriso falso.
-  - Ele respondeu com sarcasmo.
-  - Ele olhou nos seus olhos, desafiador.
-  - "Ele disse: '\xC9 isso que voc\xEA acha, ent\xE3o?'"
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0

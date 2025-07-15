@@ -60,6 +60,7 @@ public class BattleManager : MonoBehaviour
     private string falaEscolhida;
 
     private Dictionary<string, string> opcoesAtuais = new Dictionary<string, string>();
+    private Dictionary<string, string> respostasDasFalas = new Dictionary<string, string>();
 
     [Header("Battle Filter")]
     public Image filterBackgroundImage;
@@ -80,82 +81,44 @@ public class BattleManager : MonoBehaviour
     private bool avancarTexto = false;
 
     [SerializeField]
-    private List<string> falasPositivas = new List<string> {
-        "Você elogiou o visual do oponente.",
-        "Você disse que adoraria vê-lo de novo.",
-        "Você fez um elogio honesto sobre o jeito dele.",
-        "Você disse que se sentia bem ao lado dele.",
-        "Você destacou algo gentil no comportamento dele.",
-        "Você comentou que ele parece alguém confiável.",
-        "Você sorriu e fez um elogio inesperado.",
-        "Você demonstrou interesse genuíno pelo que ele dizia.",
-        "Você mencionou que ele tem uma presença acolhedora."
+    private Dictionary<string, string> falasERespostasPositivas = new Dictionary<string, string>{
+    { "Você elogiou o visual do oponente.", "O oponente sorriu de volta, um pouco sem graça." },
+    { "Você disse que adoraria vê-lo de novo.", "Ele pareceu surpreso com o elogio." },
+    { "Você fez um elogio honesto sobre o jeito dele.", "Ele desviou o olhar, mas estava sorrindo." },
+    { "Você disse que se sentia bem ao lado dele.", "Ele agradeceu, ainda que desconfiado." },
+    { "Você destacou algo gentil no comportamento dele.", "Ele balançou a cabeça, rindo de leve." },
+    { "Você comentou que ele parece alguém confiável.", "Ele murmurou um 'valeu' tímido." },
+    { "Você sorriu e fez um elogio inesperado.", "Ele pareceu se animar um pouco." },
+    { "Você demonstrou interesse genuíno pelo que ele dizia.", "Ele ficou quieto, mas você viu que gostou." },
+    { "Você mencionou que ele tem uma presença acolhedora.", "Ele corou discretamente." }
     };
 
     [SerializeField]
-    private List<string> falasNeutras = new List<string> {
-        "Você comentou sobre o tempo.",
-        "Você perguntou se ele gosta de pizza.",
-        "Você falou sobre o barulho na rua.",
-        "Você perguntou quantas horas ele dormiu.",
-        "Você comentou que esqueceu de alimentar o gato.",
-        "Você perguntou se ele já viu um pato correndo.",
-        "Você mencionou um sonho estranho sem contexto.",
-        "Você falou sobre cereal com leite ou sem.",
-        "Você ficou em silêncio por alguns segundos e sorriu."
+    private Dictionary<string, string> falasERespostasNeutras = new Dictionary<string, string>{
+    { "Você comentou sobre o tempo.", "O oponente soltou um 'aham' educado." },
+    { "Você perguntou se ele gosta de pizza.", "Ele franziu a testa, confuso." },
+    { "Você falou sobre o barulho na rua.", "Ele apenas assentiu, sem muito interesse." },
+    { "Você perguntou quantas horas ele dormiu.", "Ele olhou para o lado, esperando algo mais." },
+    { "Você comentou que esqueceu de alimentar o gato.", "Ele respondeu com um 'sei lá'." },
+    { "Você perguntou se ele já viu um pato correndo.", "Ele mexeu no celular." },
+    { "Você mencionou um sonho estranho sem contexto.", "Ele não entendeu muito bem a pergunta." },
+    { "Você falou sobre cereal com leite ou sem.", "Ele pareceu perdido nos próprios pensamentos." },
+    { "Você ficou em silêncio por alguns segundos e sorriu.", "Ele respondeu com um 'tá certo' seco." }
     };
 
     [SerializeField]
-    private List<string> falasNegativas = new List<string> {
-        "Você criticou o estilo dele.",
-        "Você fez uma piada meio ácida.",
-        "Você questionou as escolhas dele.",
-        "Você insinuou que ele se leva a sério demais.",
-        "Você disse que ele tenta parecer alguém que não é.",
-        "Você revirou os olhos enquanto ele falava.",
-        "Você zombou de algo que ele gosta.",
-        "Você fez uma comparação que o colocou pra baixo.",
-        "Você deixou claro que não está impressionado."
+    private Dictionary<string, string> falasERespostasNegativas = new Dictionary<string, string>{
+    { "Você criticou o estilo dele.", "O oponente cruzou os braços, visivelmente incomodado." },
+    { "Você fez uma piada meio ácida.", "Ele revirou os olhos." },
+    { "Você questionou as escolhas dele.", "Ele rebateu com uma piada ainda mais ácida." },
+    { "Você insinuou que ele se leva a sério demais.", "Ele ficou em silêncio, com expressão dura." },
+    { "Você disse que ele tenta parecer alguém que não é.", "Ele pareceu se fechar na hora." },
+    { "Você revirou os olhos enquanto ele falava.", "Ele deu um sorriso falso." },
+    { "Você zombou de algo que ele gosta.", "Ele respondeu com sarcasmo." },
+    { "Você fez uma comparação que o colocou pra baixo.", "Ele olhou nos seus olhos, desafiador." },
+    { "Você deixou claro que não está impressionado.", "Ele disse: 'É isso que você acha, então?'" }
     };
 
-    [SerializeField]
-    private List<string> respostasPositivas = new List<string> {
-        "O oponente sorriu de volta, um pouco sem graça.",
-        "Ele pareceu surpreso com o elogio.",
-        "Ele desviou o olhar, mas estava sorrindo.",
-        "Ele agradeceu, ainda que desconfiado.",
-        "Ele balançou a cabeça, rindo de leve.",
-        "Ele murmurou um 'valeu' tímido.",
-        "Ele pareceu se animar um pouco.",
-        "Ele ficou quieto, mas você viu que gostou.",
-        "Ele corou discretamente."
-    };
-
-    [SerializeField]
-    private List<string> respostasNeutras = new List<string> {
-        "O oponente soltou um 'aham' educado.",
-        "Ele franziu a testa, confuso.",
-        "Ele apenas assentiu, sem muito interesse.",
-        "Ele olhou para o lado, esperando algo mais.",
-        "Ele respondeu com um 'sei lá'.",
-        "Ele mexeu no celular.",
-        "Ele não entendeu muito bem a pergunta.",
-        "Ele pareceu perdido nos próprios pensamentos.",
-        "Ele respondeu com um 'tá certo' seco."
-    };
-
-    [SerializeField]
-    private List<string> respostasNegativas = new List<string> {
-        "O oponente cruzou os braços, visivelmente incomodado.",
-        "Ele revirou os olhos.",
-        "Ele rebateu com uma piada ainda mais ácida.",
-        "Ele ficou em silêncio, com expressão dura.",
-        "Ele pareceu se fechar na hora.",
-        "Ele deu um sorriso falso.",
-        "Ele respondeu com sarcasmo.",
-        "Ele olhou nos seus olhos, desafiador.",
-        "Ele disse: 'É isso que você acha, então?'"
-    };
 
     void Start()
     {
@@ -191,11 +154,13 @@ public class BattleManager : MonoBehaviour
             {
                 botaoSelecionado = (botaoSelecionado - 1 + dialogueButtons.Length) % dialogueButtons.Length;
                 AtualizarSelecaoVisual();
+                AudioManager.instance.PlaySound("Click");
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 botaoSelecionado = (botaoSelecionado + 1) % dialogueButtons.Length;
                 AtualizarSelecaoVisual();
+                AudioManager.instance.PlaySound("Click");
             }
             else if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -314,6 +279,8 @@ public class BattleManager : MonoBehaviour
     {
         if (escolhaFeita) return;
 
+        AudioManager.instance.PlaySound("Click");
+
         escolhaFeita = true;
 
         string textoBotao = buttonTexts[index].text;
@@ -429,36 +396,31 @@ public class BattleManager : MonoBehaviour
         while (!avancarTexto)
             yield return null;
 
+        AudioManager.instance.PlaySound("Avancar"); 
+
         aguardandoAvanco = false;
     }
 
     string ObterRespostaDoOponente(string tipo)
     {
-        switch (tipo)
-        {
-            case "positivo":
-                return RemoverUmaAleatoria(respostasPositivas);
-            case "neutro":
-                return RemoverUmaAleatoria(respostasNeutras);
-            case "negativo":
-                return RemoverUmaAleatoria(respostasNegativas);
-            default:
-                return "...";
-        }
+        if (respostasDasFalas.ContainsKey(falaEscolhida))
+            return respostasDasFalas[falaEscolhida];
+        return "...";
     }
+
 
     void AtualizarFalasNosBotoes()
     {
-        string positiva = RemoverUmaAleatoria(falasPositivas);
-        string neutra = RemoverUmaAleatoria(falasNeutras);
-        string negativa = RemoverUmaAleatoria(falasNegativas);
+        var positiva = RemoverParDeFala(falasERespostasPositivas);
+        var neutra = RemoverParDeFala(falasERespostasNeutras);
+        var negativa = RemoverParDeFala(falasERespostasNegativas);
 
-        var opcoes = new List<(string tipo, string fala)>
-        {
-            ("positivo", positiva),
-            ("neutro", neutra),
-            ("negativo", negativa)
-        };
+        var opcoes = new List<(string tipo, string fala, string resposta)>
+    {
+        ("positivo", positiva.Item1, positiva.Item2),
+        ("neutro", neutra.Item1, neutra.Item2),
+        ("negativo", negativa.Item1, negativa.Item2)
+    };
 
         for (int i = 0; i < opcoes.Count; i++)
         {
@@ -469,10 +431,13 @@ public class BattleManager : MonoBehaviour
         }
 
         opcoesAtuais.Clear();
+        respostasDasFalas.Clear();
+
         for (int i = 0; i < dialogueButtons.Length; i++)
         {
             buttonTexts[i].text = opcoes[i].fala;
             opcoesAtuais[opcoes[i].tipo] = opcoes[i].fala;
+            respostasDasFalas[opcoes[i].fala] = opcoes[i].resposta;
         }
 
         if (turnTimerCoroutine != null)
@@ -518,14 +483,19 @@ public class BattleManager : MonoBehaviour
         StartCoroutine(ExecutarTurno(tipoEscolhido));
     }
 
-    string RemoverUmaAleatoria(List<string> lista)
+    (string, string) RemoverParDeFala(Dictionary<string, string> dict)
     {
-        if (lista.Count == 0) return "???";
-        int index = Random.Range(0, lista.Count);
-        string item = lista[index];
-        lista.RemoveAt(index);
-        return item;
+        if (dict.Count == 0) return ("???", "???");
+        int index = Random.Range(0, dict.Count);
+        var enumerator = dict.GetEnumerator();
+        for (int i = 0; i <= index; i++) enumerator.MoveNext();
+
+        string fala = enumerator.Current.Key;
+        string resposta = enumerator.Current.Value;
+        dict.Remove(fala);
+        return (fala, resposta);
     }
+
 
     void AtualizarHP()
     {

@@ -632,44 +632,80 @@ MonoBehaviour:
   actorIcons: []
   opcoesDeDialogo:
   - tipo: 0
-    fala: "Voc\xEA disse que adoraria v\xEA-lo de novo"
-    resposta: Ele desviou o olhar, mas estava sorrindo.
+    fala: Elogiar a maquiagem dele
+    resposta: "Voc\xEA elogia a maquiagem do Dummy\u2026\r\nSua amiga n\xE3o resiste
+      e fala que foi ela quem fez\r"
   - tipo: 0
-    fala: "Voc\xEA fez um elogio honesto sobre o jeito dele."
-    resposta: ccccccccccc
+    fala: Elogiar sua peruca
+    resposta: "Voc\xEA fala que nunca viu um cabelo como o de Dummy\u2026\r\nUm vento
+      bate na peruca\u2026 \r\nMas ela se mant\xE9m firme e forte!\r"
   - tipo: 0
-    fala: "Voc\xEA comentou que ele parece algu\xE9m confi\xE1vel"
-    resposta: dddddddddddddd
+    fala: "Fazer um cora\xE7\xE3o de volta para ele"
+    resposta: "Voc\xEA faz um cora\xE7\xE3o com as m\xE3os\u2026\r\nO Dummy nunca
+      viu algu\xE9m imitando ele t\xE3o bem quanto voc\xEA!\r"
   - tipo: 0
-    fala: "Voc\xEA sorriu e fez um elogio inesperado."
-    resposta: eeeeeeeeeee
+    fala: "Cham\xE1-lo para sair"
+    resposta: "Voc\xEA convida o Dummy para sair depois da aula\u2026\r\nEle concorda
+      em sil\xEAncio\u2026\r\nOu ao menos \xE9 o que voc\xEA acha que aconteceu\r"
+  - tipo: 0
+    fala: Sorrir
+    resposta: "Voc\xEA sorri para o Dummy\u2026\r\nE voc\xEA jura que ele sorriu
+      de volta\r"
+  - tipo: 0
+    fala: "Encar\xE1-lo profundamente"
+    resposta: "Voc\xEA encara o Dummy no fundo de seus olhos de pano\u2026\r\nEle
+      retribui com um olhar de intensidade equivalente\u2026\r\nVoc\xEAs parecem
+      se entender como ningu\xE9m!\r"
   - tipo: 1
-    fala: "Voc\xEA perguntou se ele gosta de arroz"
-    resposta: gggggggggggggg
+    fala: Olhar mais de perto
+    resposta: "Voc\xEA se aproxima do dummy\u2026\r\nVoc\xEA sente que suas bochechas
+      ficaram mais rosadas\r\nMas n\xE3o sabe dizer se \xE9 de vergonha ou \xE9 s\xF3
+      sua imagina\xE7\xE3o\r"
   - tipo: 1
-    fala: "Voc\xEA perguntou se ele gosta de pizza"
-    resposta: 
-  - tipo: 2
-    fala: ffffffffffff
-    resposta: gggggggggggggg
+    fala: Perguntar se ele vem sempre aqui
+    resposta: "Voc\xEA pergunta se ele vem sempre aqui\u2026\r\nVoc\xEA percebe que
+      ele n\xE3o consegue sair do lugar\r"
   - tipo: 1
-    fala: "Voc\xEA perguntou se ele gosta de farofa"
-    resposta: gggggggggggggg
+    fala: "Ficar em sil\xEAncio"
+    resposta: "Voc\xEA fica em sil\xEAncio\u2026\r\nE o Dummy tamb\xE9m\u2026\r\nE
+      voc\xEA v\xEA sua amiga acenando para voc\xEA!\r"
   - tipo: 1
-    fala: "Voc\xEA perguntou se ele gosta de banana"
-    resposta: gggggggggggggg
+    fala: Tentar reagir ao que ele vai dizer
+    resposta: "Voc\xEA espera para fazer um contra-ataque\u2026\r\nMas voc\xEA percebe
+      que ele n\xE3o fala nada! (O que voc\xEA esperava?)\r"
+  - tipo: 1
+    fala: "Perguntar se o pai dele \xE9 padeiro"
+    resposta: "Voc\xEA tenta fazer uma cantada brega\u2026\r\nParece que ele j\xE1
+      escutou essa v\xE1rias vezes e fica em sil\xEAncio total\r"
+  - tipo: 1
+    fala: "Pedir n\xFAmero de telefone"
+    resposta: "Voc\xEA pede o n\xFAmero do Whatsapp dele\u2026\r\nVoc\xEA percebe
+      que talvez dummies n\xE3o tenham acesso \xE0 telefones\r"
   - tipo: 2
-    fala: "Voc\xEA criticou o estilo dele."
-    resposta: gggggggggggggg
+    fala: Dar um apelido carinhoso a ele
+    resposta: "Voc\xEA chama o Dummy de Luvy\u2026\r\nVoc\xEA percebe que algu\xE9m
+      tenta segurar o riso mas n\xE3o consegue\r"
   - tipo: 2
-    fala: "Voc\xEA disse que ele tenta parecer algu\xE9m que n\xE3o \xE9."
-    resposta: gggggggggggggg
+    fala: "Perguntar como est\xE3o as notas dele"
+    resposta: "Voc\xEA pergunta como o Dummy est\xE1 indo nas provas\u2026 \nVoc\xEA
+      escuta algu\xE9m falando em uma voz de choro que vai dar o seu melhor "
   - tipo: 2
-    fala: "Voc\xEA deixou claro que n\xE3o est\xE1 impressionado"
-    resposta: gggggggggggggg
+    fala: "Pedir ajuda \xE0 sua amiga"
+    resposta: "Voc\xEA pede ajuda para sua amiga\u2026\r\nEla elogia a sua apar\xEAncia\u2026\r\nE
+      foi efetivo!\r"
   - tipo: 2
-    fala: "Voc\xEA fez uma compara\xE7\xE3o que o colocou pra baixo"
-    resposta: gggggggggggggg
+    fala: "Dar um aperto de m\xE3o"
+    resposta: "Voc\xEA tenta apertar as m\xE3os dele\u2026\r\nMas voc\xEA desfaz
+      o cora\xE7\xE3o que ele estava fazendo e tenta colocar no lugar antes que algu\xE9m
+      perceba!\r"
+  - tipo: 2
+    fala: Ajeitar a peruca
+    resposta: "Voc\xEA tenta fazer carinho na peruca dele\r\nMas voc\xEA sem querer
+      desfaz os cachos e deixa ele mais bagun\xE7ado ainda!\r"
+  - tipo: 2
+    fala: Dar um presente
+    resposta: "Voc\xEA tira uma florzinha da sua mochila e professa seu amor ao dummy\u2026\r\nEle
+      n\xE3o esbanja nenhuma rea\xE7\xE3o\r\nTalvez seja cedo demais para isso\u2026\r"
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0

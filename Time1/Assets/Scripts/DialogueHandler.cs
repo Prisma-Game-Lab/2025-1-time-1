@@ -8,6 +8,7 @@ public class DialogueHandler : MonoBehaviour
 {
     [SerializeField] private string nextScene;
     [SerializeField] private GameObject saveManager;
+    [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject sprite;
     [SerializeField] private TextMeshProUGUI dialogue;
     [SerializeField] private TextMeshProUGUI charName;
@@ -16,6 +17,7 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option3;
     [SerializeField] private GameObject endScreen;
     [SerializeField] private GameObject[] LPbar;
+    [SerializeField] private GameObject dialogueBox;
     public GameObject options;
     [SerializeField] private DialogueBox[] dialogues;
     public int dialogueIndex = 0;
@@ -31,6 +33,7 @@ public class DialogueHandler : MonoBehaviour
     void Start()
     {
         dialogueIndex = GameManager.instance.index;
+        canvas.GetComponent<Image>().sprite = dialogues[dialogueIndex].background;
         Sprite newSprite = dialogues[dialogueIndex].char_sprite;
         sprite.GetComponent<Image>().sprite = newSprite;
         lastSprite = newSprite;
@@ -76,6 +79,7 @@ public class DialogueHandler : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Space))
             {
                 options.SetActive(false);
+                dialogueBox.SetActive(true);
                 Option(selectedOptionIndex);
                 AudioManager.instance.PlaySound("Click");
             }
@@ -101,6 +105,7 @@ public class DialogueHandler : MonoBehaviour
     {
         if (dialogueIndex < dialogues.Length)
         {
+            canvas.GetComponent<Image>().sprite = dialogues[dialogueIndex].background;
             Sprite newSprite = dialogues[dialogueIndex].char_sprite;
 
             if (newSprite != lastSprite)
@@ -124,6 +129,7 @@ public class DialogueHandler : MonoBehaviour
                 option2.text = dialogues[dialogueIndex].option[1].opText;
                 option3.text = dialogues[dialogueIndex].option[2].opText;
                 options.SetActive(true);
+                dialogueBox.SetActive(false);
                 selectedOptionIndex = 0;
                 AtualizarSelecao();
                 return;

@@ -26,33 +26,23 @@ public class Item3DViewer : MonoBehaviour
         }
     }
 
-    public void ShowItem(string itemName)
+    public void ShowItem()
     {
         if (itemHolder == null || viewerCamera == null || mainCanvas == null)
         {
             Debug.LogError("Item3DViewer: Referências não atribuídas!");
             return;
         }
-        // Desativa todos os filhos
-        foreach (Transform child in itemHolder)
-            child.gameObject.SetActive(false);
-
-        // Procura o filho pelo nome
-        Transform item = itemHolder.Find(itemName);
-        if (item != null)
+        // Ativa o primeiro filho do itemHolder
+        if (itemHolder.childCount > 0)
         {
-            currentItemInstance = item.gameObject;
+            currentItemInstance = itemHolder.GetChild(0).gameObject;
             currentItemInstance.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("Item3DViewer: Item não encontrado: " + itemName);
-            return;
         }
         timer = 0f;
         isViewing = true;
         gameObject.SetActive(true);
-        mainCanvas.SetActive(false);
+        mainCanvas.SetActive(false); // Desativa o Canvas principal
     }
 
     void Update()

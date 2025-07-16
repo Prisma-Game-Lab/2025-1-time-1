@@ -16,6 +16,7 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option3;
     [SerializeField] private GameObject endScreen;
     [SerializeField] private GameObject[] LPbar;
+    [SerializeField] private GameObject dialogueBox;
     public GameObject options;
     [SerializeField] private DialogueBox[] dialogues;
     public int dialogueIndex = 0;
@@ -76,6 +77,7 @@ public class DialogueHandler : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Space))
             {
                 options.SetActive(false);
+                dialogueBox.SetActive(true);
                 Option(selectedOptionIndex);
                 AudioManager.instance.PlaySound("Click");
             }
@@ -124,6 +126,7 @@ public class DialogueHandler : MonoBehaviour
                 option2.text = dialogues[dialogueIndex].option[1].opText;
                 option3.text = dialogues[dialogueIndex].option[2].opText;
                 options.SetActive(true);
+                dialogueBox.SetActive(false);
                 selectedOptionIndex = 0;
                 AtualizarSelecao();
                 return;

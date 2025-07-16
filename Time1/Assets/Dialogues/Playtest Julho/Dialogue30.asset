@@ -17,9 +17,9 @@ MonoBehaviour:
     ela teve tempo pra tudo isso? Se eu tava estudando pras avalia\xE7\xF5es do col\xE9gio
     e tirei umas notinhas medianas, como ser\xE1 que ela foi, se tava preocupada
     fazendo isso??)."
-  char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
+  char_sprite: {fileID: 21300000, guid: 26c5782e112f713458021668719979a0, type: 3}
   char_name: Jogador
-  next: 31
+  next: 30
   chapter_end: 0
   options: 0
   option: []

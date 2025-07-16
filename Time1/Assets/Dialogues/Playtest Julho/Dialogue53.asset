@@ -16,7 +16,7 @@ MonoBehaviour:
   text: "(T\xF4 sentindo que posso me arrepender disso)...Tudo bem, eu aceito."
   char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
   char_name: Jogador
-  next: 54
+  next: 53
   chapter_end: 0
   options: 0
   option: []

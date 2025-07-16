@@ -16,8 +16,8 @@ MonoBehaviour:
   text: "Ah n\xE3o! Eu n\xE3o vou repetir tudo que eu acabei de falar n\xE3o."
   char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
   char_name: Hana
-  next: 16
+  next: 15
   chapter_end: 0
   options: 0
   option: []
-  hasReward: 1
+  hasReward: 0

@@ -16,9 +16,9 @@ MonoBehaviour:
   text: "(Eu deveria ter prestado mais aten\xE7\xE3o quando a galera come\xE7ou a
     se preparar pro baile, eu achei que n\xE3o ia ser t\xE3o ruim assim deixar meio
     que pra \xFAltima hora\u2026)"
-  char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
+  char_sprite: {fileID: 21300000, guid: 26c5782e112f713458021668719979a0, type: 3}
   char_name: Jogador
-  next: 21
+  next: 20
   chapter_end: 0
   options: 0
   option: []

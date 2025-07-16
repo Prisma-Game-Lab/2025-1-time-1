@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: e7af51f9f825cdb4ebd2f08ff6e3ccca, type: 3}
   text: "Eu\u2026acho que n\xE3o?"
-  char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
+  char_sprite: {fileID: 21300000, guid: 99a711491ffadca439e24ddf7249b145, type: 3}
   char_name: Jogador
-  next: 49
+  next: 48
   chapter_end: 0
   options: 0
   option: []

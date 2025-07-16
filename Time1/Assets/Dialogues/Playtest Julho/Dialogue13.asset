@@ -17,7 +17,7 @@ MonoBehaviour:
     falando faz tipo, uns tr\xEAs minutos aqui."
   char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
   char_name: Hana
-  next: 14
+  next: 13
   chapter_end: 0
   options: 0
   option: []

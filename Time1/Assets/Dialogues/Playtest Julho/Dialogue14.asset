@@ -16,7 +16,7 @@ MonoBehaviour:
   text: Ai, foi mal Hana, o que foi?
   char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
   char_name: Jogador
-  next: 15
+  next: 14
   chapter_end: 0
   options: 0
   option: []

@@ -16,7 +16,7 @@ MonoBehaviour:
   text: "Tipo, n\xE3o tinha porque ficar nervoso\u2026n\xE3o \xE9?"
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   char_name: Jogador
-  next: 3
+  next: 2
   chapter_end: 0
   options: 0
   option: []

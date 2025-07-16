@@ -16,7 +16,7 @@ MonoBehaviour:
   text: "Ser\xE1 que tem algu\xE9m que iria comigo?"
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   char_name: Jogador
-  next: 8
+  next: 7
   chapter_end: 0
   options: 0
   option: []

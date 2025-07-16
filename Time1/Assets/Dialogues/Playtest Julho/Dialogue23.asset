@@ -16,9 +16,9 @@ MonoBehaviour:
   text: "Pois \xE9 a\xED que voc\xEA se engana! EU, conhecendo muito bem VOC\xCA,
     e sua mania de deixar tudo pra \xFAltima hora, criei um plano perfeito caso isso
     viesse a acontecer."
-  char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
+  char_sprite: {fileID: 21300000, guid: 26c5782e112f713458021668719979a0, type: 3}
   char_name: Hana
-  next: 24
+  next: 23
   chapter_end: 0
   options: 0
   option: []

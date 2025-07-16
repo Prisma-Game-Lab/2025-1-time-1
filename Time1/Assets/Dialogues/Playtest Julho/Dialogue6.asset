@@ -16,7 +16,7 @@ MonoBehaviour:
   text: SocorrooqueeufacofaltamsotresdiasprobaileeeunaotenhoNADAprontoainda
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   char_name: Jogador
-  next: 7
+  next: 6
   chapter_end: 0
   options: 0
   option: []

@@ -16,9 +16,9 @@ MonoBehaviour:
   text: "(Ela tira uma cartolina gigante de n\xE3o sei onde, cheia de glitter, setas,
     imagens tiradas desses aplicativos para inspira\xE7\xE3o e uma foto minha e dela,
     bem no meio, chorando logo depois de ver Di\xE1rio de uma Paix\xE3o)."
-  char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
-  char_name: Jogaor
-  next: 28
+  char_sprite: {fileID: 21300000, guid: 4233519f2a14589468878daa07708322, type: 3}
+  char_name: Jogador
+  next: 27
   chapter_end: 0
   options: 0
   option: []

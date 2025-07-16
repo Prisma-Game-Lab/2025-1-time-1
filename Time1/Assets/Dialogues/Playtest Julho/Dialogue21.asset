@@ -16,7 +16,7 @@ MonoBehaviour:
   text: "Jogador!! T\xE1 complicado falar com voc\xEA hoje, hein. O que houve?"
   char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
   char_name: Hana
-  next: 22
+  next: 21
   chapter_end: 0
   options: 0
   option: []

@@ -15,9 +15,9 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 705507f9e2cec394687230468a03fafe, type: 3}
   text: "(Antes que eu pudesse responder, ela j\xE1 p\xF5e o telefone na minha frente
     e, realmente, o vestido \xE9 lindo, \xE9 a cara da Hana...)"
-  char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
+  char_sprite: {fileID: 21300000, guid: 26c5782e112f713458021668719979a0, type: 3}
   char_name: Jogador
-  next: 19
+  next: 18
   chapter_end: 0
   options: 0
   option: []

@@ -8,6 +8,7 @@ public class DialogueHandler : MonoBehaviour
 {
     [SerializeField] private string nextScene;
     [SerializeField] private GameObject saveManager;
+    [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject sprite;
     [SerializeField] private TextMeshProUGUI dialogue;
     [SerializeField] private TextMeshProUGUI charName;
@@ -32,6 +33,7 @@ public class DialogueHandler : MonoBehaviour
     void Start()
     {
         dialogueIndex = GameManager.instance.index;
+        canvas.GetComponent<Image>().sprite = dialogues[dialogueIndex].background;
         Sprite newSprite = dialogues[dialogueIndex].char_sprite;
         sprite.GetComponent<Image>().sprite = newSprite;
         lastSprite = newSprite;
@@ -103,6 +105,7 @@ public class DialogueHandler : MonoBehaviour
     {
         if (dialogueIndex < dialogues.Length)
         {
+            canvas.GetComponent<Image>().sprite = dialogues[dialogueIndex].background;
             Sprite newSprite = dialogues[dialogueIndex].char_sprite;
 
             if (newSprite != lastSprite)

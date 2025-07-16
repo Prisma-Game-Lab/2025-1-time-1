@@ -19,14 +19,32 @@ public class IconData
     }
 }
 
+public enum TipoFala
+{
+    positivo,
+    neutro,
+    negativo
+}
+
+[System.Serializable]
+public class DialogOption
+{
+    public TipoFala tipo;     
+    [TextArea(2, 4)]
+    public string fala;
+    [TextArea(2, 6)]
+    public string resposta;
+}
+
+
 public class BattleManager : MonoBehaviour
 {
     [SerializeField] private string winScene;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject setaSelecionada;
     [SerializeField] private GameObject setaAvanco;
-    [SerializeField] private GameObject dialogueBox;   
-
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private PauseMenu pauseMenu;
 
     public Image playerHPFillImage;
     public Image enemyHPFillImage;
@@ -86,45 +104,13 @@ public class BattleManager : MonoBehaviour
     private Coroutine piscandoSetaCoroutine;
 
 
+    [Header("Opções de Diálogo")]
     [SerializeField]
-    private Dictionary<string, string> falasERespostasPositivas = new Dictionary<string, string>{
-    { "Você elogiou o visual do oponente.", "O oponente sorriu de volta, um pouco sem graça." },
-    { "Você disse que adoraria vê-lo de novo.", "Ele pareceu surpreso com o elogio." },
-    { "Você fez um elogio honesto sobre o jeito dele.", "Ele desviou o olhar, mas estava sorrindo." },
-    { "Você disse que se sentia bem ao lado dele.", "Ele agradeceu, ainda que desconfiado." },
-    { "Você destacou algo gentil no comportamento dele.", "Ele balançou a cabeça, rindo de leve." },
-    { "Você comentou que ele parece alguém confiável.", "Ele murmurou um 'valeu' tímido." },
-    { "Você sorriu e fez um elogio inesperado.", "Ele pareceu se animar um pouco." },
-    { "Você demonstrou interesse genuíno pelo que ele dizia.", "Ele ficou quieto, mas você viu que gostou." },
-    { "Você mencionou que ele tem uma presença acolhedora.", "Ele corou discretamente." }
-    };
+    private List<DialogOption> opcoesDeDialogo = new List<DialogOption>();
 
-    [SerializeField]
-    private Dictionary<string, string> falasERespostasNeutras = new Dictionary<string, string>{
-    { "Você comentou sobre o tempo.", "O oponente soltou um 'aham' educado." },
-    { "Você perguntou se ele gosta de pizza.", "Ele franziu a testa, confuso." },
-    { "Você falou sobre o barulho na rua.", "Ele apenas assentiu, sem muito interesse." },
-    { "Você perguntou quantas horas ele dormiu.", "Ele olhou para o lado, esperando algo mais." },
-    { "Você comentou que esqueceu de alimentar o gato.", "Ele respondeu com um 'sei lá'." },
-    { "Você perguntou se ele já viu um pato correndo.", "Ele mexeu no celular." },
-    { "Você mencionou um sonho estranho sem contexto.", "Ele não entendeu muito bem a pergunta." },
-    { "Você falou sobre cereal com leite ou sem.", "Ele pareceu perdido nos próprios pensamentos." },
-    { "Você ficou em silêncio por alguns segundos e sorriu.", "Ele respondeu com um 'tá certo' seco." }
-    };
-
-    [SerializeField]
-    private Dictionary<string, string> falasERespostasNegativas = new Dictionary<string, string>{
-    { "Você criticou o estilo dele.", "O oponente cruzou os braços, visivelmente incomodado." },
-    { "Você fez uma piada meio ácida.", "Ele revirou os olhos." },
-    { "Você questionou as escolhas dele.", "Ele rebateu com uma piada ainda mais ácida." },
-    { "Você insinuou que ele se leva a sério demais.", "Ele ficou em silêncio, com expressão dura." },
-    { "Você disse que ele tenta parecer alguém que não é.", "Ele pareceu se fechar na hora." },
-    { "Você revirou os olhos enquanto ele falava.", "Ele deu um sorriso falso." },
-    { "Você zombou de algo que ele gosta.", "Ele respondeu com sarcasmo." },
-    { "Você fez uma comparação que o colocou pra baixo.", "Ele olhou nos seus olhos, desafiador." },
-    { "Você deixou claro que não está impressionado.", "Ele disse: 'É isso que você acha, então?'" }
-    };
-
+    private HashSet<string> usadasPositivo = new HashSet<string>();
+    private HashSet<string> usadasNeutro = new HashSet<string>();
+    private HashSet<string> usadasNegativo = new HashSet<string>();
 
     void Start()
     {
@@ -150,7 +136,16 @@ public class BattleManager : MonoBehaviour
     void Update()
     {
         AtualizarIcones();
+
+
         DetectarEntradaDeTeclado();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("ESC pressionado - tentando pausar");
+            pauseMenu.TogglePause();
+        }
+
     }
 
     void DetectarEntradaDeTeclado()
@@ -222,7 +217,7 @@ public class BattleManager : MonoBehaviour
                 iconsArray = nerdIcons;
                 break;
             case Pretendente.Rebelde:
-                cor = new Color(1f, 0f, 0f, 0.25f);
+                cor = new Color(0.8039f, 0.2392f, 0.6039f, 0.25f);
                 iconsArray = rebelIcons;
                 break;
             case Pretendente.Ator:
@@ -299,6 +294,82 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    private DialogOption EscolherOpcaoAleatoriaPorTipo(TipoFala tipo)
+    {
+        List<DialogOption> disponiveis = new List<DialogOption>();
+
+        foreach (var opcao in opcoesDeDialogo)
+        {
+            if (opcao.tipo == tipo)
+            {
+                bool jaUsada = false;
+                switch (tipo)
+                {
+                    case TipoFala.positivo:
+                        jaUsada = usadasPositivo.Contains(opcao.fala);
+                        break;
+                    case TipoFala.neutro:
+                        jaUsada = usadasNeutro.Contains(opcao.fala);
+                        break;
+                    case TipoFala.negativo:
+                        jaUsada = usadasNegativo.Contains(opcao.fala);
+                        break;
+                }
+
+                if (!jaUsada)
+                    disponiveis.Add(opcao);
+            }
+        }
+
+        if (disponiveis.Count == 0)
+        {
+         
+            switch (tipo)
+            {
+                case TipoFala.positivo:
+                    usadasPositivo.Clear();
+                    break;
+                case TipoFala.neutro:
+                    usadasNeutro.Clear();
+                    break;
+                case TipoFala.negativo:
+                    usadasNegativo.Clear();
+                    break;
+            }
+            
+            foreach (var opcao in opcoesDeDialogo)
+            {
+                if (opcao.tipo == tipo)
+                    disponiveis.Add(opcao);
+            }
+        }
+
+        if (disponiveis.Count == 0)
+        {
+            Debug.LogWarning($"Sem opções para tipo {tipo}");
+            return null;
+        }
+
+        int indexSorteado = Random.Range(0, disponiveis.Count);
+        var escolha = disponiveis[indexSorteado];
+
+        switch (tipo)
+        {
+            case TipoFala.positivo:
+                usadasPositivo.Add(escolha.fala);
+                break;
+            case TipoFala.neutro:
+                usadasNeutro.Add(escolha.fala);
+                break;
+            case TipoFala.negativo:
+                usadasNegativo.Add(escolha.fala);
+                break;
+        }
+
+        return escolha;
+    }
+
+
     void Escolher(int index)
     {
         if (escolhaFeita) return;
@@ -330,12 +401,13 @@ public class BattleManager : MonoBehaviour
         feedbackText.text = falaEscolhida;
         yield return EsperarAvanco();
 
-        string resposta = ObterRespostaDoOponente(tipo);
+        string resposta = ObterRespostaDoOponente(falaEscolhida);
+
         feedbackText.text += "\n" + resposta;
         yield return EsperarAvanco();
 
         feedbackText.text = "";
-        yield return new WaitForSeconds(0.2f); // espera técnica, mantém
+        yield return new WaitForSeconds(0.2f);
 
         string efeitoTexto = "";
 
@@ -462,12 +534,13 @@ public class BattleManager : MonoBehaviour
     }
 
 
-    string ObterRespostaDoOponente(string tipo)
+    string ObterRespostaDoOponente(string fala)
     {
-        if (respostasDasFalas.ContainsKey(falaEscolhida))
-            return respostasDasFalas[falaEscolhida];
+        if (!string.IsNullOrEmpty(fala) && respostasDasFalas.ContainsKey(fala))
+            return respostasDasFalas[fala];
         return "...";
     }
+
 
 
     void AtualizarFalasNosBotoes()
@@ -475,43 +548,42 @@ public class BattleManager : MonoBehaviour
         dialogueBox.SetActive(false);
         dialogueButtonsPanel.SetActive(true);
 
-
-        var positiva = RemoverParDeFala(falasERespostasPositivas);
-        var neutra = RemoverParDeFala(falasERespostasNeutras);
-        var negativa = RemoverParDeFala(falasERespostasNegativas);
-
-        var opcoes = new List<(string tipo, string fala, string resposta)>
-    {
-        ("positivo", positiva.Item1, positiva.Item2),
-        ("neutro", neutra.Item1, neutra.Item2),
-        ("negativo", negativa.Item1, negativa.Item2)
-    };
-
-        for (int i = 0; i < opcoes.Count; i++)
-        {
-            var temp = opcoes[i];
-            int rand = Random.Range(i, opcoes.Count);
-            opcoes[i] = opcoes[rand];
-            opcoes[rand] = temp;
-        }
-
         opcoesAtuais.Clear();
         respostasDasFalas.Clear();
 
-        for (int i = 0; i < dialogueButtons.Length; i++)
+        List<DialogOption> selecionadas = new List<DialogOption>();
+
+        var pos = EscolherOpcaoAleatoriaPorTipo(TipoFala.positivo);
+        var neu = EscolherOpcaoAleatoriaPorTipo(TipoFala.neutro);
+        var neg = EscolherOpcaoAleatoriaPorTipo(TipoFala.negativo);
+
+        if (pos != null) selecionadas.Add(pos);
+        if (neu != null) selecionadas.Add(neu);
+        if (neg != null) selecionadas.Add(neg);
+
+        for (int i = 0; i < selecionadas.Count; i++)
         {
-            buttonTexts[i].text = opcoes[i].fala;
-            opcoesAtuais[opcoes[i].tipo] = opcoes[i].fala;
-            respostasDasFalas[opcoes[i].fala] = opcoes[i].resposta;
+            var temp = selecionadas[i];
+            int rand = Random.Range(i, selecionadas.Count);
+            selecionadas[i] = selecionadas[rand];
+            selecionadas[rand] = temp;
+        }
+
+        int count = Mathf.Min(dialogueButtons.Length, selecionadas.Count);
+
+        for (int i = 0; i < count; i++)
+        {
+            buttonTexts[i].text = selecionadas[i].fala;
+            opcoesAtuais[selecionadas[i].tipo.ToString()] = selecionadas[i].fala;
+            respostasDasFalas[selecionadas[i].fala] = selecionadas[i].resposta;
         }
 
         if (turnTimerCoroutine != null)
             StopCoroutine(turnTimerCoroutine);
         turnTimerCoroutine = StartCoroutine(IniciarContagemRegressiva());
-
-
-
     }
+
+
 
     IEnumerator IniciarContagemRegressiva()
     {

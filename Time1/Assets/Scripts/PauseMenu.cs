@@ -113,4 +113,13 @@ public class PauseMenu : MonoBehaviour
     {
         Screen.fullScreen = isFullscreen;
     }
+
+    public void TogglePause()
+    {
+        if (isPaused)
+            ResumeGame();
+        else
+            PauseGame();
+    }
+
 }

@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: Dialogue6
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
   text: "%#@!* CABE\xC7UDO, OLHA POR ONDE ANDA!"
   char_sprite: {fileID: 21300000, guid: 7cdc398b84eadd745b7152cdf2bb9bfb, type: 3}
   char_name: Rebelde
   next: 6
+  chapter_end: 0
   options: 1
   option:
-  - opText: 
+  - opText: aaaaaaaaaaaaaaaaaa
     next: 6
     reaction: 1
-  - opText: 
+  - opText: bbbbbbbbbbbbbbbbb
     next: 7
     reaction: 0
-  - opText: 
+  - opText: cccccccccccccccccccc
     next: 8
     reaction: -1
   hasReward: 0

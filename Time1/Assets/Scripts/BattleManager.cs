@@ -698,20 +698,21 @@ public class BattleManager : MonoBehaviour
 
     void ShowRewardItem()
     {
-        if (itemViewer != null && itemPrefab != null && itemViewerPanel != null)
+        if (itemViewer != null && itemViewerPanel != null)
         {
-            GameManager.instance.itemsAcquired[itemNumber - 1] = true;
             itemViewerPanel.SetActive(true);
             itemViewer.gameObject.SetActive(true);
             mainCamera.enabled = false;
             itemViewerCamera.enabled = true;
             itemViewer.onViewFinished.RemoveAllListeners();
             itemViewer.onViewFinished.AddListener(OnRewardViewFinished);
-            itemViewer.ShowItem();
+
+            // Exemplo: mostrar o bombom
+            itemViewer.ShowItem("bombom");
         }
         else
         {
-            Debug.LogWarning($"Missing references - itemViewer: {itemViewer}, itemPrefab: {itemPrefab}, itemViewerPanel: {itemViewerPanel}");
+            Debug.LogWarning($"Missing references - itemViewer: {itemViewer}, itemViewerPanel: {itemViewerPanel}");
             StartCoroutine(ReturnToMenuAfterDelay());
         }
     }

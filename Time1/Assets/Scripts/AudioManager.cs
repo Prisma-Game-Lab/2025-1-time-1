@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Sound
@@ -13,7 +14,8 @@ public class Sound
 
     public bool loop = false;
 
-    private AudioSource source;
+    public AudioSource source;
+
 
     public void SetSource(AudioSource audioSource)
     {
@@ -83,10 +85,36 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < sounds.Length; i++)
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+        // Cena inicial
+        OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Cena carregada: " + scene.name);
+
+        switch (scene.name)
         {
-            if (sounds[i].loop)
-                sounds[i].Play();
+            case "Menu":
+                PlayIfNotPlaying("MenuMusic");
+                StopSound("BattleMusic");
+                break;
+
+            case "DialoguePlaytest":
+                // Mantém a música do menu tocando — não faz nada
+                break;
+
+            case "BattlePlaytest":
+                StopSound("MenuMusic");
+                PlayIfNotPlaying("BattleMusic");
+                break;
+
+            default:
+                StopSound("MenuMusic");
+                StopSound("BattleMusic");
+                break;
         }
     }
 
@@ -145,6 +173,19 @@ public class AudioManager : MonoBehaviour
         foreach (var s in sounds)
         {
             s.UpdateVolume(volume);
+        }
+    }
+
+    private void PlayIfNotPlaying(string name)
+    {
+        foreach (var s in sounds)
+        {
+            if (s.name == name)
+            {
+                if (!s.source.isPlaying)
+                    s.Play();
+                return;
+            }
         }
     }
 }

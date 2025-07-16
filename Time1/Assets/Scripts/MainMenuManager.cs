@@ -37,7 +37,6 @@ public class MainMenuManager : MonoBehaviour
     IEnumerator Start()
     {
         yield return new WaitForSeconds(0.5f);
-        AudioManager.instance.PlaySound("MenuMusic");
 
         currentVolume = 1f;
         volumeSlider.value = currentVolume;

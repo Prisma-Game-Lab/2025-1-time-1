@@ -23,7 +23,7 @@ public class BattleManager : MonoBehaviour
 {
     [SerializeField] private string winScene;
     [SerializeField] private Camera mainCamera;
-
+    [SerializeField] private GameObject setaSelecionada; 
     public Slider playerHPBar;
     public Slider enemyHPBar;
 
@@ -122,6 +122,9 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
+        AudioManager.instance.StopSound("MenuMusic");
+        AudioManager.instance.PlaySound("BattleMusic");
+
         AtualizarHP();
         feedbackText.text = "A batalha começou!";
         RegistrarBotoes();
@@ -179,10 +182,28 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < dialogueButtons.Length; i++)
         {
             ColorBlock colors = dialogueButtons[i].colors;
-            colors.normalColor = (i == botaoSelecionado) ? Color.yellow : Color.white;
+            colors.normalColor = (i == botaoSelecionado) ? new Color(1f, 0.4f, 0.7f, 1f) : Color.white;
             dialogueButtons[i].colors = colors;
         }
+
+        if (setaSelecionada != null && botaoSelecionado >= 0 && botaoSelecionado < dialogueButtons.Length)
+        {
+            setaSelecionada.SetActive(true);
+
+            RectTransform setaRT = setaSelecionada.GetComponent<RectTransform>();
+            RectTransform btnRT = dialogueButtons[botaoSelecionado].GetComponent<RectTransform>();
+
+            Vector3 posBotao = btnRT.localPosition;
+            float deslocamentoX = -btnRT.rect.width / 2 - setaRT.rect.width / 2 - 20f; 
+
+            setaRT.localPosition = new Vector3(posBotao.x + deslocamentoX, posBotao.y, posBotao.z);
+        }
+        else if (setaSelecionada != null)
+        {
+            setaSelecionada.SetActive(false);
+        }
     }
+
 
 
     private void AdicionarIcones(int quantidade)

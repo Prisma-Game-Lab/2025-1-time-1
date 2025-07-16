@@ -23,13 +23,9 @@ public class BattleManager : MonoBehaviour
 {
     [SerializeField] private string winScene;
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private GameObject setaSelecionada;
-    [SerializeField] private GameObject setaAvanco;
-    [SerializeField] private GameObject dialogueBox;   
-
-
-    public Image playerHPFillImage;
-    public Image enemyHPFillImage;
+    [SerializeField] private GameObject setaSelecionada; 
+    public Slider playerHPBar;
+    public Slider enemyHPBar;
 
     public TextMeshProUGUI feedbackText;
     public GameObject dialogueButtonsPanel;
@@ -83,8 +79,6 @@ public class BattleManager : MonoBehaviour
     private int botaoSelecionado = 0;
     private bool aguardandoAvanco = false;
     private bool avancarTexto = false;
-    private Coroutine piscandoSetaCoroutine;
-
 
     [SerializeField]
     private Dictionary<string, string> falasERespostasPositivas = new Dictionary<string, string>{
@@ -131,11 +125,11 @@ public class BattleManager : MonoBehaviour
         AudioManager.instance.StopSound("MenuMusic");
         AudioManager.instance.PlaySound("BattleMusic");
 
-        dialogueBox.SetActive(true);
-        dialogueButtonsPanel.SetActive(false);
-
         AtualizarHP();
-        StartCoroutine(IniciarPrimeiraFala());
+        feedbackText.text = "A batalha começou!";
+        RegistrarBotoes();
+        AtualizarFalasNosBotoes();
+        dialogueButtonsPanel.SetActive(true);
 
         if (itemViewerPanel != null)
         {
@@ -144,6 +138,8 @@ public class BattleManager : MonoBehaviour
         }
 
         pretendenteAtual = Pretendente.Rebelde;
+
+        
         AdicionarIcones(5);
     }
 
@@ -198,7 +194,7 @@ public class BattleManager : MonoBehaviour
             RectTransform btnRT = dialogueButtons[botaoSelecionado].GetComponent<RectTransform>();
 
             Vector3 posBotao = btnRT.localPosition;
-            float deslocamentoX = -btnRT.rect.width / 2 - setaRT.rect.width / 2 - 5f; 
+            float deslocamentoX = -btnRT.rect.width / 2 - setaRT.rect.width / 2 - 20f; 
 
             setaRT.localPosition = new Vector3(posBotao.x + deslocamentoX, posBotao.y, posBotao.z);
         }
@@ -231,6 +227,7 @@ public class BattleManager : MonoBehaviour
                 break;
         }
 
+        // Atualiza a cor do filtro (background)
         filterBackgroundImage.color = cor;
 
         float minDistance = 100f; // Distância mínima entre ícones
@@ -320,8 +317,6 @@ public class BattleManager : MonoBehaviour
         }
 
         dialogueButtonsPanel.SetActive(false);
-        dialogueBox.SetActive(true);
-
         StartCoroutine(ExecutarTurno(tipoEscolhido));
     }
 
@@ -419,48 +414,13 @@ public class BattleManager : MonoBehaviour
         aguardandoAvanco = true;
         avancarTexto = false;
 
-        if (setaAvanco != null)
-        {
-            setaAvanco.SetActive(true);
-
-            if (piscandoSetaCoroutine != null)
-                StopCoroutine(piscandoSetaCoroutine);
-
-            piscandoSetaCoroutine = StartCoroutine(PiscandoSeta());
-        }
-
         while (!avancarTexto)
             yield return null;
 
-        AudioManager.instance.PlaySound("Avancar");
-
-        if (setaAvanco != null)
-        {
-            setaAvanco.SetActive(false);
-
-            if (piscandoSetaCoroutine != null)
-            {
-                StopCoroutine(piscandoSetaCoroutine);
-                piscandoSetaCoroutine = null;
-            }
-        }
+        AudioManager.instance.PlaySound("Avancar"); 
 
         aguardandoAvanco = false;
     }
-
-
-    IEnumerator PiscandoSeta()
-    {
-        Image setaImg = setaAvanco.GetComponent<Image>();
-        while (setaAvanco.activeSelf)
-        {
-            setaImg.color = new Color(1, 1, 1, 1);
-            yield return new WaitForSeconds(0.5f);
-            setaImg.color = new Color(1, 1, 1, 0);
-            yield return new WaitForSeconds(0.5f);
-        }
-    }
-
 
     string ObterRespostaDoOponente(string tipo)
     {
@@ -472,10 +432,6 @@ public class BattleManager : MonoBehaviour
 
     void AtualizarFalasNosBotoes()
     {
-        dialogueBox.SetActive(false);
-        dialogueButtonsPanel.SetActive(true);
-
-
         var positiva = RemoverParDeFala(falasERespostasPositivas);
         var neutra = RemoverParDeFala(falasERespostasNeutras);
         var negativa = RemoverParDeFala(falasERespostasNegativas);
@@ -508,9 +464,6 @@ public class BattleManager : MonoBehaviour
         if (turnTimerCoroutine != null)
             StopCoroutine(turnTimerCoroutine);
         turnTimerCoroutine = StartCoroutine(IniciarContagemRegressiva());
-
-
-
     }
 
     IEnumerator IniciarContagemRegressiva()
@@ -543,29 +496,12 @@ public class BattleManager : MonoBehaviour
         tipoEscolhido = "neutro";
         falaEscolhida = "Você ficou em silêncio...";
         dialogueButtonsPanel.SetActive(false);
-        dialogueBox.SetActive(true);
-
 
         leftBarFill.fillAmount = 0f;
         rightBarFill.fillAmount = 0f;
         timerBarContainer.SetActive(false);
 
         StartCoroutine(ExecutarTurno(tipoEscolhido));
-    }
-
-    IEnumerator IniciarPrimeiraFala()
-    {
-        feedbackText.text = "A batalha começou!";
-        yield return EsperarAvanco();
-
-        dialogueBox.SetActive(false);
-        dialogueButtonsPanel.SetActive(true);
-
-        RegistrarBotoes();
-        AtualizarFalasNosBotoes();
-
-        botaoSelecionado = 0;
-        AtualizarSelecaoVisual();
     }
 
     (string, string) RemoverParDeFala(Dictionary<string, string> dict)
@@ -587,11 +523,8 @@ public class BattleManager : MonoBehaviour
         playerHP = Mathf.Max(0, playerHP);
         enemyHP = Mathf.Max(0, enemyHP);
 
-        float playerFill = (float)playerHP / 100f;
-        float enemyFill = (float)enemyHP / 100f;
-
-        playerHPFillImage.fillAmount = playerFill;
-        enemyHPFillImage.fillAmount = enemyFill;
+        playerHPBar.value = playerHP;
+        enemyHPBar.value = enemyHP;
     }
 
     void FinalizarBatalhaPorTurno()

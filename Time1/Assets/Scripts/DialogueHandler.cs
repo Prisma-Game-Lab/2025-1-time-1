@@ -232,7 +232,7 @@ public class DialogueHandler : MonoBehaviour
         if (dialogues[currIndex].hasReward && itemViewer != null && itemViewerPanel != null)
         {
             itemViewerPanel.SetActive(true);
-            itemViewer.ShowItem();
+            //itemViewer.ShowItem();
         }
     }
 

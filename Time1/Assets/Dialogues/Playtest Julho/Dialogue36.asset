@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
+  m_Name: Dialogue36
+  m_EditorClassIdentifier: 
+  background: {fileID: 21300000, guid: 705507f9e2cec394687230468a03fafe, type: 3}
+  text: "Passo 2: Voc\xEA vai ter que falar com os tr\xEAs nos pr\xF3ximos tr\xEAs
+    dias, conquistar o cora\xE7\xE3o deles e conseguir convidar ou ser convidada
+    pro baile."
+  char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
+  char_name: Hana
+  next: 37
+  chapter_end: 0
+  options: 0
+  option: []
+  hasReward: 0

@@ -12,6 +12,8 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private GameObject sprite;
     [SerializeField] private TextMeshProUGUI dialogue;
     [SerializeField] private TextMeshProUGUI charName;
+    [SerializeField] private TextMeshProUGUI[] dialogueLog;
+    [SerializeField] private TextMeshProUGUI[] nameLog;
     [SerializeField] private GameObject endScreen;
     [SerializeField] private GameObject[] LPbar;
     [SerializeField] private GameObject dialogueBox;
@@ -32,6 +34,7 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private GameObject setaSelecionada;  // seta para opção selecionada
     [SerializeField] private GameObject setaAvanco;       // seta para avançar diálogo
 
+    private int logIndex = 0;
     private int selectedOptionIndex = 0;
     private Sprite lastSprite;
     private Coroutine piscandoSetaCoroutine;
@@ -271,6 +274,8 @@ public class DialogueHandler : MonoBehaviour
                 return;
             }
 
+            showLog();
+
             if (dialogues[dialogueIndex].chapter_end)
             {
                 endScreen.SetActive(true);
@@ -298,6 +303,24 @@ public class DialogueHandler : MonoBehaviour
         }
     }
 
+    private void showLog()
+    {
+        for (int i = 0; i < dialogueLog.Length; ++i)
+        {
+            int index = i + (logIndex * 3);
+            if (index < dialogueIndex)
+            {
+                dialogueLog[i].text = dialogues[index].text;
+                nameLog[i].text = dialogues[index].char_name;
+            }
+            else
+            {
+                dialogueLog[i].text = "";
+                nameLog[i].text = "";
+            }
+        }
+    }
+
     public void addPoints(int index)
     {
         int idPretendente = 0;
@@ -315,6 +338,22 @@ public class DialogueHandler : MonoBehaviour
         }
 
         GameManager.instance.AddLovePoints(idPretendente, (int)dialogues[currIndex].option[index].reaction);
+    }
+
+    public void updateLog(int qtd)
+    {
+        logIndex += qtd;
+        if (logIndex < 0)
+        {
+            logIndex = 0;
+            return;
+        }
+        if ((logIndex * 3) > (dialogueIndex -1))
+        {
+            logIndex -= 1;
+            return;
+        }
+        showLog();
     }
 
     IEnumerator FadeInSprite(float duration = 0.75f)

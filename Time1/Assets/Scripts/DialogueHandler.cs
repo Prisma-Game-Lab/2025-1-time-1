@@ -17,9 +17,9 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private GameObject endScreen;
     [SerializeField] private GameObject[] LPbar;
     [SerializeField] private GameObject dialogueBox;
-    public GameObject options; // painel com as opções
+    public GameObject options; // painel com as opï¿½ï¿½es
 
-    [SerializeField] private Button[] dialogueButtons; // Botões de opção (3)
+    [SerializeField] private Button[] dialogueButtons; // Botï¿½es de opï¿½ï¿½o (3)
     private TextMeshProUGUI[] buttonTexts;
 
     [SerializeField] private DialogueBox[] dialogues;
@@ -31,8 +31,8 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] public GameObject itemViewerPanel;
 
     [Header("UI Setas")]
-    [SerializeField] private GameObject setaSelecionada;  // seta para opção selecionada
-    [SerializeField] private GameObject setaAvanco;       // seta para avançar diálogo
+    [SerializeField] private GameObject setaSelecionada;  // seta para opï¿½ï¿½o selecionada
+    [SerializeField] private GameObject setaAvanco;       // seta para avanï¿½ar diï¿½logo
 
     private int logIndex = 0;
     private int selectedOptionIndex = 0;
@@ -108,7 +108,7 @@ public class DialogueHandler : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("dialogueButtons está vazio ou não atribuído!");
+                Debug.LogWarning("dialogueButtons estï¿½ vazio ou nï¿½o atribuï¿½do!");
             }
         }
         else if (Input.GetKeyDown(KeyCode.Space))
@@ -124,13 +124,13 @@ public class DialogueHandler : MonoBehaviour
     {
         if (dialogues == null || dialogues.Length == 0)
         {
-            Debug.LogError("Array 'dialogues' está vazio ou null!");
+            Debug.LogError("Array 'dialogues' estï¿½ vazio ou null!");
             return;
         }
 
         if (indexDialogo < 0 || indexDialogo >= dialogues.Length)
         {
-            Debug.LogError($"Index de diálogo inválido: {indexDialogo}");
+            Debug.LogError($"Index de diï¿½logo invï¿½lido: {indexDialogo}");
             return;
         }
 
@@ -138,11 +138,11 @@ public class DialogueHandler : MonoBehaviour
 
         if (dialogoAtual.option == null || dialogoAtual.option.Length == 0)
         {
-            Debug.LogError("As opções do diálogo atual estão vazias ou null!");
+            Debug.LogError("As opï¿½ï¿½es do diï¿½logo atual estï¿½o vazias ou null!");
             return;
         }
 
-        // Garantindo que temos o mesmo número de botões e opções
+        // Garantindo que temos o mesmo nï¿½mero de botï¿½es e opï¿½ï¿½es
         int quantidade = Mathf.Min(dialogueButtons.Length, dialogoAtual.option.Length);
 
         for (int i = 0; i < quantidade; i++)
@@ -150,7 +150,7 @@ public class DialogueHandler : MonoBehaviour
             TextMeshProUGUI textoBotao = dialogueButtons[i].GetComponentInChildren<TextMeshProUGUI>();
             if (textoBotao == null)
             {
-                Debug.LogError($"Texto do botão {i} não encontrado!");
+                Debug.LogError($"Texto do botï¿½o {i} nï¿½o encontrado!");
                 continue;
             }
 
@@ -270,7 +270,7 @@ public class DialogueHandler : MonoBehaviour
                 dialogueBox.SetActive(false);
                 selectedOptionIndex = 0;
                 AtualizarSelecaoVisual();
-                AtualizarSetaAvanco(false); // Não mostra a seta de avanço enquanto opções estão abertas
+                AtualizarSetaAvanco(false); // Nï¿½o mostra a seta de avanï¿½o enquanto opï¿½ï¿½es estï¿½o abertas
                 return;
             }
 
@@ -299,7 +299,15 @@ public class DialogueHandler : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(nextScene);
+            LevelLoader levelLoader = FindObjectOfType<LevelLoader>();
+            if (levelLoader != null)
+            {
+                levelLoader.LoadScene(nextScene);
+            }
+            else
+            {
+                SceneManager.LoadScene(nextScene);
+            }
         }
     }
 

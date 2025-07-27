@@ -56,7 +56,15 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        LevelLoader levelLoader = FindObjectOfType<LevelLoader>();
+        if (levelLoader != null)
+        {
+            levelLoader.LoadScene(sceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 
     public void StartBattle(int battleID)

@@ -79,9 +79,18 @@ public class BattleManager : MonoBehaviour
     public bool podePausar = false;
 
     private bool opponentVulnerable = false;
-     
+    private bool hoverAtivo = false;
+
     private string tipoEscolhido;
     private string falaEscolhida;
+
+    private float lastKeyboardInputTime = 0f;
+    private float lastMouseInputTime = 0f;
+    private float inputSwitchDelay = 0.1f;
+
+    private enum InputMode { Keyboard, Mouse }
+    private InputMode currentInputMode = InputMode.Mouse; 
+
 
     private Dictionary<string, string> opcoesAtuais = new Dictionary<string, string>();
     private Dictionary<string, string> respostasDasFalas = new Dictionary<string, string>();
@@ -113,6 +122,7 @@ public class BattleManager : MonoBehaviour
     private HashSet<string> usadasPositivo = new HashSet<string>();
     private HashSet<string> usadasNeutro = new HashSet<string>();
     private HashSet<string> usadasNegativo = new HashSet<string>();
+    private int selectedOption = 0;
 
     void Start()
     {
@@ -132,13 +142,14 @@ public class BattleManager : MonoBehaviour
         }
 
         pretendenteAtual = Pretendente.Rebelde;
-        AdicionarIcones(5);
+        AdicionarIcones(10);
     }
 
     void Update()
     {
         AtualizarIcones();
 
+        AtualizarModoInput();  
 
         DetectarEntradaDeTeclado();
 
@@ -154,9 +165,39 @@ public class BattleManager : MonoBehaviour
                 Debug.Log("ESC pressionado, mas pause está desativado no turno do jogador");
             }
         }
-
-
     }
+
+
+
+    private void AtualizarModoInput()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.Space))
+            lastKeyboardInputTime = Time.time;
+
+        if (Input.GetMouseButtonDown(0) || Mathf.Abs(Input.GetAxis("Mouse X")) > 0.01f || Mathf.Abs(Input.GetAxis("Mouse Y")) > 0.01f)
+            lastMouseInputTime = Time.time;
+
+        if (Mathf.Abs(lastKeyboardInputTime - lastMouseInputTime) > inputSwitchDelay)
+        {
+            if (lastKeyboardInputTime > lastMouseInputTime)
+                currentInputMode = InputMode.Keyboard;
+            else
+                currentInputMode = InputMode.Mouse;
+        }
+
+        if (setaSelecionada != null)
+        {
+            if (!hoverAtivo) 
+            {
+                if (currentInputMode == InputMode.Keyboard && dialogueButtonsPanel.activeSelf && !escolhaFeita)
+                    setaSelecionada.SetActive(true);
+                else
+                    setaSelecionada.SetActive(false);
+            }
+         
+        }
+    }
+
 
     void DetectarEntradaDeTeclado()
     {
@@ -191,11 +232,13 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < dialogueButtons.Length; i++)
         {
             ColorBlock colors = dialogueButtons[i].colors;
-            colors.normalColor = (i == botaoSelecionado) ? new Color(1f, 0.4f, 0.7f, 1f) : Color.white;
+            colors.normalColor = (currentInputMode == InputMode.Keyboard && i == botaoSelecionado)
+                                 ? new Color(1f, 0.4f, 0.7f, 1f)
+                                 : Color.white;
             dialogueButtons[i].colors = colors;
         }
 
-        if (setaSelecionada != null && botaoSelecionado >= 0 && botaoSelecionado < dialogueButtons.Length)
+        if (setaSelecionada != null && botaoSelecionado >= 0 && botaoSelecionado < dialogueButtons.Length && dialogueButtonsPanel.activeSelf && !escolhaFeita)
         {
             setaSelecionada.SetActive(true);
 
@@ -203,16 +246,49 @@ public class BattleManager : MonoBehaviour
             RectTransform btnRT = dialogueButtons[botaoSelecionado].GetComponent<RectTransform>();
 
             Vector3 posBotao = btnRT.localPosition;
-            float deslocamentoX = -btnRT.rect.width / 2 - setaRT.rect.width / 2 - 5f; 
+            float deslocamentoX = -btnRT.rect.width / 2 - setaRT.rect.width / 2 - 5f;
 
             setaRT.localPosition = new Vector3(posBotao.x + deslocamentoX, posBotao.y, posBotao.z);
+
+            hoverAtivo = false;  // Como está selecionando por teclado, o hover é falso
         }
-        else if (setaSelecionada != null)
+        else if (setaSelecionada != null && !hoverAtivo)
         {
             setaSelecionada.SetActive(false);
         }
     }
 
+
+    public void OnOptionHover(int index)
+    {
+        selectedOption = index;
+        hoverAtivo = true;
+        AtualizarPosicaoSeta();
+        setaSelecionada.SetActive(true);
+    }
+
+    public void OnOptionExit()
+    {
+        hoverAtivo = false;
+        setaSelecionada.SetActive(false);
+    }
+
+
+
+    private void AtualizarPosicaoSeta()
+    {
+        if (setaSelecionada != null && selectedOption >= 0 && selectedOption < dialogueButtons.Length)
+        {
+            RectTransform setaRect = setaSelecionada.GetComponent<RectTransform>();
+            RectTransform alvoRect = dialogueButtons[selectedOption].GetComponent<RectTransform>();
+
+            setaRect.position = new Vector3(
+                setaRect.position.x,
+                alvoRect.position.y,
+                setaRect.position.z
+            );
+        }
+    }
 
 
     private void AdicionarIcones(int quantidade)
@@ -300,9 +376,16 @@ public class BattleManager : MonoBehaviour
         {
             int index = i;
             buttonTexts[i] = dialogueButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            dialogueButtons[i].onClick.AddListener(() => Escolher(index));
+            dialogueButtons[i].onClick.RemoveAllListeners();  
+            dialogueButtons[i].onClick.AddListener(() =>
+            {
+                botaoSelecionado = index;          
+                AtualizarSelecaoVisual();          
+                Escolher(index);                   
+            });
         }
     }
+
 
     private DialogOption EscolherOpcaoAleatoriaPorTipo(TipoFala tipo)
     {
@@ -444,7 +527,7 @@ public class BattleManager : MonoBehaviour
 
         AtualizarHP();
 
-        AdicionarIcones(3);
+        AdicionarIcones(6);
 
         feedbackText.text = efeitoTexto;
         yield return EsperarAvanco();

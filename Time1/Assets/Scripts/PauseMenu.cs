@@ -35,22 +35,6 @@ public class PauseMenu : MonoBehaviour
         AudioManager.instance.SetMusicVolume(volume);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (optionsPanel.activeSelf)
-            {
-                CloseOptions();
-            }
-            else
-            {
-                if (isPaused) ResumeGame();
-                else PauseGame();
-            }
-        }
-    }
-
     public void PauseGame()
     {
         pausePanel.SetActive(true);

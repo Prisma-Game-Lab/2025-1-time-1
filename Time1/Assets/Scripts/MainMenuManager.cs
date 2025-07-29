@@ -38,7 +38,8 @@ public class MainMenuManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        currentVolume = 1f;
+        currentVolume = PlayerPrefs.GetFloat("volume", 1f);
+
         volumeSlider.value = currentVolume;
         volumeSlider.onValueChanged.AddListener(SetVolume);
         SetVolume(currentVolume);
@@ -184,7 +185,9 @@ public class MainMenuManager : MonoBehaviour
     {
         currentVolume = volume;
         AudioManager.instance.SetMusicVolume(volume);
+        PlayerPrefs.SetFloat("volume", volume);
     }
+
 
     public void SetFullscreen(bool isFullscreen)
     {

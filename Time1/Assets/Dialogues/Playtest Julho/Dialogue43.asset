@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Dialogue43
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: e7af51f9f825cdb4ebd2f08ff6e3ccca, type: 3}
+  fadeInBackground: 1
   text: (Ela abre a porta do teatro e acende a luz) O que exatamente a gente veio
     fazer aqui?
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
+  fadeInCharacter: 0
   char_name: Jogador
   next: 43
   chapter_end: 0

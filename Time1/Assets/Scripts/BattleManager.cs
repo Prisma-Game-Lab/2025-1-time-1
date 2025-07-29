@@ -76,8 +76,10 @@ public class BattleManager : MonoBehaviour
     private int turn = 1;
     private const int maxTurns = 4;
 
-    private bool opponentVulnerable = false;
+    private bool podePausar = false;
 
+    private bool opponentVulnerable = false;
+     
     private string tipoEscolhido;
     private string falaEscolhida;
 
@@ -142,9 +144,17 @@ public class BattleManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("ESC pressionado - tentando pausar");
-            pauseMenu.TogglePause();
+            if (podePausar)
+            {
+                Debug.Log("ESC pressionado - pausando");
+                pauseMenu.TogglePause();
+            }
+            else
+            {
+                Debug.Log("ESC pressionado, mas pause está desativado no turno do jogador");
+            }
         }
+
 
     }
 
@@ -399,6 +409,7 @@ public class BattleManager : MonoBehaviour
     IEnumerator ExecutarTurno(string tipo)
     {
         feedbackText.text = falaEscolhida;
+        podePausar = true;
         yield return EsperarAvanco();
 
         string resposta = ObterRespostaDoOponente(falaEscolhida);
@@ -464,6 +475,8 @@ public class BattleManager : MonoBehaviour
         AtualizarHP();
 
         feedbackText.text += "\n" + textoReacao;
+        
+
         yield return EsperarAvanco();
 
         if (enemyHP <= 0 || playerHP <= 0)
@@ -545,6 +558,8 @@ public class BattleManager : MonoBehaviour
 
     void AtualizarFalasNosBotoes()
     {
+        podePausar = false; 
+
         dialogueBox.SetActive(false);
         dialogueButtonsPanel.SetActive(true);
 

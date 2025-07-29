@@ -8,6 +8,7 @@ public class DialogueHandler : MonoBehaviour
 {
     [SerializeField] private string nextScene;
     [SerializeField] private GameObject saveManager;
+    [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject sprite;
     [SerializeField] private TextMeshProUGUI dialogue;
@@ -39,6 +40,11 @@ public class DialogueHandler : MonoBehaviour
     private Sprite lastSprite;
     private Coroutine piscandoSetaCoroutine;
 
+    private Sprite lastBackground;
+    private Coroutine fadeBackgroundCoroutine;
+    private Image backgroundImage => canvas.GetComponent<Image>();
+
+
     void Start()
     {
         dialogueIndex = GameManager.instance.index;
@@ -47,6 +53,9 @@ public class DialogueHandler : MonoBehaviour
         sprite.GetComponent<Image>().sprite = newSprite;
         lastSprite = newSprite;
         StartCoroutine(FadeInSprite());
+
+        lastBackground = canvas.GetComponent<Image>().sprite;
+
 
         dialogue.text = dialogues[dialogueIndex].text;
         charName.text = dialogues[dialogueIndex].char_name;
@@ -79,6 +88,12 @@ public class DialogueHandler : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.TogglePause();
+
+        }
+
         if (options.activeSelf)
         {
             int totalOptions = dialogueButtons != null ? dialogueButtons.Length : 0;
@@ -245,13 +260,39 @@ public class DialogueHandler : MonoBehaviour
 
         if (dialogueIndex < dialogues.Length)
         {
-            canvas.GetComponent<Image>().sprite = dialogues[dialogueIndex].background;
+            Sprite newBackground = dialogues[dialogueIndex].background;
+            bool fadeBG = dialogues[dialogueIndex].fadeInBackground;
+
+            if (newBackground != lastBackground)
+            {
+                backgroundImage.sprite = newBackground;
+
+                if (fadeBG)
+                {
+                    if (fadeBackgroundCoroutine != null)
+                        StopCoroutine(fadeBackgroundCoroutine);
+
+                    fadeBackgroundCoroutine = StartCoroutine(FadeInBackground());
+                }
+
+                lastBackground = newBackground;
+            }
+            else
+            {
+                backgroundImage.sprite = newBackground;
+            }
+
             Sprite newSprite = dialogues[dialogueIndex].char_sprite;
+
+            bool vaiDarFade = dialogues[dialogueIndex].fadeInCharacter;
 
             if (newSprite != lastSprite)
             {
                 sprite.GetComponent<Image>().sprite = newSprite;
-                StartCoroutine(FadeInSprite());
+
+                if (vaiDarFade)
+                    StartCoroutine(FadeInSprite());
+
                 lastSprite = newSprite;
             }
             else
@@ -384,4 +425,24 @@ public class DialogueHandler : MonoBehaviour
 
         cg.alpha = 1f;
     }
+
+    IEnumerator FadeInBackground(float duration = 0.75f)
+    {
+        CanvasGroup cg = canvas.GetComponent<CanvasGroup>();
+        if (cg == null)
+            cg = canvas.AddComponent<CanvasGroup>();
+
+        cg.alpha = 0f;
+        float t = 0f;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(0f, 1f, t / duration);
+            yield return null;
+        }
+
+        cg.alpha = 1f;
+    }
+
 }

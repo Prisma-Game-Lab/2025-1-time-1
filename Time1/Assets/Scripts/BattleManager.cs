@@ -76,7 +76,7 @@ public class BattleManager : MonoBehaviour
     private int turn = 1;
     private const int maxTurns = 4;
 
-    private bool podePausar = false;
+    public bool podePausar = false;
 
     private bool opponentVulnerable = false;
      

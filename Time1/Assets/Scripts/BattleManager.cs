@@ -47,6 +47,7 @@ public class DialogOption
 public class BattleManager : MonoBehaviour
 {
     [SerializeField] private string winScene;
+    [SerializeField] private string loseScene;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject setaSelecionada;
     [SerializeField] private GameObject setaAvanco;
@@ -842,6 +843,6 @@ public class BattleManager : MonoBehaviour
             winScene = "Menu";
         }
         
-        SceneManager.LoadScene(winScene);
+        SceneManager.LoadScene(loseScene);
     }
 }

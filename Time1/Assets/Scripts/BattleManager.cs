@@ -26,6 +26,13 @@ public enum TipoFala
     negativo
 }
 
+public enum Pretendente
+{
+    Nerd,
+    Rebelde,
+    Ator
+}
+
 [System.Serializable]
 public class DialogOption
 {
@@ -106,8 +113,11 @@ public class BattleManager : MonoBehaviour
 
     private List<IconData> activeIcons = new List<IconData>();
 
-    private enum Pretendente { Nerd, Rebelde, Ator }
+    [SerializeField]
+    private Pretendente pretendenteSelecionado = Pretendente.Nerd;
+
     private Pretendente pretendenteAtual;
+
 
     private int botaoSelecionado = 0;
     private bool aguardandoAvanco = false;
@@ -126,6 +136,7 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
+        pretendenteAtual = pretendenteSelecionado;
         AudioManager.instance.StopSound("MenuMusic");
         AudioManager.instance.PlaySound("BattleMusic");
 
@@ -141,7 +152,8 @@ public class BattleManager : MonoBehaviour
             itemViewerCamera.enabled = false;
         }
 
-        pretendenteAtual = Pretendente.Rebelde;
+        pretendenteAtual = pretendenteSelecionado;
+
         AdicionarIcones(10);
     }
 

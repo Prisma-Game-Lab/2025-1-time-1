@@ -662,37 +662,39 @@ MonoBehaviour:
   filterBackgroundImage: {fileID: 198554187}
   iconPrefab: {fileID: 7780794242681910549, guid: e8af20497adc1ce4ba8ec1c6d946580f, type: 3}
   iconsContainer: {fileID: 1662570469}
-  nerdIcons: []
-  rebelIcons:
-  - {fileID: 21300000, guid: 697102ee4c123f942ad8cfe0d950c6f8, type: 3}
+  nerdIcons:
+  - {fileID: 21300000, guid: ea8fdde7074d7fa48930d838d794ca92, type: 3}
+  - {fileID: 21300000, guid: fd647f345fab1944da3284b670d752af, type: 3}
+  - {fileID: 21300000, guid: 1c2b16599973f61458be80660b836a4f, type: 3}
+  - {fileID: 21300000, guid: 23ff0b6cd5fca3c42afad968d4ef953a, type: 3}
+  rebelIcons: []
   actorIcons: []
-  pretendenteSelecionado: 1
+  pretendenteSelecionado: 0
   opcoesDeDialogo:
   - tipo: 0
-    fala: Elogiar a maquiagem dele
-    resposta: "Voc\xEA elogia a maquiagem do Dummy\u2026\r\nSua amiga n\xE3o resiste
-      e fala que foi ela quem fez\r"
+    fala: Pedir ajuda nos estudos
+    resposta: "Voc\xEA pede ajuda com os estudos\r\nOs \xF3culos dele brilham em
+      empolga\xE7\xE3o \r"
   - tipo: 0
-    fala: Elogiar sua peruca
-    resposta: "Voc\xEA fala que nunca viu um cabelo como o de Dummy\u2026\r\nUm vento
-      bate na peruca\u2026 \r\nMas ela se mant\xE9m firme e forte!\r"
+    fala: "Falar que o irm\xE3o verde \xE9 melhor do que o vermelho"
+    resposta: "Voc\xEA fala que o irm\xE3o verde \xE9 o melhor dos dois\r\nEle fica
+      impressionado com sua sabedoria"
   - tipo: 0
-    fala: "Fazer um cora\xE7\xE3o de volta para ele"
-    resposta: "Voc\xEA faz um cora\xE7\xE3o com as m\xE3os\u2026\r\nO Dummy nunca
-      viu algu\xE9m imitando ele t\xE3o bem quanto voc\xEA!\r"
+    fala: Oferecer seu lanche para ele
+    resposta: "Voc\xEA tenta dividir seu lanche com ele\r\nEle parece relutante em
+      aceitar at\xE9 que o est\xF4mago dele diz o contr\xE1rio"
   - tipo: 0
-    fala: "Cham\xE1-lo para sair"
-    resposta: "Voc\xEA convida o Dummy para sair depois da aula\u2026\r\nEle concorda
-      em sil\xEAncio\u2026\r\nOu ao menos \xE9 o que voc\xEA acha que aconteceu\r"
+    fala: Falar sobre um jogo desconhecido
+    resposta: "Voc\xEA tenta inventar um jogo desconhecido e se mostrar\r\nMisteriosamente
+      1% Suco de Ma\xE7\xE3 \xE9 um dos jogos favoritos dele!\r"
   - tipo: 0
-    fala: Sorrir
-    resposta: "Voc\xEA sorri para o Dummy\u2026\r\nE voc\xEA jura que ele sorriu
-      de volta\r"
+    fala: Falar sobre as estrelas
+    resposta: "Voc\xEA fala que gosta de ver o c\xE9u estrelado durante a noite\r\nEle
+      se empolga bastante e come\xE7a a contar fatos aleat\xF3rios sobre o espa\xE7o"
   - tipo: 0
-    fala: "Encar\xE1-lo profundamente"
-    resposta: "Voc\xEA encara o Dummy no fundo de seus olhos de pano\u2026\r\nEle
-      retribui com um olhar de intensidade equivalente\u2026\r\nVoc\xEAs parecem
-      se entender como ningu\xE9m!\r"
+    fala: "Abra\xE7\xE1-lo"
+    resposta: "Voc\xEA d\xE1 um abra\xE7o nele\r\nO golpe parece ter sido efetivo
+      at\xE9 demais!\r\nEle ficou sem rea\xE7\xE3o!"
   - tipo: 1
     fala: Olhar mais de perto
     resposta: "Voc\xEA se aproxima do dummy\u2026\r\nVoc\xEA sente que suas bochechas
@@ -703,46 +705,65 @@ MonoBehaviour:
     resposta: "Voc\xEA pergunta se ele vem sempre aqui\u2026\r\nVoc\xEA percebe que
       ele n\xE3o consegue sair do lugar\r"
   - tipo: 1
-    fala: "Ficar em sil\xEAncio"
-    resposta: "Voc\xEA fica em sil\xEAncio\u2026\r\nE o Dummy tamb\xE9m\u2026\r\nE
-      voc\xEA v\xEA sua amiga acenando para voc\xEA!\r"
+    fala: "Encar\xE1-lo profundamente\r"
+    resposta: "Voc\xEA o encara profundamente\u2026\r\nO reflexo do Sol em seus \xF3culos
+      atrapalha seu ataque"
   - tipo: 1
-    fala: Tentar reagir ao que ele vai dizer
-    resposta: "Voc\xEA espera para fazer um contra-ataque\u2026\r\nMas voc\xEA percebe
-      que ele n\xE3o fala nada! (O que voc\xEA esperava?)\r"
+    fala: 'Perguntar sobre suas notas
+
+'
+    resposta: "Voc\xEA pergunta como ele est\xE1 indo nas provas\r\nEle fala que
+      est\xE1 indo bem\u2026 e voc\xEAs n\xE3o falam mais nada"
   - tipo: 1
-    fala: "Perguntar se o pai dele \xE9 padeiro"
-    resposta: "Voc\xEA tenta fazer uma cantada brega\u2026\r\nParece que ele j\xE1
-      escutou essa v\xE1rias vezes e fica em sil\xEAncio total\r"
+    fala: "Ficar em sil\xEAncio\r\n"
+    resposta: "Voc\xEA fica em sil\xEAncio\u2026\r\nEle n\xE3o aguenta o sil\xEAncio
+      constrangedor e volta o olhar para seu videogame"
   - tipo: 1
-    fala: "Pedir n\xFAmero de telefone"
-    resposta: "Voc\xEA pede o n\xFAmero do Whatsapp dele\u2026\r\nVoc\xEA percebe
-      que talvez dummies n\xE3o tenham acesso \xE0 telefones\r"
+    fala: 'Perguntar sobre faculdade
+
+'
+    resposta: "Voc\xEA pergunta para ele qual faculdade ele pretende cursar no futuro\r\nEle
+      fica sem resposta, essa pergunta n\xE3o \xE9 f\xE1cil pra ningu\xE9m"
+  - tipo: 1
+    fala: "Dar um aperto de m\xE3o\r\n"
+    resposta: "Voc\xEA d\xE1 um aperto de m\xE3o nele\r\n\u2026\r\n\u2026\r\nPor
+      quanto tempo voc\xEA pretende ficar segurando a m\xE3o dele!?"
+  - tipo: 1
+    fala: 'Perguntar sobre grade de aulas
+
+      
+
+'
+    resposta: "Voc\xEA pergunta sobre os hor\xE1rios de aula dele...\r\nAcho que
+      ele j\xE1 foi stalkeado o suficiente "
   - tipo: 2
-    fala: Dar um apelido carinhoso a ele
-    resposta: "Voc\xEA chama o Dummy de Luvy\u2026\r\nVoc\xEA percebe que algu\xE9m
-      tenta segurar o riso mas n\xE3o consegue\r"
+    fala: 'Perguntar o signo dele
+
+'
+    resposta: "Voc\xEA pergunta qual o signo dele\r\nO clima ficou pesado\u2026"
   - tipo: 2
-    fala: "Perguntar como est\xE3o as notas dele"
-    resposta: "Voc\xEA pergunta como o Dummy est\xE1 indo nas provas\u2026 \nVoc\xEA
-      escuta algu\xE9m falando em uma voz de choro que vai dar o seu melhor "
+    fala: "Fazer uma refer\xEAncia \xE0 Guerras Estelares\r\n\r\n"
+    resposta: "Voc\xEA faz uma refer\xEAncia \xE0 Guerras Estelares\r\nEle come\xE7a
+      a explicar detalhadamente o motivo do som n\xE3o se propagar no espa\xE7o \t"
   - tipo: 2
-    fala: "Pedir ajuda \xE0 sua amiga"
-    resposta: "Voc\xEA pede ajuda para sua amiga\u2026\r\nEla elogia a sua apar\xEAncia\u2026\r\nE
-      foi efetivo!\r"
+    fala: 'Falar algo inteligente
+
+'
+    resposta: "Voc\xEA fala algo que viu nas redes sociais\r\nEle volta a jogar seu
+      videogame depois que voc\xEA questionou teorias j\xE1 provadas"
   - tipo: 2
-    fala: "Dar um aperto de m\xE3o"
-    resposta: "Voc\xEA tenta apertar as m\xE3os dele\u2026\r\nMas voc\xEA desfaz
-      o cora\xE7\xE3o que ele estava fazendo e tenta colocar no lugar antes que algu\xE9m
-      perceba!\r"
+    fala: Falar uma curiosidade
+    resposta: "Voc\xEA aponta para um formigueiro pr\xF3ximo e come\xE7a a falar
+      coisas sobre formigas\r\nVoc\xEA percebe que ele est\xE1 tremendo de medo desde
+      que voc\xEA apontou o formigueiro"
   - tipo: 2
-    fala: Ajeitar a peruca
-    resposta: "Voc\xEA tenta fazer carinho na peruca dele\r\nMas voc\xEA sem querer
-      desfaz os cachos e deixa ele mais bagun\xE7ado ainda!\r"
+    fala: Perguntar sobre roupas
+    resposta: "Voc\xEA pergunta onde ele comprou suas roupas\nEle parece confuso
+      e diz que esse \xE9 o uniforme da escola"
   - tipo: 2
-    fala: Dar um presente
-    resposta: "Voc\xEA tira uma florzinha da sua mochila e professa seu amor ao dummy\u2026\r\nEle
-      n\xE3o esbanja nenhuma rea\xE7\xE3o\r\nTalvez seja cedo demais para isso\u2026\r"
+    fala: "Experimentar \xF3culos"
+    resposta: "Voc\xEA rouba os \xF3culos dele e os coloca na sua cara\nEle fica
+      furioso, mas de um jeito inofensivo"
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0
@@ -1314,7 +1335,7 @@ PrefabInstance:
     - target: {fileID: 7863703723105141231, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d86a1ea9017d6d148bc38a91d1e75a8b, type: 3}
+      objectReference: {fileID: 21300000, guid: e21113c14bb775440963dc4434c06881, type: 3}
     - target: {fileID: 8110090933160440526, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2503,7 +2524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e7af51f9f825cdb4ebd2f08ff6e3ccca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2704,7 +2725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6432e7aa62427c1469dc586b667e5080, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17ed3a71052952d4c87d6bd34e8490d6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2968,19 +2989,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223209242856282813, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1223209242856282813, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1223209242856282813, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1223209242856282813, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -262.5
       objectReference: {fileID: 0}
     - target: {fileID: 3008853085440127517, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2996,19 +3017,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3136173065040630115, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3136173065040630115, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3136173065040630115, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3136173065040630115, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -182.5
       objectReference: {fileID: 0}
     - target: {fileID: 3241393444318828506, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3060,35 +3081,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7543147490924841716, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7543147490924841716, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7543147490924841716, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7543147490924841716, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -102.5
       objectReference: {fileID: 0}
     - target: {fileID: 7945538555910169707, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7945538555910169707, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7945538555910169707, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7945538555910169707, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -22.5
       objectReference: {fileID: 0}
     - target: {fileID: 7996232090511770406, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_Pivot.x
@@ -3192,7 +3213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8855721161062423333, guid: 01b02e1b624beb746a141d90fadc78b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3270,7 +3291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8a88ad1d64bcf814a9cf6532ca85bb60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68e93567acd280a409be85e3530d80b4, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1

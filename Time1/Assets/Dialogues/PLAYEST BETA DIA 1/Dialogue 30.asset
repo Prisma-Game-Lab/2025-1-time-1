@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 705507f9e2cec394687230468a03fafe, type: 3}
   fadeInBackground: 0
   text: (Eu vou SURTAR)
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: ff596111a2ec06e47b725a95f8691e33, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 30

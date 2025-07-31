@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 705507f9e2cec394687230468a03fafe, type: 3}
   fadeInBackground: 0
   text: 'AAAAAAAH! '
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 92079b4bd0af0ef4dad370a90bfdb2ad, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 32

@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Da\xED eu filtrei as suas op\xE7\xF5es pras tr\xEAs que mais combinassem
     com a sua personalidade."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 56

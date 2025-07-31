@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Seu pr\xF3ximo pretendente j\xE1 vai ser uma pessoa, ent\xE3o \xE9 bom que
     voc\xEA realmente se prepare pra n\xE3o passar essa vergonha de novo."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: c2b73a49493ac7b45a2c0cb619de78df, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 1000

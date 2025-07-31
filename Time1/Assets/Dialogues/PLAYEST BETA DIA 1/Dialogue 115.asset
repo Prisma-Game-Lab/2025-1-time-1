@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Ent\xE3o basicamente voc\xEA quer que eu finja que esse manequim a\xED tem
     vida e que eu\u2026 paquere ele?????"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 26c5782e112f713458021668719979a0, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 115

@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 705507f9e2cec394687230468a03fafe, type: 3}
   fadeInBackground: 0
   text: "Eu sei, incr\xEDvel n\xE9? Voc\xEA \xE9 muito previs\xEDvel, t\xE1?"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 2479e03fd9983b942b7250d27ae1288f, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 38

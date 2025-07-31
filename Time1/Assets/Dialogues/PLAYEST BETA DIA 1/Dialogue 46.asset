@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Vamos falar sobre o que realmente importa, n\xE3o t\xE1 tipo, perfeito??
     Eu j\xE1 pensei em tudo."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 6f38d7d5e929f884da58909122070a96, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 46

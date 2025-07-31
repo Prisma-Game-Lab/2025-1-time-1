@@ -405,6 +405,11 @@ public class DialogueHandler : MonoBehaviour
         showLog();
     }
 
+    public void loadNextScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
     IEnumerator FadeInSprite(float duration = 0.75f)
     {
         if (sprite == null) yield break;

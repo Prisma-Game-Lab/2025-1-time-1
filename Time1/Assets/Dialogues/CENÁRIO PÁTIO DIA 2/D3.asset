@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
+  m_Name: D3
+  m_EditorClassIdentifier: 
+  background: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
+  fadeInBackground: 0
+  text: "Quantas pessoas voc\xEA teve que chutar e empurrar pra conseguir isso?"
+  char_sprite: {fileID: 21300000, guid: 26c5782e112f713458021668719979a0, type: 3}
+  fadeInCharacter: 0
+  char_name: Anna
+  next: 4
+  chapter_end: 0
+  options: 0
+  option: []
+  hasReward: 0

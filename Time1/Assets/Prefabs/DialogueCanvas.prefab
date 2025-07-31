@@ -234,15 +234,15 @@ RectTransform:
   m_GameObject: {fileID: 714107444531802777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8, y: 2.16, z: 1}
+  m_LocalScale: {x: 2.4, y: 2.16, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6583441592058200707}
-  m_Father: {fileID: 3512454122619912023}
+  m_Father: {fileID: 5452507927413488871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -139, y: 36}
+  m_AnchoredPosition: {x: -185.33334, y: 36}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9106387917508203967
@@ -2259,6 +2259,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5121157865273668656}
+  - {fileID: 8085888337991161582}
+  - {fileID: 8853395815421242507}
   m_Father: {fileID: 3512454122619912023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -3673,6 +3675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: 
   saveManager: {fileID: 8979481643888529573}
+  pauseMenu: {fileID: 0}
   canvas: {fileID: 8979481643888529573}
   sprite: {fileID: 8509682465591373224}
   dialogue: {fileID: 7890711192116493592}
@@ -6779,15 +6782,15 @@ RectTransform:
   m_GameObject: {fileID: 8147884743211067126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8, y: 2.16, z: 1}
+  m_LocalScale: {x: 2.4, y: 2.16, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1447600944326515119}
-  m_Father: {fileID: 3512454122619912023}
+  m_Father: {fileID: 5452507927413488871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 175, y: 36}
+  m_AnchoredPosition: {x: 233.33334, y: 36}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5996044668907481693
@@ -6915,8 +6918,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5452507927413488871}
-  - {fileID: 8085888337991161582}
-  - {fileID: 8853395815421242507}
   - {fileID: 9107521371186183463}
   - {fileID: 1688692351374064880}
   - {fileID: 834980299087422265}

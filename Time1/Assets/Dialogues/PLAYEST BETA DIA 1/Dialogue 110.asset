@@ -20,7 +20,7 @@ MonoBehaviour:
   char_name: Anna
   next: 0
   chapter_end: 0
-  options: 0
+  options: 1
   option:
   - opText: Talvez?
     next: 110

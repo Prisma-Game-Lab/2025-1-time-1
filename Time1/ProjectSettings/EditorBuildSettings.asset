@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Beta/Capitulo1.1.unity
     guid: 43e6c065ace622345b24cf6ed431ecb8
   - enabled: 1
-    path: Assets/Scenes/Playtest/BattlePlaytest.unity
+    path: Assets/Scenes/Beta/BattlePlaytest.unity
     guid: 682c552bb20671d4797a768a2f24ad4e
   - enabled: 1
     path: Assets/Scenes/Beta/Capitulo1.1.1.unity

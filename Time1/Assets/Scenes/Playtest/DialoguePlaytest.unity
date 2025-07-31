@@ -1096,12 +1096,7 @@ MonoBehaviour:
   - {fileID: 197558550}
   - {fileID: 197558549}
   - {fileID: 2032637562}
-  itemTexts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  itemTexts: []
   itemNames:
   - Caixa de bombom
   - Calculadora

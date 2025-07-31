@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
 
-        float volume = AudioManager.globalVolume;
+        float volume = PlayerPrefs.GetFloat("volume", 1f); 
         volumeSlider.value = volume;
         fullscreenToggle.isOn = Screen.fullScreen;
 
@@ -91,6 +91,7 @@ public class PauseMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         AudioManager.instance.SetMusicVolume(volume);
+        PlayerPrefs.SetFloat("volume", volume); 
     }
 
     public void SetFullscreen(bool isFullscreen)

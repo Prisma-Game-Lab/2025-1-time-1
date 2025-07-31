@@ -3,90 +3,80 @@ using UnityEngine.Events;
 
 public class Item3DViewer : MonoBehaviour
 {
-    [Header("Visualização do Item 3D")]
-    public Camera viewerCamera; // Câmera auxiliar
-    public Transform itemHolder; // Empty no centro da cena/câmera
-    public float rotationSpeed = 500f;
-    public float viewDuration = 7f; // Tempo de exibição (padrão 7s)
-    public UnityEvent onViewFinished; // Evento chamado ao terminar
-    public GameObject mainCanvas; // Referência ao Canvas principal (Canvas 1)
+    [Header("Configuração de Visualização")]
+    public Transform itemHolder; // Onde os itens 3D estão
+    public float rotationSpeed = 100f;
+    public float viewDuration = 5f;
+    public UnityEvent onViewFinished;
 
-    private GameObject currentItemInstance;
-    private Vector3 lastMousePosition;
+    private GameObject currentItem;
     private float timer;
     private bool isViewing = false;
 
     void Awake()
     {
-        // Garante que todos os filhos estejam desativados ao iniciar
-        if (itemHolder != null && itemHolder.childCount > 0)
-        {
-            foreach (Transform child in itemHolder)
-                child.gameObject.SetActive(false);
-        }
+        DesativarTodosOsItens();
+        gameObject.SetActive(false); // Viewer começa invisível
     }
 
     public void ShowItem(string itemName)
     {
-        if (itemHolder == null || viewerCamera == null || mainCanvas == null)
-        {
-            Debug.LogError("Item3DViewer: Referências não atribuídas!");
-            return;
-        }
-        // Desativa todos os filhos
-        foreach (Transform child in itemHolder)
-            child.gameObject.SetActive(false);
+        DesativarTodosOsItens();
 
-        // Procura o filho pelo nome
         Transform item = itemHolder.Find(itemName);
         if (item != null)
         {
-            currentItemInstance = item.gameObject;
-            currentItemInstance.SetActive(true);
+            currentItem = item.gameObject;
+            currentItem.SetActive(true);
         }
         else
         {
-            Debug.LogError("Item3DViewer: Item não encontrado: " + itemName);
+            Debug.LogWarning("Item3DViewer: Item não encontrado: " + itemName);
+            onViewFinished?.Invoke(); // Avança mesmo sem item
             return;
         }
+
         timer = 0f;
         isViewing = true;
-        gameObject.SetActive(true);
-        mainCanvas.SetActive(false);
+        gameObject.SetActive(true); // Ativa o objeto que contém o viewer
     }
 
     void Update()
     {
         if (!isViewing) return;
-        timer += Time.unscaledDeltaTime;
+
+        timer += Time.deltaTime;
+
+        if (currentItem != null)
+        {
+            currentItem.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
+        }
+
         if (timer >= viewDuration)
         {
-            isViewing = false;
             HideItem();
-            onViewFinished?.Invoke();
-            return;
-        }
-        RotateAutomatically();
-    }
-
-    void RotateAutomatically()
-    {
-        if (currentItemInstance != null)
-        {
-            // Rotaciona continuamente no eixo Y
-            currentItemInstance.transform.Rotate(Vector3.up, rotationSpeed * Time.unscaledDeltaTime, Space.World);
         }
     }
 
     public void HideItem()
     {
-        if (currentItemInstance != null)
+        if (currentItem != null)
         {
-            currentItemInstance.SetActive(false);
+            currentItem.SetActive(false);
         }
+
         isViewing = false;
         gameObject.SetActive(false);
-        if (mainCanvas != null)
-            mainCanvas.SetActive(true); // Reativa o Canvas principal
+        onViewFinished?.Invoke();
     }
-} 
+
+    private void DesativarTodosOsItens()
+    {
+        if (itemHolder == null) return;
+
+        foreach (Transform child in itemHolder)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+}

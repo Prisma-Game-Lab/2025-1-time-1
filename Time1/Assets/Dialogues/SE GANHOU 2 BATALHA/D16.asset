@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D16
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
   fadeInBackground: 0
   text: "Um dia eu terei mais alunos, e da\xED voc\xEA vai ter que lutar por esse
     posto que n\xE3o t\xE1 valorizando agora."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 17

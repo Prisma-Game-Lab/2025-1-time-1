@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D4
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
   text: "(Uma menina parece que vai desmaiar, um garoto tenta tirar uma selfie com
     o que quer que seja que t\xE1 causando esse alvoro\xE7o\u2026) "

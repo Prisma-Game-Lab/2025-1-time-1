@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D5
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
   text: "(E a\xED eu vejo o que \xE9) "
-  char_sprite: {fileID: 0}
-  fadeInCharacter: 0
+  char_sprite: {fileID: 21300000, guid: 3dabe47d879955e4e86cacc0de8d3c27, type: 3}
+  fadeInCharacter: 1
   char_name: Anna
   next: 6
   chapter_end: 0

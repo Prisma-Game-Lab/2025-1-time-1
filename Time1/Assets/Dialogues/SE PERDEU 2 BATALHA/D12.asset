@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D12
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
   fadeInBackground: 0
   text: "Mas parece. \xC9 tipo, o fim da minha vida social."
   char_sprite: {fileID: 0}

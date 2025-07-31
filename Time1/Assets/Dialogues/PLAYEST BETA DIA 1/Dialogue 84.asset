@@ -17,7 +17,7 @@ MonoBehaviour:
   text: "Calma a\xED Hana. Voc\xEA n\xE3o percebeu que em tr\xEAs minutos voc\xEA
     basicamente definiu o que vai acontecer na minha vida nos pr\xF3ximos TR\xCAS
     DIAS? "
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 84

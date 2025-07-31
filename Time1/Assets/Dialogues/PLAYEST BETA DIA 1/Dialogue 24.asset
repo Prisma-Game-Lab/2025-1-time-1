@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "T\xE1, na real eu vou, mas s\xF3 porque eu realmente poderia ficar falando
     desse baile por horas."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: ff596111a2ec06e47b725a95f8691e33, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 24

@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Ir pro baile com algum deles, conseguir se divertir de verdade e tirar \xF3timas
     fotinhos para eu poder imprimir tudo e colocar no meu \xE1lbum de fotos."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 63

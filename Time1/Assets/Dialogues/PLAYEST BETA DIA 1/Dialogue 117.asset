@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: Dialogue 117
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: e7af51f9f825cdb4ebd2f08ff6e3ccca, type: 3}
+  background: {fileID: 0}
   fadeInBackground: 0
-  text: "N\xE3o."
-  char_sprite: {fileID: 0}
+  text: "Mas \xE9, \xE9 isso mesmo. E a\xED, pronta?"
+  char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
-  char_name: Anna
+  char_name: Hana
   next: 117
   chapter_end: 0
   options: 0

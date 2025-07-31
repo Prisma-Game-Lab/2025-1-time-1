@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Agora s\xF3 resta voc\xEA seguir meu plano e torcer muito pra que milagrosamente
     voc\xEA vire uma paqueradora genial"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: c2b73a49493ac7b45a2c0cb619de78df, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 1000

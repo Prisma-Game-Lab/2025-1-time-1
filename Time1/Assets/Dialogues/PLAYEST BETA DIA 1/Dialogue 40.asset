@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "TUTORIAL INFAL\xCDVEL DE COMO ROUBAR TODOS OS CORA\xC7\xD5ES DA ESCOLA EM
     MENOS DE TR\xCAS DIAS DA HANA"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 6f38d7d5e929f884da58909122070a96, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 40

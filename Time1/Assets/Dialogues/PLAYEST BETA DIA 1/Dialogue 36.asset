@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "EU, conhecendo muito bem VOC\xCA, e sua mania de deixar tudo pra \xFAltima
     hora, criei um plano perfeito caso isso viesse a acontecer. "
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 2479e03fd9983b942b7250d27ae1288f, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 36

@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Apenas digamos que voc\xEA com certeza vai precisar de mais do que o que
     quer que seja que voc\xEA tentou fazer agora."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: c2b73a49493ac7b45a2c0cb619de78df, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 11

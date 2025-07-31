@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: e7af51f9f825cdb4ebd2f08ff6e3ccca, type: 3}
   fadeInBackground: 0
   text: "Como voc\xEA pode ser t\xE3o ruim flertando com algo QUE NEM FALA?"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: c2b73a49493ac7b45a2c0cb619de78df, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 3

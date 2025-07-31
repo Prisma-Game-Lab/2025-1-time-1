@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Voc\xEA vai ter que falar com os tr\xEAs nos pr\xF3ximos tr\xEAs dias, conquistar
     o cora\xE7\xE3o deles e conseguir convidar ou ser convidada pro baile. "
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 59

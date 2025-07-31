@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 705507f9e2cec394687230468a03fafe, type: 3}
   fadeInBackground: 0
   text: "Aham\u2026 Como voc\xEA arranjou tempo pra montar esse esquema?"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 6f38d7d5e929f884da58909122070a96, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 50

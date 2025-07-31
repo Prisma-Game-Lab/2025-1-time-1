@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "(Ela \xE9 cheia de glitter, setas, imagens tiradas desses aplicativos para
     inspira\xE7\xE3o)"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 6f38d7d5e929f884da58909122070a96, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 42

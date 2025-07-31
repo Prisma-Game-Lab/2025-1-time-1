@@ -715,7 +715,7 @@ MonoBehaviour:
     resposta: "Voc\xEA pergunta como ele est\xE1 indo nas provas\r\nEle fala que
       est\xE1 indo bem\u2026 e voc\xEAs n\xE3o falam mais nada"
   - tipo: 1
-    fala: "Ficar em sil\xEAncio\r\n"
+    fala: "Ficar em sil\xEAncio\r"
     resposta: "Voc\xEA fica em sil\xEAncio\u2026\r\nEle n\xE3o aguenta o sil\xEAncio
       constrangedor e volta o olhar para seu videogame"
   - tipo: 1
@@ -725,24 +725,18 @@ MonoBehaviour:
     resposta: "Voc\xEA pergunta para ele qual faculdade ele pretende cursar no futuro\r\nEle
       fica sem resposta, essa pergunta n\xE3o \xE9 f\xE1cil pra ningu\xE9m"
   - tipo: 1
-    fala: "Dar um aperto de m\xE3o\r\n"
+    fala: "Dar um aperto de m\xE3o\r"
     resposta: "Voc\xEA d\xE1 um aperto de m\xE3o nele\r\n\u2026\r\n\u2026\r\nPor
       quanto tempo voc\xEA pretende ficar segurando a m\xE3o dele!?"
   - tipo: 1
-    fala: 'Perguntar sobre grade de aulas
-
-      
-
-'
+    fala: Perguntar sobre grade de aulas
     resposta: "Voc\xEA pergunta sobre os hor\xE1rios de aula dele...\r\nAcho que
       ele j\xE1 foi stalkeado o suficiente "
   - tipo: 2
-    fala: 'Perguntar o signo dele
-
-'
+    fala: Perguntar o signo dele
     resposta: "Voc\xEA pergunta qual o signo dele\r\nO clima ficou pesado\u2026"
   - tipo: 2
-    fala: "Fazer uma refer\xEAncia \xE0 Guerras Estelares\r\n\r\n"
+    fala: "Fazer uma refer\xEAncia \xE0 Guerras Estelares\r"
     resposta: "Voc\xEA faz uma refer\xEAncia \xE0 Guerras Estelares\r\nEle come\xE7a
       a explicar detalhadamente o motivo do som n\xE3o se propagar no espa\xE7o \t"
   - tipo: 2
@@ -2049,6 +2043,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6860368037619009743, guid: 9060aa0cc19130a4b841c6dfbecbaccd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 00f5855af72726a42a1c3f0b29c2cae8, type: 3}
     - target: {fileID: 8361773959806727980, guid: 9060aa0cc19130a4b841c6dfbecbaccd, type: 3}
       propertyPath: m_Name
       value: LoadSelect

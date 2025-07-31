@@ -311,7 +311,7 @@ public class BattleManager : MonoBehaviour
         switch (pretendenteAtual)
         {
             case Pretendente.Nerd:
-                cor = new Color(1f, 0.5f, 0f, 0.25f);
+                cor = new Color(1f, 0.372f, 0.082f, 0.25f);
                 iconsArray = nerdIcons;
                 break;
             case Pretendente.Rebelde:

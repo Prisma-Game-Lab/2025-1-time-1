@@ -12,6 +12,7 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private GameObject dialogueScene;
     [SerializeField] private TextMeshProUGUI[] saveName;
     [SerializeField] private TextMeshProUGUI[] loadName;
+    [SerializeField] private string currChapter;
     [SerializeField] private string nextChapter;
     private string[] filePath = new string[3];
     public bool chapterEnd = false;

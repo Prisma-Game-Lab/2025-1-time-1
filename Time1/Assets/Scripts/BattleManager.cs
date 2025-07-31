@@ -800,8 +800,7 @@ public class BattleManager : MonoBehaviour
         {
             itemViewerPanel.SetActive(true);
             itemViewer.gameObject.SetActive(true);
-            mainCamera.enabled = false;
-            itemViewerCamera.enabled = true;
+            
             itemViewer.onViewFinished.RemoveAllListeners();
             itemViewer.onViewFinished.AddListener(OnRewardViewFinished);
 
@@ -830,8 +829,7 @@ public class BattleManager : MonoBehaviour
             Debug.LogWarning("winScene not set in BattleManager! Defaulting to 'Menu'");
             winScene = "Menu";
         }
-        mainCamera.enabled = true;
-        itemViewerCamera.enabled = false;
+        
         SceneManager.LoadScene(winScene);
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
   fadeInBackground: 0
   text: "Eu acho que j\xE1 podem me matar."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 5

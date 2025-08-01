@@ -19,7 +19,7 @@ MonoBehaviour:
   fadeInCharacter: 0
   char_name: 
   next: 1000
-  chapter_end: 0
+  chapter_end: 1
   options: 0
   option: []
   hasReward: 0

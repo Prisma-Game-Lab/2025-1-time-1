@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D156
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
   fadeInBackground: 0
   text: "(Acho que t\xE1 na hora de colocar os ensinamentos da Hana em a\xE7\xE3o.
     Quem sabe quando vou poder de novo? Aqui vou eu\u2026)"

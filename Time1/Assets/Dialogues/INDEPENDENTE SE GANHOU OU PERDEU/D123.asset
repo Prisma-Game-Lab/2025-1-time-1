@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "(Eu me levanto e vou andando em dire\xE7\xE3o ao Henrique, meio como quem
     n\xE3o quer nada)."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 124

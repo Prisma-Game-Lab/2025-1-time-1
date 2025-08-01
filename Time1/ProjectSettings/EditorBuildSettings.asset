@@ -29,4 +29,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beta/Capitulo1.1.1.unity
     guid: 43ef794163272674db46f97c325b9392
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo1.2.unity
+    guid: 1192dfc5b45d83a42bd82cca41084e55
+  - enabled: 1
+    path: Assets/Scenes/Beta/NerdPlaytest.unity
+    guid: 2f6eb17f3fa798a4d90653ba049430e5
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo1.3.unity
+    guid: 042b1e39a8459f2459463edd56a50f85
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo1.3.1.unity
+    guid: 375b5709db5fd024895e6142bf099a91
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo1.4.unity
+    guid: 190c2073854d80347a762d32e3b24ced
   m_configObjects: {}

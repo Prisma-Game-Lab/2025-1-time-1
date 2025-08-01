@@ -15,12 +15,12 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
   fadeInBackground: 0
   text: 
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
-  char_name: Anna
+  char_name: Henrique
   next: 0
   chapter_end: 0
-  options: 0
+  options: 1
   option:
   - opText: "Oi! Er\u2026 Eu vi seu console caindo mais cedo. Ainda bem que ele sobreviveu
       \xE0 queda n\xE9?"
@@ -29,8 +29,8 @@ MonoBehaviour:
   - opText: " Oi, tudo bem? Eu queria dizer que achei seu projeto da feira de ci\xEAncias
       bem impressionante."
     next: 136
-    reaction: 0
+    reaction: 1
   - opText: "Nossa, quem ainda joga esse jogo? Ele \xE9 tipo, muito antigo."
     next: 146
-    reaction: 0
+    reaction: -1
   hasReward: 0

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DialogueHandler : MonoBehaviour
 {
     [SerializeField] private string nextScene;
+    [SerializeField] private string altScene;
     [SerializeField] private GameObject saveManager;
     [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private GameObject canvas;
@@ -258,6 +259,18 @@ public class DialogueHandler : MonoBehaviour
     {
         AtualizarSetaAvanco(false);
 
+        if (dialogueIndex < 0)
+        {
+            LevelLoader levelLoader = FindObjectOfType<LevelLoader>();
+            if (levelLoader != null)
+            {
+                levelLoader.LoadScene(altScene);
+            }
+            else
+            {
+                SceneManager.LoadScene(altScene);
+            }
+        }
         if (dialogueIndex < dialogues.Length)
         {
             Sprite newBackground = dialogues[dialogueIndex].background;
@@ -375,13 +388,13 @@ public class DialogueHandler : MonoBehaviour
         int idPretendente = 0;
         switch (dialogues[currIndex].char_name)
         {
-            case "Rebelde":
+            case "Rebeca":
                 idPretendente = 0;
                 break;
-            case "Nerd":
+            case "Henrique":
                 idPretendente = 1;
                 break;
-            case "Ator":
+            case "Antoine":
                 idPretendente = 2;
                 break;
         }

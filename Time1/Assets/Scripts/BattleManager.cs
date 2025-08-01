@@ -784,7 +784,7 @@ public class BattleManager : MonoBehaviour
         if (playerHP <= 0)
         {
             feedbackText.text = "Você perdeu a batalha!";
-            StartCoroutine(ReturnToMenuAfterDelay());
+            StartCoroutine(ReturnToMenuAfterDelay(loseScene));
         }
         else if (enemyHP <= 0)
         {
@@ -803,7 +803,7 @@ public class BattleManager : MonoBehaviour
             playerHP = 0;
             AtualizarHP();
             feedbackText.text = "Você perdeu a batalha!";
-            StartCoroutine(ReturnToMenuAfterDelay());
+            StartCoroutine(ReturnToMenuAfterDelay(loseScene));
         }
     }
 
@@ -823,7 +823,7 @@ public class BattleManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"Missing references - itemViewer: {itemViewer}, itemViewerPanel: {itemViewerPanel}");
-            StartCoroutine(ReturnToMenuAfterDelay());
+            StartCoroutine(ReturnToMenuAfterDelay(winScene));
         }
     }
 
@@ -831,10 +831,10 @@ public class BattleManager : MonoBehaviour
     {
         if (itemViewerPanel != null)
             itemViewerPanel.SetActive(false);
-        StartCoroutine(ReturnToMenuAfterDelay());
+        StartCoroutine(ReturnToMenuAfterDelay(winScene));
     }
 
-    IEnumerator ReturnToMenuAfterDelay()
+    IEnumerator ReturnToMenuAfterDelay(string scene)
     {
         yield return new WaitForSeconds(3f);
         if (string.IsNullOrEmpty(winScene))
@@ -843,6 +843,6 @@ public class BattleManager : MonoBehaviour
             winScene = "Menu";
         }
         
-        SceneManager.LoadScene(loseScene);
+        SceneManager.LoadScene(scene);
     }
 }

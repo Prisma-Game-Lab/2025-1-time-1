@@ -636,7 +636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523af05aefca26b4f8ed667cecfd5584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winScene: Menu
+  winScene: Capitulo1.3
+  loseScene: Capitulo1.3.1
   mainCamera: {fileID: 2137212087}
   setaSelecionada: {fileID: 228031990}
   setaAvanco: {fileID: 82623512}

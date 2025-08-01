@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 1
   text: "(Como que se faz pra puxar papo com um desconhecido? Isso n\xE3o deveria
     ser natural?)"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 46

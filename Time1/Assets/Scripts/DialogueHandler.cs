@@ -365,6 +365,17 @@ public class DialogueHandler : MonoBehaviour
         }
     }
 
+    public void selectOption(int index)
+    {
+        options.SetActive(false);
+        dialogueBox.SetActive(true);
+        selectedOptionIndex = index;
+        OnOptionClick(selectedOptionIndex);
+        AudioManager.instance.PlaySound("Click");
+        AtualizarSetaAvanco(true);
+        NextDialogue();
+    }
+
     private void showLog()
     {
         for (int i = 0; i < dialogueLog.Length; ++i)

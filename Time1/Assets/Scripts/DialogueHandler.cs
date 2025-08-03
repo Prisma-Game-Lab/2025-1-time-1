@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class DialogueHandler : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class DialogueHandler : MonoBehaviour
     private TextMeshProUGUI[] buttonTexts;
 
     [SerializeField] private DialogueBox[] dialogues;
+    private List<DialogueBox> dialoguesLog = new List<DialogueBox>();
     public int dialogueIndex = 0;
     public int currIndex = 0;
 
@@ -67,6 +69,7 @@ public class DialogueHandler : MonoBehaviour
         }
 
         currIndex = dialogueIndex;
+        dialoguesLog.Add(dialogues[dialogueIndex]);
         dialogueIndex = dialogues[dialogueIndex].next;
 
         if (itemViewerPanel != null)
@@ -246,7 +249,9 @@ public class DialogueHandler : MonoBehaviour
     void OnOptionClick(int index)
     {
         dialogueIndex = dialogues[currIndex].option[index].next;
+        dialogues[currIndex].text = dialogues[currIndex].option[index].opText;
         addPoints(index);
+        dialoguesLog.Add(dialogues[currIndex]);
 
         if (dialogues[currIndex].hasReward && itemViewer != null && itemViewerPanel != null)
         {
@@ -327,6 +332,7 @@ public class DialogueHandler : MonoBehaviour
                 AtualizarSetaAvanco(false); // N�o mostra a seta de avan�o enquanto op��es est�o abertas
                 return;
             }
+            dialoguesLog.Add(dialogues[dialogueIndex]);
 
             showLog();
 
@@ -381,10 +387,10 @@ public class DialogueHandler : MonoBehaviour
         for (int i = 0; i < dialogueLog.Length; ++i)
         {
             int index = i + (logIndex * 3);
-            if (index < dialogueIndex)
+            if (index < dialoguesLog.Count)
             {
-                dialogueLog[i].text = dialogues[index].text;
-                nameLog[i].text = dialogues[index].char_name;
+                dialogueLog[i].text = dialoguesLog[index].text;
+                nameLog[i].text = dialoguesLog[index].char_name;
             }
             else
             {
@@ -421,7 +427,7 @@ public class DialogueHandler : MonoBehaviour
             logIndex = 0;
             return;
         }
-        if ((logIndex * 3) > (dialogueIndex -1))
+        if ((logIndex * 3) > (dialoguesLog.Count -1))
         {
             logIndex -= 1;
             return;

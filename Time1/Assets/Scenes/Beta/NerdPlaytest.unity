@@ -654,7 +654,7 @@ MonoBehaviour:
   timerBarContainer: {fileID: 745817826}
   leftBarFill: {fileID: 2144729433}
   rightBarFill: {fileID: 1547077441}
-  itemNumber: 1
+  itemNumber: 2
   itemViewer: {fileID: 1001730141}
   itemViewerPanel: {fileID: 1001730139}
   itemPrefab: {fileID: -8679921383154817045, guid: 076585ec0307341ee8b41ca2b4f4476d, type: 3}
@@ -727,8 +727,8 @@ MonoBehaviour:
       fica sem resposta, essa pergunta n\xE3o \xE9 f\xE1cil pra ningu\xE9m"
   - tipo: 1
     fala: "Dar um aperto de m\xE3o\r"
-    resposta: "Voc\xEA d\xE1 um aperto de m\xE3o nele\r\n\u2026\r\n\u2026\r\nPor
-      quanto tempo voc\xEA pretende ficar segurando a m\xE3o dele!?"
+    resposta: "Voc\xEA d\xE1 um aperto de m\xE3o nele\r\n\u2026\r\r\nPor quanto tempo
+      voc\xEA pretende ficar segurando a m\xE3o dele!?"
   - tipo: 1
     fala: Perguntar sobre grade de aulas
     resposta: "Voc\xEA pergunta sobre os hor\xE1rios de aula dele...\r\nAcho que
@@ -1037,7 +1037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5114713306410300922, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
       propertyPath: m_text
-      value: Dummy
+      value: Henrique
       objectReference: {fileID: 0}
     - target: {fileID: 5114713306410300922, guid: d6d8ee7cfa7699a43a697f16a8a3c5a6, type: 3}
       propertyPath: m_fontSize

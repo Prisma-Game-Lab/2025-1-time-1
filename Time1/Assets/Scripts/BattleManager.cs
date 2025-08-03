@@ -70,11 +70,7 @@ public class BattleManager : MonoBehaviour
     private bool escolhaFeita = false;
 
     [Header("Reward System")]
-    [SerializeField] private int itemNumber;
     [SerializeField] private Item3DViewer itemViewer;
-    [SerializeField] private GameObject itemViewerPanel;
-    [SerializeField] private Transform itemPrefab;
-    [SerializeField] private Camera itemViewerCamera;
 
     private TextMeshProUGUI[] buttonTexts;
 
@@ -147,11 +143,7 @@ public class BattleManager : MonoBehaviour
         AtualizarHP();
         StartCoroutine(IniciarPrimeiraFala());
 
-        if (itemViewerPanel != null)
-        {
-            itemViewerPanel.SetActive(false);
-            itemViewerCamera.enabled = false;
-        }
+        // Item3DViewer será ativado quando necessário
 
         pretendenteAtual = pretendenteSelecionado;
 
@@ -809,28 +801,20 @@ public class BattleManager : MonoBehaviour
 
     void ShowRewardItem()
     {
-        if (itemViewer != null && itemViewerPanel != null)
+        if (itemViewer != null)
         {
-            itemViewerPanel.SetActive(true);
-            itemViewer.gameObject.SetActive(true);
-            
-            itemViewer.onViewFinished.RemoveAllListeners();
-            itemViewer.onViewFinished.AddListener(OnRewardViewFinished);
-
             // Exemplo: mostrar o bombom
             itemViewer.ShowItem("bombom");
         }
         else
         {
-            Debug.LogWarning($"Missing references - itemViewer: {itemViewer}, itemViewerPanel: {itemViewerPanel}");
+            Debug.LogWarning($"Missing itemViewer reference: {itemViewer}");
             StartCoroutine(ReturnToMenuAfterDelay(winScene));
         }
     }
 
     void OnRewardViewFinished()
     {
-        if (itemViewerPanel != null)
-            itemViewerPanel.SetActive(false);
         StartCoroutine(ReturnToMenuAfterDelay(winScene));
     }
 

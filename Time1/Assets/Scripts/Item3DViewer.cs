@@ -1,22 +1,35 @@
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Item3DViewer : MonoBehaviour
 {
-    [Header("Configuração de Visualização")]
-    public Transform itemHolder; // Onde os itens 3D estão
+    [Header("Referências")]
+    public Transform itemHolder;
+    public Camera viewerCamera;
+    public GameObject rawImageOverlay;
+    public TextMeshProUGUI rewardText;
+
+    [Header("Configurações")]
     public float rotationSpeed = 100f;
-    public float viewDuration = 5f;
-    public UnityEvent onViewFinished;
+    public float minDisplayTime = 3f;
+    public string nextSceneName;
+    public string defaultMessage = "Você ganhou um item!";
 
     private GameObject currentItem;
     private float timer;
     private bool isViewing = false;
+    private bool readyToExit = false;
 
     void Awake()
     {
         DesativarTodosOsItens();
-        gameObject.SetActive(false); // Viewer começa invisível
+
+        if (rawImageOverlay != null)
+            rawImageOverlay.SetActive(false);
+
+        if (rewardText != null)
+            rewardText.gameObject.SetActive(false);
     }
 
     public void ShowItem(string itemName)
@@ -28,17 +41,29 @@ public class Item3DViewer : MonoBehaviour
         {
             currentItem = item.gameObject;
             currentItem.SetActive(true);
+            Debug.Log("[Item3DViewer] Exibindo item: " + itemName);
         }
         else
         {
-            Debug.LogWarning("Item3DViewer: Item não encontrado: " + itemName);
-            onViewFinished?.Invoke(); // Avança mesmo sem item
+            Debug.LogWarning("[Item3DViewer] Item não encontrado: " + itemName);
             return;
+        }
+
+        if (viewerCamera != null)
+            viewerCamera.gameObject.SetActive(true);
+
+        if (rawImageOverlay != null)
+            rawImageOverlay.SetActive(true);
+
+        if (rewardText != null)
+        {
+            rewardText.text = defaultMessage;
+            rewardText.gameObject.SetActive(true);
         }
 
         timer = 0f;
         isViewing = true;
-        gameObject.SetActive(true); // Ativa o objeto que contém o viewer
+        readyToExit = false;
     }
 
     void Update()
@@ -48,35 +73,47 @@ public class Item3DViewer : MonoBehaviour
         timer += Time.deltaTime;
 
         if (currentItem != null)
-        {
             currentItem.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
-        }
 
-        if (timer >= viewDuration)
+        if (timer >= minDisplayTime)
+            readyToExit = true;
+
+        if (readyToExit && Input.GetMouseButtonDown(0))
         {
-            HideItem();
+            Debug.Log("[Item3DViewer] Clique detectado. Carregando próxima cena...");
+            CarregarProximaCena();
         }
     }
 
-    public void HideItem()
+    public void SetRewardMessage(string message)
+    {
+        if (rewardText != null)
+            rewardText.text = message;
+    }
+
+    private void CarregarProximaCena()
     {
         if (currentItem != null)
-        {
             currentItem.SetActive(false);
-        }
+
+        if (viewerCamera != null)
+            viewerCamera.gameObject.SetActive(false);
+
+        if (rawImageOverlay != null)
+            rawImageOverlay.SetActive(false);
+
+        if (rewardText != null)
+            rewardText.gameObject.SetActive(false);
 
         isViewing = false;
-        gameObject.SetActive(false);
-        onViewFinished?.Invoke();
+        readyToExit = false;
+
+        SceneManager.LoadScene(nextSceneName);
     }
 
     private void DesativarTodosOsItens()
     {
-        if (itemHolder == null) return;
-
         foreach (Transform child in itemHolder)
-        {
             child.gameObject.SetActive(false);
-        }
     }
 }

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D26
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
-  text: 
-  char_sprite: {fileID: 0}
+  text: "...E ele era AL\xC9RGICO a amendoim? Se seu objetivo era fazer algu\xE9m
+    parar no hospital, realmente voc\xEA mandou bem demais aquele dia"
+  char_sprite: {fileID: 21300000, guid: c2b73a49493ac7b45a2c0cb619de78df, type: 3}
   fadeInCharacter: 0
-  char_name: 
-  next: 0
+  char_name: Anna
+  next: 26
   chapter_end: 0
   options: 0
   option: []

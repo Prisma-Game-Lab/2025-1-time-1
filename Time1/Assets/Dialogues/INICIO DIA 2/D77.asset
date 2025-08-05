@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D77
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 3558c141fd53c3c4a8e32f301705a3ff, type: 3}
   fadeInBackground: 0
-  text: 
-  char_sprite: {fileID: 0}
+  text: Bem, nada aconteceu, eu acho.
+  char_sprite: {fileID: 21300000, guid: e4421fd1365efb34d8b7c9e2d9af4c4d, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 77

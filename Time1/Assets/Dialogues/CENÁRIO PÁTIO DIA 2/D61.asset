@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D60
+  m_Name: D61
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
   fadeInBackground: 0
-  text: "Ok\u2026"
+  text: Eu sabia que ele era exagerado, mas parece que ele tirou todas as falas dele
+    direto de uma novela mexicana!
   char_sprite: {fileID: 21300000, guid: 99a711491ffadca439e24ddf7249b145, type: 3}
-  fadeInCharacter: 1
+  fadeInCharacter: 0
   char_name: Hana
-  next: 61
+  next: 62
   chapter_end: 0
   options: 0
   option: []

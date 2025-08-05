@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D60
+  m_Name: D4
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
+  background: {fileID: 21300000, guid: 1614d7136ca5f53489a5ffe689a863a4, type: 3}
   fadeInBackground: 0
-  text: "Ok\u2026"
-  char_sprite: {fileID: 21300000, guid: 99a711491ffadca439e24ddf7249b145, type: 3}
-  fadeInCharacter: 1
-  char_name: Hana
-  next: 61
+  text: "Quer s\xF3 um conselho? Tenta gaguejar menos da pr\xF3xima vez, isso j\xE1
+    vai melhorar muito."
+  char_sprite: {fileID: 0}
+  fadeInCharacter: 0
+  char_name: Rebeca
+  next: 5
   chapter_end: 0
   options: 0
   option: []

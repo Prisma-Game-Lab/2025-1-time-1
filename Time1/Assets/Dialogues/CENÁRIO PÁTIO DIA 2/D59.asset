@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "At\xE9 meu pr\xF3ximo ato, espectadoras. (Ele vai embora, sendo seguido
     pela horda esquista de f\xE3s dele)."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 6d0e081dc5f4cbb4a8ed5b05cbd88d45, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 60

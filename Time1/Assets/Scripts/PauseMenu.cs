@@ -44,16 +44,21 @@ public class PauseMenu : MonoBehaviour
         Texture2D texture;
         for (int i = 0; i < itemImages.Length; i++)
         {
+            int num = i;
+            if (num == 0)
+            {
+                num = 1;
+            }
             if (GameManager.instance.itemsAcquired[i])
             {
                 string texturePath = "Textures/texture" + (i + 1);
-                itemText = itemNames[i] + " - encontrado no capitulo " + (i + 1);
+                itemText = itemNames[i] + " - encontrado no capitulo " + num;
                 texture = Resources.Load<Texture2D>(texturePath);
             }
             else
             {
                 string texturePath = "Textures/textureAlt" + (i + 1);
-                itemText = "?????? - encontrado no capitulo " + (i + 1);
+                itemText = "?????? - encontrado no capitulo " + num;
                 texture = Resources.Load<Texture2D>(texturePath);
             }
             itemIcons[i].texture = texture;

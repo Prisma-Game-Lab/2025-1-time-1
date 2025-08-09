@@ -70,6 +70,7 @@ public class DialogueHandler : MonoBehaviour
 
         currIndex = dialogueIndex;
         dialoguesLog.Add(dialogues[dialogueIndex]);
+        showLog();
         dialogueIndex = dialogues[dialogueIndex].next;
 
         if (itemViewerPanel != null)
@@ -333,6 +334,10 @@ public class DialogueHandler : MonoBehaviour
                 return;
             }
             dialoguesLog.Add(dialogues[dialogueIndex]);
+            if ((dialoguesLog.Count % 3 == 1) && (dialoguesLog.Count != 1))
+            {
+                logIndex += 1;
+            }
 
             showLog();
 

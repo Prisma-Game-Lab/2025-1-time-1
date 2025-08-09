@@ -8,6 +8,7 @@ public class Item3DViewer : MonoBehaviour
     public Transform itemHolder;
     public Camera viewerCamera;
     public GameObject rawImageOverlay;
+    public GameObject imageOverlay;
     public TextMeshProUGUI rewardText;
 
     [Header("Configurações")]
@@ -27,6 +28,9 @@ public class Item3DViewer : MonoBehaviour
 
         if (rawImageOverlay != null)
             rawImageOverlay.SetActive(false);
+
+        if (imageOverlay != null)
+            imageOverlay.SetActive(false);
 
         if (rewardText != null)
             rewardText.gameObject.SetActive(false);
@@ -55,9 +59,12 @@ public class Item3DViewer : MonoBehaviour
         if (rawImageOverlay != null)
             rawImageOverlay.SetActive(true);
 
+        if (imageOverlay != null)
+            imageOverlay.SetActive(true);
+
         if (rewardText != null)
         {
-            rewardText.text = defaultMessage;
+            //rewardText.text = defaultMessage;
             rewardText.gameObject.SetActive(true);
         }
 
@@ -101,6 +108,9 @@ public class Item3DViewer : MonoBehaviour
 
         if (rawImageOverlay != null)
             rawImageOverlay.SetActive(false);
+
+        if (imageOverlay != null)
+            imageOverlay.SetActive(false);
 
         if (rewardText != null)
             rewardText.gameObject.SetActive(false);

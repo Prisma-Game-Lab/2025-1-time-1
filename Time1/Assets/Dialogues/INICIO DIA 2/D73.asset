@@ -24,10 +24,10 @@ MonoBehaviour:
   option:
   - opText: "Voc\xEA sabe que passou pouco tempo desde que a gente se viu, n\xE9?"
     next: 73
-    reaction: 0
+    reaction: -1
   - opText: Passei a noite de ontem jogando Deltarune.
     next: 79
-    reaction: 0
+    reaction: 1
   - opText: "Ah\u2026 eu acho que\u2026 n\xE3o?"
     next: 91
     reaction: 0

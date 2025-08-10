@@ -24,10 +24,10 @@ MonoBehaviour:
   option:
   - opText: "Ah, \xF3timo, s\xF3 o que me faltava. Voc\xEA."
     next: 31
-    reaction: 0
+    reaction: -1
   - opText: "E a\xED, esquentadinha."
     next: 45
-    reaction: 0
+    reaction: 1
   - opText: "A-ah\u2026 oi, tudo bem?"
     next: 57
     reaction: 0

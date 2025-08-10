@@ -24,10 +24,10 @@ MonoBehaviour:
   option:
   - opText: "T\xE1 faltando um parafuso em voc\xEA? Isso n\xE3o \xE9 um filme n\xE3o."
     next: 35
-    reaction: 0
+    reaction: -1
   - opText: "Plateia, \xE9? Espero que o show seja bom ent\xE3o."
     next: 40
-    reaction: 0
+    reaction: 1
   - opText: Q-que? (esse jeito que ele fala me deixa meio desconcertada)
     next: 53
     reaction: 0

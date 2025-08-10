@@ -18,7 +18,7 @@ MonoBehaviour:
   char_sprite: {fileID: 21300000, guid: 98b909d5fd54a284c87e1a4bc8c70bc6, type: 3}
   fadeInCharacter: 0
   char_name: Rebeca
-  next: 10
+  next: 9
   chapter_end: 0
   options: 0
   option: []

@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Acho que voc\xEA deveria tentar pra ver se deixa de ser\u2026 assim. (Eu
     aponto meu dedo pra ela)."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: b8f6040b516ab774180756a42bae0863, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 96

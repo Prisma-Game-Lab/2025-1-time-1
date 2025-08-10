@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "(Enquanto guardo as coisas e coloco os cartazes junto com as outras decora\xE7\xF5es
     do baile, uma menina chega toda afobada no gin\xE1sio)"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 4

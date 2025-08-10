@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 1614d7136ca5f53489a5ffe689a863a4, type: 3}
   fadeInBackground: 0
   text: Manda a boa, eu to pronta.
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 753d5cdfda3e49241bdd1b1da3dcb5fe, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 90

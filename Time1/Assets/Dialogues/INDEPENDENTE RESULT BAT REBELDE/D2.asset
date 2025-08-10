@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 1614d7136ca5f53489a5ffe689a863a4, type: 3}
   fadeInBackground: 0
   text: "Acho que at\xE9 mandei bem. Certeza que a Hana vai gostar."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 3

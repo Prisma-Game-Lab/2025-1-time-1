@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 1614d7136ca5f53489a5ffe689a863a4, type: 3}
   fadeInBackground: 0
   text: 
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 98b909d5fd54a284c87e1a4bc8c70bc6, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 0
@@ -24,11 +24,11 @@ MonoBehaviour:
   option:
   - opText: "E se eu tivesse, acha dif\xEDcil?"
     next: 81
-    reaction: 0
+    reaction: 1
   - opText: "N\xE3o perturba a minha paz, eu s\xF3 vim fazer umas coisas pra minha
       amiga."
     next: 91
-    reaction: 0
+    reaction: -1
   - opText: "Ah\u2026N\xE3o, eu s\xF3 vim fazer umas coisas que minha amiga pediu."
     next: 99
     reaction: 0

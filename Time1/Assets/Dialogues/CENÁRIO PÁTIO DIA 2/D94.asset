@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 1614d7136ca5f53489a5ffe689a863a4, type: 3}
   fadeInBackground: 0
   text: "Voc\xEA j\xE1 tentou terapia? Deve fazer bem."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: b8f6040b516ab774180756a42bae0863, type: 3}
   fadeInCharacter: 0
   char_name: Rebeca
   next: 95

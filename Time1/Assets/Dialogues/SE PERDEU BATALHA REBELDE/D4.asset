@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Quer s\xF3 um conselho? Tenta gaguejar menos da pr\xF3xima vez, isso j\xE1
     vai melhorar muito."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: b8f6040b516ab774180756a42bae0863, type: 3}
   fadeInCharacter: 0
   char_name: Rebeca
   next: 5

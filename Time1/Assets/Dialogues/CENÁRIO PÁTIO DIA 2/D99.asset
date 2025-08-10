@@ -16,7 +16,7 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "T\xF4 sabendo. A gente sempre tem uma desculpa pra n\xE3o querer chamar
     a aten\xE7\xE3o dos outros, n\xE3o \xE9?"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 98b909d5fd54a284c87e1a4bc8c70bc6, type: 3}
   fadeInCharacter: 0
   char_name: Rebeca
   next: 100

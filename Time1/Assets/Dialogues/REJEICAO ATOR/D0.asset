@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D17
+  m_Name: D0
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
-  fadeInBackground: 0
-  text: "Deixa eu pensar bem sobre isso\u2026"
+  background: {fileID: 21300000, guid: e7af51f9f825cdb4ebd2f08ff6e3ccca, type: 3}
+  fadeInBackground: 1
+  text: "(Vou pro \xFAnico lugar onde ele poderia estar e logo o vejo repassando
+    as falas pra pr\xF3xima pe\xE7a do col\xE9gio junto de outros alunos)"
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
-  next: 10000
+  next: 1
   chapter_end: 0
   options: 0
   option: []

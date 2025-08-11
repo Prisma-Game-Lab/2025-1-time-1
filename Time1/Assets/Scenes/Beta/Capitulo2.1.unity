@@ -488,8 +488,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291952895
-  m_fontColor: {r: 1, g: 0, b: 0.8227806, a: 1}
+    rgba: 4294490353
+  m_fontColor: {r: 0.94509804, g: 0.72156864, b: 0.972549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2400,7 +2400,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -29.999878, y: -29.999878}
-  m_SizeDelta: {x: 80, y: 80}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977306519
 MonoBehaviour:
@@ -2415,14 +2415,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.7185302, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 473509a294e933441afbe5f5b5d3fdb4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a91ed39cef747024ab8654adb5ba11c8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2804,6 +2804,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 1580594822572082379, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580594822572082379, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580594822572082379, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1688692351374064880, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0.5
@@ -2952,6 +2964,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3932142073213450188, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b788aad86e1d5d42b025b2519cb092e, type: 3}
     - target: {fileID: 3982267212434518647, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3060,6 +3076,14 @@ PrefabInstance:
       propertyPath: saveName.Array.data[2]
       value: 
       objectReference: {fileID: 590195851}
+    - target: {fileID: 5174111876566657008, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c1a051dc1400e4a4a889fc7fd637a689, type: 3}
+    - target: {fileID: 5295710002363657352, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 987e3cf61a73be84ea1e8259766d13af, type: 3}
     - target: {fileID: 5353955380685884224, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_fontColor.b
       value: 0
@@ -3904,6 +3928,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8617752680308226550, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617752680308226550, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617752680308226550, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8645429129244607857, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_Type
       value: 1
@@ -3912,6 +3948,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 8682346503322803924, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682346503322803924, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 8979481643888529573, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_Name
       value: DialogueCanvas
@@ -3944,6 +3988,7 @@ PrefabInstance:
     - {fileID: 8712387958675411219, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
     - {fileID: 2953866895451491444, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
     - {fileID: 3982267212434518647, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+    - {fileID: 8988282206174195275, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7746514444834344855, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       insertIndex: 2

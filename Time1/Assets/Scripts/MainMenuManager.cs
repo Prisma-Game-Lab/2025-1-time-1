@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 public class MainMenuManager : MonoBehaviour
 {
     [Header("Panels")]
-    public GameObject mainMenuPanel;
+    public GameObject mainMenuPanel;     // Botões do menu principal
+    public GameObject mainMenuVisuals;   // Título, personagens, etc.
     public GameObject optionsPanel;
     public GameObject creditsPanel;
 
@@ -51,6 +52,7 @@ public class MainMenuManager : MonoBehaviour
         optionsPanel.SetActive(false);
         creditsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
+        mainMenuVisuals.SetActive(true);
 
         InicializarPainel(mainMenuPanel, ref menuButtons, ref selectedMenuIndex);
     }
@@ -152,7 +154,8 @@ public class MainMenuManager : MonoBehaviour
     public void OpenOptions()
     {
         optionsPanel.SetActive(true);
-        mainMenuPanel.SetActive(false);
+        mainMenuPanel.SetActive(false);    // Esconde botões
+        mainMenuVisuals.SetActive(true);   // Mantém título/personagens
         InicializarPainel(optionsPanel, ref optionButtons, ref selectedOptionIndex);
         lastInputTime = Time.time;
     }
@@ -161,6 +164,7 @@ public class MainMenuManager : MonoBehaviour
     {
         optionsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
+        mainMenuVisuals.SetActive(true);
         InicializarPainel(mainMenuPanel, ref menuButtons, ref selectedMenuIndex);
         lastInputTime = Time.time;
     }
@@ -168,7 +172,8 @@ public class MainMenuManager : MonoBehaviour
     public void OpenCredits()
     {
         creditsPanel.SetActive(true);
-        mainMenuPanel.SetActive(false);
+        mainMenuPanel.SetActive(false);    // Esconde botões
+        mainMenuVisuals.SetActive(false);  // Esconde título/personagens
         InicializarPainel(creditsPanel, ref creditButtons, ref selectedCreditIndex);
         lastInputTime = Time.time;
     }
@@ -177,6 +182,7 @@ public class MainMenuManager : MonoBehaviour
     {
         creditsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
+        mainMenuVisuals.SetActive(true);
         InicializarPainel(mainMenuPanel, ref menuButtons, ref selectedMenuIndex);
         lastInputTime = Time.time;
     }
@@ -187,7 +193,6 @@ public class MainMenuManager : MonoBehaviour
         AudioManager.instance.SetMusicVolume(volume);
         PlayerPrefs.SetFloat("volume", volume);
     }
-
 
     public void SetFullscreen(bool isFullscreen)
     {

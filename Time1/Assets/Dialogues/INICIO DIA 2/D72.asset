@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D72
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 3558c141fd53c3c4a8e32f301705a3ff, type: 3}
   fadeInBackground: 0
-  text: 
-  char_sprite: {fileID: 0}
+  text: "Ent\xE3o\u2026 Alguma novidade?"
+  char_sprite: {fileID: 21300000, guid: 5d8a2070c013c134eaa209f3939f963f, type: 3}
   fadeInCharacter: 0
-  char_name: 
-  next: 0
+  char_name: Henrique
+  next: 72
   chapter_end: 0
   options: 0
   option: []

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
+  m_Name: D128
+  m_EditorClassIdentifier: 
+  background: {fileID: 21300000, guid: e7af51f9f825cdb4ebd2f08ff6e3ccca, type: 3}
+  fadeInBackground: 0
+  text: "S\xF3 aqueles que eu julgo especiais. Vejo em voc\xEA a possibilidade de
+    ter encontrado a minha musa!"
+  char_sprite: {fileID: 21300000, guid: 3dabe47d879955e4e86cacc0de8d3c27, type: 3}
+  fadeInCharacter: 0
+  char_name: Antoine
+  next: 129
+  chapter_end: 0
+  options: 0
+  option: []
+  hasReward: 0

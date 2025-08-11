@@ -44,4 +44,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beta/Capitulo1.4.unity
     guid: 190c2073854d80347a762d32e3b24ced
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo2.unity
+    guid: b90b6cdac3bdd014c88efffdf123db2f
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo2.1.unity
+    guid: 9bed1839f4bd20949952ab9ef4a62692
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo2.2.unity
+    guid: 6a91b1e37be10c84caa5418aff1c8d24
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo2.2.1.unity
+    guid: c4a9c3d43b5af3644a3324066b9e0189
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo2.3.unity
+    guid: 3fbf41aa155c3f74cb5b49367b754dd0
+  - enabled: 1
+    path: Assets/Scenes/Beta/RebeldePlaytest.unity
+    guid: 77d19222c4274e9488d841869a669e90
   m_configObjects: {}

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D49
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
-  text: 
-  char_sprite: {fileID: 0}
+  text: "\xC9 porque n\xE3o entendo como cabe tanta confus\xE3o em uma pessoa s\xF3,
+    tendeu?"
+  char_sprite: {fileID: 21300000, guid: fac180a35042f564aa347d16dbd452c7, type: 3}
   fadeInCharacter: 0
-  char_name: 
-  next: 0
+  char_name: Anna
+  next: 49
   chapter_end: 0
   options: 0
   option: []

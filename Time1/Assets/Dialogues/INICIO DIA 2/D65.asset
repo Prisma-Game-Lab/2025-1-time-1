@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D65
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
-  text: 
-  char_sprite: {fileID: 0}
+  text: "Olha, eu vou encontrar a Vicky rapidinho antes da aula pra gente combinar
+    tudo, ent\xE3o te vejo depois, t\xE1?"
+  char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
-  char_name: 
-  next: 0
+  char_name: Hana
+  next: 65
   chapter_end: 0
   options: 0
   option: []

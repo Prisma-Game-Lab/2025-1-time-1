@@ -17,7 +17,7 @@ MonoBehaviour:
   text: "Sabe, quando eu finalmente consegui falar com ele semana passada pra pedir
     pra ele fazer o question\xE1rio, ele achou que eu tava atr\xE1s era de um aut\xF3grafo,
     acredita?"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: a66eecc4febed2e47ab25ed6ed8d0970, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 17

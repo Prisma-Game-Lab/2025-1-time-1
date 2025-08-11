@@ -1,8 +1,8 @@
-chapter: Capitulo1
-scene: 81
-time: 22,51569
-lovePts: 0: 0: 0
-items: 0: 0: 0: 0: 0
+chapter: DialoguePlaytest
+scene: 0
+time: 99,78848
+lovePts: 1: 1: 0
+items: 0: 1: 0: 0: 0
 
 
 

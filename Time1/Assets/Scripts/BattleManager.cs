@@ -71,6 +71,7 @@ public class BattleManager : MonoBehaviour
 
     [Header("Reward System")]
     [SerializeField] private Item3DViewer itemViewer;
+    [SerializeField] private int itemID;
 
     private TextMeshProUGUI[] buttonTexts;
 
@@ -781,6 +782,7 @@ public class BattleManager : MonoBehaviour
         else if (enemyHP <= 0)
         {
             feedbackText.text = "Você venceu a batalha!";
+            GameManager.instance.itemsAcquired[itemID] = true;
             ShowRewardItem();
         }
         else if (playerHP > enemyHP)
@@ -788,6 +790,7 @@ public class BattleManager : MonoBehaviour
             enemyHP = 0;
             AtualizarHP();
             feedbackText.text = "Você venceu a batalha!";
+            GameManager.instance.itemsAcquired[itemID] = true;
             ShowRewardItem();
         }
         else

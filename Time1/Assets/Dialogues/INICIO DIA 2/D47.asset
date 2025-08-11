@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D47
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
-  text: "Engra\xE7ado, acho que voc\xEA t\xE1 prestando aten\xE7\xE3o demais em mim  "
-  char_sprite: {fileID: 0}
+  text: "\xC9, eu achei que pudesse combinar com esse seu jeitinho mais\u2026 explosivo."
+  char_sprite: {fileID: 21300000, guid: bf15aef7db1daa9408a2e4c146f76f6c, type: 3}
   fadeInCharacter: 0
-  char_name: Rebelde
+  char_name: Anna
   next: 47
   chapter_end: 0
   options: 0

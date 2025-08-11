@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D60
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
-  text: 
-  char_sprite: {fileID: 0}
+  text: "(Ela me olha com um olhar meio desconfort\xE1vel)"
+  char_sprite: {fileID: 21300000, guid: 98b909d5fd54a284c87e1a4bc8c70bc6, type: 3}
   fadeInCharacter: 0
-  char_name: 
-  next: 0
+  char_name: Anna
+  next: 60
   chapter_end: 0
   options: 0
   option: []

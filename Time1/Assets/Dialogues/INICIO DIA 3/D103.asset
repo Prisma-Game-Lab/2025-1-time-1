@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D84
+  m_Name: D103
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 3558c141fd53c3c4a8e32f301705a3ff, type: 3}
   fadeInBackground: 0
-  text: (Ele termina de arrumar os livros e, quando eu tento falar de novo com ele,
-    ele vira a cara e se enfia em um dos livros que trouxe)
-  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
+  text: "\xC9\u2026 A escola toda t\xE1 falando sobre."
+  char_sprite: {fileID: 21300000, guid: ad2f08ec95240394aa4a293ddee46cb1, type: 3}
   fadeInCharacter: 0
-  char_name: Anna
-  next: 100
+  char_name: Henrique
+  next: 104
   chapter_end: 0
   options: 0
   option: []

@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D84
+  m_Name: D153
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: 3558c141fd53c3c4a8e32f301705a3ff, type: 3}
+  background: {fileID: 21300000, guid: e7af51f9f825cdb4ebd2f08ff6e3ccca, type: 3}
   fadeInBackground: 0
-  text: (Ele termina de arrumar os livros e, quando eu tento falar de novo com ele,
-    ele vira a cara e se enfia em um dos livros que trouxe)
-  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
+  text: "S\xF3 posso dizer que estou pronto para qualquer situa\xE7\xE3o."
+  char_sprite: {fileID: 21300000, guid: 6d0e081dc5f4cbb4a8ed5b05cbd88d45, type: 3}
   fadeInCharacter: 0
-  char_name: Anna
-  next: 100
+  char_name: Antoine
+  next: 10000
   chapter_end: 0
   options: 0
   option: []

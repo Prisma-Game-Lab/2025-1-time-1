@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D84
+  m_Name: D106
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 3558c141fd53c3c4a8e32f301705a3ff, type: 3}
   fadeInBackground: 0
-  text: (Ele termina de arrumar os livros e, quando eu tento falar de novo com ele,
-    ele vira a cara e se enfia em um dos livros que trouxe)
-  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
+  text: "Entendi\u2026 Boa sorte ent\xE3o."
+  char_sprite: {fileID: 21300000, guid: 5aa9341f97de492409b0f73da57ee2d0, type: 3}
   fadeInCharacter: 0
-  char_name: Anna
-  next: 100
+  char_name: Henrique
+  next: 107
   chapter_end: 0
   options: 0
   option: []

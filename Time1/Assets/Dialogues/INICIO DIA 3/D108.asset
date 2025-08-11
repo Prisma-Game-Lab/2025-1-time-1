@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D84
+  m_Name: D108
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: 3558c141fd53c3c4a8e32f301705a3ff, type: 3}
-  fadeInBackground: 0
-  text: (Ele termina de arrumar os livros e, quando eu tento falar de novo com ele,
-    ele vira a cara e se enfia em um dos livros que trouxe)
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
+  fadeInBackground: 1
+  text: "(Enquanto vou indo pro teatro consigo perceber uma turma me encarando e
+    cochichando. Se eu tinha qualquer inten\xE7\xE3o de n\xE3o chamar aten\xE7\xE3o
+    pra mim hoje, \xE9 melhor eu desistir logo)"
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
-  next: 100
+  next: 109
   chapter_end: 0
   options: 0
   option: []

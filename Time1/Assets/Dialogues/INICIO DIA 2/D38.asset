@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
   text: "\u2026Voc\xEA \xE9 insuport\xE1vel."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: f06ed9439023d6346b432c984b4753b0, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 38

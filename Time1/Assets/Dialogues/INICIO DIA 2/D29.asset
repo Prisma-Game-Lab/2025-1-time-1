@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
   text: "(Algu\xE9m me d\xE1 um tapa na parte de tr\xE1s da cabe\xE7a)"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 29

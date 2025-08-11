@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
   text: "E voc\xEA \xE9 um raio de sol, n\xE9?"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: b8f6040b516ab774180756a42bae0863, type: 3}
   fadeInCharacter: 0
   char_name: Rebeca
   next: 39

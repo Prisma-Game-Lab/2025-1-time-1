@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
   text: "Eita, que que foi? Eu n\xE3o mordo n\xE3o, tava s\xF3 brincando"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 753d5cdfda3e49241bdd1b1da3dcb5fe, type: 3}
   fadeInCharacter: 0
   char_name: Rebeca
   next: 58

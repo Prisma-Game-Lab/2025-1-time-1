@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D5
+  m_Name: D3
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
   fadeInBackground: 0
-  text: "Mas hoje \xE9 um dia especial, ent\xE3o lhe concedo quantas revanches quiser."
-  char_sprite: {fileID: 21300000, guid: 6d0e081dc5f4cbb4a8ed5b05cbd88d45, type: 3}
+  text: "Ah, haha, voc\xEA tem senso de humor! Uma protagonista completa."
+  char_sprite: {fileID: 21300000, guid: 6f08ce4d0ce254f4dbd69bb7bd8a74fd, type: 3}
   fadeInCharacter: 0
   char_name: Antoine
-  next: 6
+  next: 4
   chapter_end: 0
   options: 0
   option: []

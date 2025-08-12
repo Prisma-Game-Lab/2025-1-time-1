@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D5
+  m_Name: D7
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
   fadeInBackground: 0
-  text: "Mas hoje \xE9 um dia especial, ent\xE3o lhe concedo quantas revanches quiser."
-  char_sprite: {fileID: 21300000, guid: 6d0e081dc5f4cbb4a8ed5b05cbd88d45, type: 3}
+  text: "S\xF3 vem comigo, por favor?"
+  char_sprite: {fileID: 21300000, guid: 2a19df90d4706fc43b46044f0d4144d7, type: 3}
   fadeInCharacter: 0
-  char_name: Antoine
-  next: 6
+  char_name: Henrique
+  next: 8
   chapter_end: 0
   options: 0
   option: []

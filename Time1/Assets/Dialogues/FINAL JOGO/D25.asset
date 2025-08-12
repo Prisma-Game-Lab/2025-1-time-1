@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D5
+  m_Name: D25
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
-  text: "Mas hoje \xE9 um dia especial, ent\xE3o lhe concedo quantas revanches quiser."
-  char_sprite: {fileID: 21300000, guid: 6d0e081dc5f4cbb4a8ed5b05cbd88d45, type: 3}
+  text: "Eu sei que \xE9 muito estranho vindo de mim, mas eu me apaixonei por voc\xEA,
+    Anna. Percebi que a arte que os humanos produzem vem do amor que sentem, e \xE9
+    isso o que sinto por voc\xEA."
+  char_sprite: {fileID: 0}
   fadeInCharacter: 0
-  char_name: Antoine
-  next: 6
+  char_name: Lumy
+  next: 26
   chapter_end: 0
   options: 0
   option: []

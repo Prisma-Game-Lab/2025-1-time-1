@@ -247,11 +247,44 @@ public class DialogueHandler : MonoBehaviour
         }
     }
 
+    void FinalOption(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                if (GameManager.instance.lovePoints[0] > 0)
+                {
+                    SceneManager.LoadScene("Capitulo3.R");
+                }
+                SceneManager.LoadScene("Capitulo3.R.1");
+                break;
+            case 1:
+                if (GameManager.instance.lovePoints[1] > 0)
+                {
+                    SceneManager.LoadScene("Capitulo3.H");
+                }
+                SceneManager.LoadScene("Capitulo3.H.1");
+                break;
+            case 2:
+                if (GameManager.instance.lovePoints[2] > 0)
+                {
+                    SceneManager.LoadScene("Capitulo3.A");
+                }
+                SceneManager.LoadScene("Capitulo3.A.1");
+                break;
+        }
+    }
+
     void OnOptionClick(int index)
     {
+        if (dialogues[currIndex].final_option)
+        {
+            FinalOption(index);
+        }
         dialogueIndex = dialogues[currIndex].option[index].next;
         dialogues[currIndex].text = dialogues[currIndex].option[index].opText;
         addPoints(index);
+        dialogues[currIndex].char_name = "Anna";
         dialoguesLog.Add(dialogues[currIndex]);
 
         if (dialogues[currIndex].hasReward && itemViewer != null && itemViewerPanel != null)

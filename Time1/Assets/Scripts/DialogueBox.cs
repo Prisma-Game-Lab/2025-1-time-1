@@ -14,6 +14,7 @@ public class DialogueBox: ScriptableObject
     public string char_name;
     public int next;
     public bool chapter_end;
+    public bool final_option;
     public bool options;
     public Option[] option;
     public bool hasReward; // Indica se este diálogo tem uma recompensa

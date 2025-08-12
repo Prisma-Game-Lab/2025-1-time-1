@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D21
+  m_Name: D5
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
   fadeInBackground: 0
-  text: "Boa noite, gente! Espero que o baile esteja superando suas expectativas.
-    Se n\xE3o consegui convencer voc\xEAs ainda, tenho certeza que minha atra\xE7\xE3o
-    surpresa vai."
-  char_sprite: {fileID: 21300000, guid: 26c5782e112f713458021668719979a0, type: 3}
-  fadeInCharacter: 1
-  char_name: Hana
-  next: 22
+  text: "Mas hoje \xE9 um dia especial, ent\xE3o lhe con\xE7edo quantas revanches
+    quiser."
+  char_sprite: {fileID: 21300000, guid: 6d0e081dc5f4cbb4a8ed5b05cbd88d45, type: 3}
+  fadeInCharacter: 0
+  char_name: Antoine
+  next: 6
   chapter_end: 0
   options: 0
   option: []

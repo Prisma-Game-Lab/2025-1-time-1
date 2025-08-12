@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D4
+  m_Name: D10
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: 1614d7136ca5f53489a5ffe689a863a4, type: 3}
+  background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
   fadeInBackground: 0
-  text: "Tem alguma\u2026(Ela parece estar olhando um papel) Anna por aqui?"
-  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
+  text: "(Eu n\xE3o sei se sou estrela n\xE3o, mas pelo Antoine, olho para as pessoas
+    ao redor e sorrio como se realmente fosse uma estrela de cinema)"
+  char_sprite: {fileID: 21300000, guid: 3dabe47d879955e4e86cacc0de8d3c27, type: 3}
   fadeInCharacter: 0
-  char_name: Menina
-  next: 5
+  char_name: Anna
+  next: 11
   chapter_end: 0
   options: 0
   option: []

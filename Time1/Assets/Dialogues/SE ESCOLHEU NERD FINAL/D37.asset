@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D4
+  m_Name: D37
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: 1614d7136ca5f53489a5ffe689a863a4, type: 3}
+  background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
   fadeInBackground: 0
-  text: "Tem alguma\u2026(Ela parece estar olhando um papel) Anna por aqui?"
-  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
+  text: "Fechado. J\xE1 vou come\xE7ar a procurar o pr\xF3ximo."
+  char_sprite: {fileID: 21300000, guid: ff707d502cec28b4b850b57805b93b71, type: 3}
   fadeInCharacter: 0
-  char_name: Menina
-  next: 5
+  char_name: Anna
+  next: 38
   chapter_end: 0
   options: 0
   option: []

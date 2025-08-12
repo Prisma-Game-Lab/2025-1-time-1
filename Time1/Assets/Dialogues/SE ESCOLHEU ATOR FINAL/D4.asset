@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D4
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: 1614d7136ca5f53489a5ffe689a863a4, type: 3}
+  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
-  text: "Tem alguma\u2026(Ela parece estar olhando um papel) Anna por aqui?"
-  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
+  text: "Mais que uma rosa, querida Anna. \xC9 um s\xEDmbolo da nossa hist\xF3ria"
+  char_sprite: {fileID: 21300000, guid: 01270d88e620f3642b1aee2e4a225be8, type: 3}
   fadeInCharacter: 0
-  char_name: Menina
+  char_name: Antoine
   next: 5
   chapter_end: 0
   options: 0

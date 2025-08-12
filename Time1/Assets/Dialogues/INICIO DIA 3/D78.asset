@@ -25,7 +25,7 @@ MonoBehaviour:
   - opText: "Mas pra que esse tanto de livro, voc\xEA n\xE3o faz outra coisa da vida
       n\xE3o?"
     next: 79
-    reaction: 0
+    reaction: -1
   - opText: "Voc\xEA \xE9 mesmo o nerdzinho da turma n\xE9? Espero que esse tanto
       de livro te ajude nas provas."
     next: 85
@@ -33,5 +33,5 @@ MonoBehaviour:
   - opText: "Nossa, que dedica\xE7\xE3o! E eu achei que eu que estudava muito. S\xE3o
       livros de que?"
     next: 92
-    reaction: 0
+    reaction: 1
   hasReward: 0

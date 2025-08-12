@@ -25,11 +25,11 @@ MonoBehaviour:
   - opText: "N\xE3o tem um dia na sua vida que voc\xEA n\xE3o comece sendo irritante
       assim?"
     next: 11
-    reaction: 0
+    reaction: -1
   - opText: "Eu s\xF3 n\xE3o dormi muito bem\u2026"
     next: 15
     reaction: 0
   - opText: E se eu dissesse que sim, vai ficar nervosinha?
     next: 20
-    reaction: 0
+    reaction: 1
   hasReward: 0

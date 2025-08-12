@@ -20,13 +20,13 @@ MonoBehaviour:
   char_name: Anna
   next: 0
   chapter_end: 0
-  options: 0
+  options: 1
   option:
   - opText: "Musa? Quem disse que eu quero ser sua musa, ou fazer parte disso aqui?
       Voc\xEA fez todo mundo no col\xE9gio prestar aten\xE7\xE3o em mim! Eu n\xE3o
       queria isso."
     next: 130
-    reaction: 0
+    reaction: -1
   - opText: "Voc\xEA n\xE3o acha estranho falar isso pra algu\xE9m que mal conhece?
       Algu\xE9m pode acabar n\xE3o reagindo t\xE3o bem."
     next: 143
@@ -34,5 +34,5 @@ MonoBehaviour:
   - opText: "Eu? Eu nunca pensei que seria musa de ningu\xE9m\u2026 Mas acho que
       posso me acostumar com a ideia\u2026"
     next: 154
-    reaction: 0
+    reaction: 1
   hasReward: 0

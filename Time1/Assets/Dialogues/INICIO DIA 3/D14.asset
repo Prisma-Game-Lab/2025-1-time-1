@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 101590b92b105a247bf8bd0063261c98, type: 3}
   fadeInBackground: 0
   text: "(Nem olho pra tr\xE1s e entro no col\xE9gio)"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 30

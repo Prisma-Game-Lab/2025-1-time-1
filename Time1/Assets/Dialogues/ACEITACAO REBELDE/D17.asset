@@ -19,7 +19,8 @@ MonoBehaviour:
   fadeInCharacter: 0
   char_name: Anna
   next: 10000
-  chapter_end: 0
+  chapter_end: 1
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

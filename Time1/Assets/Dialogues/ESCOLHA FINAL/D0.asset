@@ -20,6 +20,7 @@ MonoBehaviour:
   char_name: Anna
   next: 0
   chapter_end: 0
+  final_option: 1
   options: 1
   option:
   - opText: "Eu escolho\u2026 A Rebeca."

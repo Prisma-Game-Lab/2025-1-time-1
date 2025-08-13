@@ -17,11 +17,12 @@ MonoBehaviour:
   text: "Meu povo n\xE3o achava que arte era algo importante e que se fosse pra eu
     n\xE3o ajudar eles em suas conquistas, ent\xE3o eu deveria cair fora. Dito e
     feito."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: afc9c8d3263266a47a6c3019a3b2410b, type: 3}
   fadeInCharacter: 0
   char_name: Lumy
   next: 20
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

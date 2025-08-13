@@ -15,11 +15,12 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
   text: "...Tudo bem. Mas voc\xEA tem pouco tempo."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: afc9c8d3263266a47a6c3019a3b2410b, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 12
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

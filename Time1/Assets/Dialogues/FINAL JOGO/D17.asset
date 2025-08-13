@@ -16,11 +16,12 @@ MonoBehaviour:
   fadeInBackground: 0
   text: E, com o tempo, eu decidi que sabia o que queria pra minha vida. Me tornar
     um artista!
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: afc9c8d3263266a47a6c3019a3b2410b, type: 3}
   fadeInCharacter: 0
   char_name: Lumy
   next: 18
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

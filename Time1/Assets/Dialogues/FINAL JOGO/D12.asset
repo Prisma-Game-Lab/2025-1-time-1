@@ -16,11 +16,12 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Tudo bem. Eu me chamo Lumy, e, acho que d\xE1 pra perceber, eu n\xE3o sou
     daqui."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: afc9c8d3263266a47a6c3019a3b2410b, type: 3}
   fadeInCharacter: 0
   char_name: Lumy
   next: 13
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

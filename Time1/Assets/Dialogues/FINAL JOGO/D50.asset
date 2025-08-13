@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
-  m_Name: D37
+  m_Name: D50
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
+  background: {fileID: 21300000, guid: f2f0350073aa99146ac15f99da3bab93, type: 3}
   fadeInBackground: 0
-  text: "Bem vinda a nossa hist\xF3ria em meio a esse universo! De agora em diante,
-    estamos juntos."
-  char_sprite: {fileID: 21300000, guid: 096bc842b2e843445a30692da8ae2c04, type: 3}
+  text: '- OBRIGADO POR JOGAR! -'
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
-  char_name: Lumy
-  next: 38
+  char_name: Anna
+  next: 10000
   chapter_end: 0
   final_option: 0
   options: 0

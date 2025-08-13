@@ -16,11 +16,12 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Lumy, a ideia at\xE9 parece legal, mas \xE9 loucura total! Eu n\xE3o posso
     aceitar isso, nunca."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: afc9c8d3263266a47a6c3019a3b2410b, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 41
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

@@ -16,11 +16,12 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Eu queria aprender a como me disfar\xE7ar entre voc\xEAs, e ir praticando
     minha arte enquanto isso."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: afc9c8d3263266a47a6c3019a3b2410b, type: 3}
   fadeInCharacter: 0
   char_name: Lumy
   next: 24
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

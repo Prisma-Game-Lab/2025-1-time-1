@@ -16,11 +16,12 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Se um dia... Voc\xEA mudar de ideia, eu estarei correndo atr\xE1s do meu
     sonho. Basta buscar, e voc\xEA vai me encontrar."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: d966d68cfd18413458f674c57911dfb3, type: 3}
   fadeInCharacter: 0
   char_name: Lumy
   next: 45
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

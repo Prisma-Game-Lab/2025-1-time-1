@@ -16,11 +16,12 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Eu sei que \xE9 r\xE1pido mas...o que me diz? Voc\xEA viveria essa aventura
     comigo, Anna?"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 096bc842b2e843445a30692da8ae2c04, type: 3}
   fadeInCharacter: 0
   char_name: Lumy
   next: 30
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

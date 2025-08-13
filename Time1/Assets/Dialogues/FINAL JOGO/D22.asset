@@ -16,11 +16,12 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Ent\xE3o, eu decidi vir pra Terra e seguir meu sonho. Mas eu n\xE3o queria
     ir direto para os palcos, queria come\xE7ar por dentro de tudo."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: afc9c8d3263266a47a6c3019a3b2410b, type: 3}
   fadeInCharacter: 0
   char_name: Lumy
   next: 23
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

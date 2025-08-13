@@ -20,7 +20,8 @@ MonoBehaviour:
   char_name: Anna
   next: 0
   chapter_end: 0
-  options: 0
+  final_option: 0
+  options: 1
   option:
   - opText: "Eu aceito viver essa aventura com voc\xEA, Lumy."
     next: 33

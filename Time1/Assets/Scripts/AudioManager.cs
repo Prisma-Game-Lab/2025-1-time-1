@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Audio; 
+using System;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
@@ -22,6 +24,11 @@ public class Sound
         source = audioSource;
         source.clip = clip;
         source.loop = loop;
+
+        source.playOnAwake = false;
+
+        float calculatedVolume = AudioManager.globalVolume * this.volume;
+        source.volume = calculatedVolume;
     }
 
     public void UpdateVolume(float newVolume)
@@ -29,7 +36,7 @@ public class Sound
         volume = newVolume;
         if (source != null)
         {
-            float modifier = 1 + Random.Range(-randomVolume / 2f, randomVolume / 2f);
+            float modifier = 1 + UnityEngine.Random.Range(-randomVolume / 2f, randomVolume / 2f); 
             source.volume = newVolume * modifier;
         }
     }
@@ -38,15 +45,16 @@ public class Sound
     {
         if (source == null)
         {
-            Debug.LogWarning("Sound.Play() called but source is null for sound: " + name);
+            
             return;
         }
 
-        float randomVolumeModifier = 1 + Random.Range(-randomVolume / 2f, randomVolume / 2f);
-        float randomPitchModifier = 1 + Random.Range(-randomPitch / 2f, randomPitch / 2f);
+        float randomVolumeModifier = 1 + UnityEngine.Random.Range(-randomVolume / 2f, randomVolume / 2f); 
+        float randomPitchModifier = 1 + UnityEngine.Random.Range(-randomPitch / 2f, randomPitch / 2f); 
 
         source.volume = AudioManager.globalVolume * randomVolumeModifier;
         source.pitch = pitch * randomPitchModifier;
+
         source.Play();
     }
 
@@ -77,7 +85,8 @@ public class AudioManager : MonoBehaviour
         {
             GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
             _go.transform.SetParent(this.transform);
-            sounds[i].SetSource(_go.AddComponent<AudioSource>());
+            AudioSource newAudioSource = _go.AddComponent<AudioSource>();
+            sounds[i].SetSource(newAudioSource);
         }
 
         SetMusicVolume(globalVolume);
@@ -87,13 +96,17 @@ public class AudioManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        // Cena inicial
         OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Cena carregada: " + scene.name);
+
 
         if (scene.name.StartsWith("Capitulo") || scene.name == "Fim" || scene.name == "Escolha")
         {
@@ -125,7 +138,7 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
-        Debug.LogWarning("AudioManager: Sound " + _name + " not found!");
+        
     }
 
     public void StopSound(string _name)
@@ -164,13 +177,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void SetMusicVolume(float volume)
+    public void SetMusicVolume(float newVolume)
     {
-        globalVolume = volume;
-        foreach (var s in sounds)
+
+        globalVolume = Mathf.Clamp01(newVolume);
+
+
+        foreach (Sound s in sounds)
         {
-            s.UpdateVolume(volume);
+            if (s.source != null && s.source.isPlaying)
+            {
+                s.source.volume = globalVolume * s.volume;
+            }
         }
+        
     }
 
     private void PlayIfNotPlaying(string name)

@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
   fadeInBackground: 0
-  text: "Na verdade, isso \xE9 uma vit\xF3ria sendo j\xE1 anunciada.a"
+  text: "Na verdade, isso \xE9 uma vit\xF3ria sendo j\xE1 anunciada."
   char_sprite: {fileID: 21300000, guid: 533d4f2de3bb3f54db653eaacab29cd2, type: 3}
   fadeInCharacter: 0
   char_name: Antoine
   next: 10000
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

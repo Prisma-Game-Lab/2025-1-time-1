@@ -18,10 +18,11 @@ MonoBehaviour:
     se eu nem estivesse aqui ainda, volta para o palco e come\xE7a sua pr\xF3xima
     fala)"
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
-  fadeInCharacter: 0
+  fadeInCharacter: 1
   char_name: Anna
   next: 13
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

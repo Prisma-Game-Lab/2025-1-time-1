@@ -16,11 +16,12 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Ai, t\xE1 bom. Sem tempo pra essa conversa. N\xE3o vai dar em nada de bom
     mesmo."
-  char_sprite: {fileID: 21300000, guid: 81b0c091487d59e4884d513b2674f36c, type: 3}
+  char_sprite: {fileID: 21300000, guid: b8f6040b516ab774180756a42bae0863, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 13
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

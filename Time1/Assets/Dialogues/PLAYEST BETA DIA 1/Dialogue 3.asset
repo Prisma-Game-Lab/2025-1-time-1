@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: f2f0350073aa99146ac15f99da3bab93, type: 3}
   fadeInBackground: 0
-  text: "Sim, tem o baile no final da semana, e eu ainda n\xE3o tenho um par"
+  text: "Sim, tem o baile no final da semana, e eu ainda n\xE3o tenho um par."
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 3
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

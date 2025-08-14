@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 705507f9e2cec394687230468a03fafe, type: 3}
   fadeInBackground: 0
-  text: "(Como ser\xE1 que ela foi, se tava preocupada fazendo isso?)."
+  text: "(Como ser\xE1 que ela foi, se tava preocupada fazendo isso?)"
   char_sprite: {fileID: 21300000, guid: 6f38d7d5e929f884da58909122070a96, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 49
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

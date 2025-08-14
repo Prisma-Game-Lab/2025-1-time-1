@@ -15,12 +15,13 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 705507f9e2cec394687230468a03fafe, type: 3}
   fadeInBackground: 0
   text: "Eu fiz uma an\xE1lise bem detalhada das pessoas do nosso ano do col\xE9gio,
-    pedindo pra todo mundo fazer um teste de personalidade que achei na internet"
+    pedindo pra todo mundo fazer um teste de personalidade que achei na internet..."
   char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 55
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

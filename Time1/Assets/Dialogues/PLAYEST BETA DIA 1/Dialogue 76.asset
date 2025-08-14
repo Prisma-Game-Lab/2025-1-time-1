@@ -15,12 +15,13 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: e7af51f9f825cdb4ebd2f08ff6e3ccca, type: 3}
   fadeInBackground: 1
   text: "(As luzes s\xE3o acesas, e vejo a Hana indo na dire\xE7\xE3o da coxia do
-    teatro )"
+    teatro)"
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 76
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

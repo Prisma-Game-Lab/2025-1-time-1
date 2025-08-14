@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+
 public class DialogueHandler : MonoBehaviour
 {
     [SerializeField] private string nextScene;
@@ -50,6 +51,24 @@ public class DialogueHandler : MonoBehaviour
 
     void Start()
     {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName.StartsWith("Capitulo1"))
+        {
+            AudioManager.instance.PlaySound("Dia1");   
+        }
+        else if (sceneName.StartsWith("Capitulo2") || sceneName.StartsWith("Capitulo3"))
+        {
+            AudioManager.instance.PlaySound("Dia2");   
+        }
+        else if (sceneName.StartsWith("Capitulo4"))
+        {
+            AudioManager.instance.PlaySound("Baile");  
+        }
+        else
+        {
+            Debug.LogWarning("Capítulo sem música definida!");
+        }
         dialogueIndex = GameManager.instance.index;
         canvas.GetComponent<Image>().sprite = dialogues[dialogueIndex].background;
         Sprite newSprite = dialogues[dialogueIndex].char_sprite;

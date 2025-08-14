@@ -135,7 +135,10 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         pretendenteAtual = pretendenteSelecionado;
-        AudioManager.instance.StopSound("MenuMusic");
+        AudioManager.instance.StopSound("Dia1");
+        AudioManager.instance.StopSound("Dia2");
+        AudioManager.instance.StopSound("Baile");
+
         AudioManager.instance.PlaySound("BattleMusic");
 
         dialogueBox.SetActive(true);

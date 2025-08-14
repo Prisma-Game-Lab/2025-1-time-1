@@ -807,7 +807,7 @@ MonoBehaviour:
   setaSelecionada: {fileID: 228031990}
   setaAvanco: {fileID: 82623512}
   dialogueBox: {fileID: 109451809}
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 932991781}
   playerHPFillImage: {fileID: 1292256484}
   enemyHPFillImage: {fileID: 1432072976}
   feedbackText: {fileID: 465612277}

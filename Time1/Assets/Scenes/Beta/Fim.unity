@@ -1556,7 +1556,7 @@ MonoBehaviour:
   - Calculadora
   - Fone
   - Livro
-  - Item sinistro alien
+  - "Buqu\xEA"
 --- !u!4 &1079245095
 Transform:
   m_ObjectHideFlags: 0

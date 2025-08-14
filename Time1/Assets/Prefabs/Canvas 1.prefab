@@ -834,6 +834,7 @@ MonoBehaviour:
   dialogueScene: {fileID: 6051055944343985740}
   saveName: []
   loadName: []
+  currChapter: 
   nextChapter: 
   chapterEnd: 0
 --- !u!1 &2783103171284339145
@@ -1242,8 +1243,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
-  m_fontSizeBase: 52
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1646,18 +1647,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: 
+  altScene: 
   saveManager: {fileID: 0}
+  pauseMenu: {fileID: 0}
   canvas: {fileID: 0}
   sprite: {fileID: 8297908942157019202}
   dialogue: {fileID: 7039499788365277865}
   charName: {fileID: 5114713306410300922}
-  option1: {fileID: 8389748543557937741}
-  option2: {fileID: 6861615633781956205}
-  option3: {fileID: 6614790150274972595}
+  dialogueLog: []
+  nameLog: []
   endScreen: {fileID: 0}
   LPbar: []
   dialogueBox: {fileID: 0}
   options: {fileID: 2234453774178834892}
+  dialogueButtons: []
   dialogues:
   - {fileID: 11400000, guid: 329ed5ad660d8c34dae40790330072bd, type: 2}
   - {fileID: 11400000, guid: eba51580b9d8bdf4aa85b8d747074d52, type: 2}
@@ -1670,6 +1673,8 @@ MonoBehaviour:
   currIndex: 0
   itemViewer: {fileID: 0}
   itemViewerPanel: {fileID: 0}
+  setaSelecionada: {fileID: 0}
+  setaAvanco: {fileID: 0}
 --- !u!114 &8372899967302576379
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -673,82 +673,81 @@ MonoBehaviour:
   pretendenteSelecionado: 2
   opcoesDeDialogo:
   - tipo: 0
-    fala: "Encar\xE1-la profundamente"
-    resposta: "Voc\xEA olha no fundo dos olhos dela\u2026\r\nEla te encara de volta\u2026
-      \r\nE ela piscou! Que luta \xE9pica!\r\r"
+    fala: "Convidar para uma segunda dan\xE7a"
+    resposta: "Voc\xEA convida Antoine para uma outra dan\xE7a\r\nEle interpreta
+      isso como um elogio de que sabe dan\xE7ar bem!\r"
   - tipo: 0
-    fala: Elogiar patch de caveira
-    resposta: "Voc\xEA diz que a caveira no uniforme dela \xE9 maneira\r\nEla d\xE1
-      um leve sorriso e diz que ela mesma costurou!\r"
+    fala: Elogiar cabelo
+    resposta: "Voc\xEA diz que o cabelo de Antoine parece muito lindo sob as luzes
+      do baile\r\nEle acha muito po\xE9tico!\r"
   - tipo: 0
-    fala: Chamar ela por um apelido carinhoso
-    resposta: "Voc\xEA chama ela de docinho de coco estragado\r\nEla ri e retribui
-      o \u201Celogio\u201D te chamando de florzinha murcha\r"
+    fala: Entregar rosa
+    resposta: "Voc\xEA tira uma rosa do bolso e a entrega para Antoine\r\nEla est\xE1
+      um pouco amassada, mas \xE9 a flor favorita dele!\r"
   - tipo: 0
-    fala: "Cham\xE1-la pro baile"
-    resposta: "Voc\xEA cria coragem e chama ela pro baile\r\nEla ri bastante da sua
-      piada!\r\nDeu certo, s\xF3 n\xE3o do jeito que voc\xEA esperava\u2026\r"
+    fala: Dizer cantada
+    resposta: "Voc\xEA diz que Antoine \xE9 a estrela mais bonita que caiu do c\xE9u!\r\nEle
+      d\xE1 nota 10 para sua cantada!\r"
   - tipo: 0
-    fala: Oferecer chocolate para ela
-    resposta: "Voc\xEA oferece a ela uma barrinha de chocolate que tinha comprado
-      antes\r\nEla aceita\u2026 \r\nE sua m\xE3o quase \xE9 perdida no processo!\r"
+    fala: Se declarar
+    resposta: "Voc\xEA declara seu amor para Antoine\r\nEle acha sua performance
+      perfeita!\r"
   - tipo: 0
-    fala: "Perguntar sobre a m\xFAsica que ela gosta"
-    resposta: "Voc\xEA pergunta sobre as m\xFAsicas que ela escuta\r\nSeu n\xEDvel
-      de rock n\xE3o \xE9 t\xE3o alto pra entender a resposta, mas parece que deu
-      certo!\r"
+    fala: "Abra\xE7ar"
+    resposta: "Voc\xEA abra\xE7a Antoine\r\nEle finge naturalidade e retribui, mas
+      o cora\xE7\xE3o dele t\xE1 a mil!\r"
   - tipo: 1
-    fala: Fazer cara de brava
-    resposta: "Voc\xEA tenta parecer intimidadora\r\nRebeca acha que voc\xEA t\xE1
-      imitando ela\u2026\r"
+    fala: Perguntar sobre passado
+    resposta: "Voc\xEA pergunta para Antoine se ele j\xE1 dan\xE7ou com algu\xE9m
+      assim\r\nEle ri e diz que obviamente sim\r\nMas ele com certeza t\xE1 mentindo\r"
   - tipo: 1
-    fala: Se apresentar
-    resposta: "Voc\xEA se apresenta pra ela como se voc\xEAs nunca tivessem se visto\r\nMas
-      voc\xEA esqueceu que voc\xEAs j\xE1 se viram at\xE9 demais\u2026\r"
+    fala: Comparar com famoso
+    resposta: "Voc\xEA diz que Antoine se parece com um ator famoso\r\nMas ele n\xE3o
+      tem ideia de quem voc\xEA t\xE1 falando\r"
   - tipo: 1
-    fala: "Elogiar alguma coisa\r"
-    resposta: "Voc\xEA tenta elogiar alguma coisa dela\r\nS\xF3 que voc\xEA esquece
-      o que ia falar no meio da frase e acaba dizendo nada com nada\r"
+    fala: "Perguntar sobre m\xFAsica cl\xE1ssica"
+    resposta: "Voc\xEA pergunta se ele gosta de m\xFAsica cl\xE1ssica\r\nEle diz
+      que ama, e come\xE7a a tentar imitar os instrumentais da m\xFAsica favorita
+      dele\r"
   - tipo: 1
-    fala: Perguntar sobre os estudos
-    resposta: "Voc\xEA pergunta como ela est\xE1 indo nos estudos\r\nDe acordo com
-      as palavras dela, ela \xE9 maneira demais pra isso\r"
+    fala: "Convidar para ver uma pe\xE7a"
+    resposta: "Voc\xEA convida Antoine para assistir um musical que vai ter na escola
+      semana que vem\r\nEle te diz que na verdade ele \xE9 o ator principal da pe\xE7a!\r"
   - tipo: 1
-    fala: "Pedir ajuda com a sua tarefa\r"
-    resposta: "Voc\xEA pede ajuda para arrumar as coisas do baile\r\nEla pergunta
-      quanto vai ganhar pra fazer isso\r"
+    fala: Oferecer ponche
+    resposta: "Voc\xEA entrega um copo de ponche para Antoine\r\nMas ele diz que
+      \xE9 al\xE9rgico a uvas!\r"
   - tipo: 1
-    fala: "Dar um aperto de m\xE3o\r"
-    resposta: "Voc\xEA d\xE1 um aperto de m\xE3o nele\r\n\u2026\r\r\nPor quanto tempo
-      voc\xEA pretende ficar segurando a m\xE3o dele!?"
+    fala: "Falar sobre animais\r"
+    resposta: "Voc\xEA pergunta para Antoine qual \xE9 o animal favorito dele\r\nEle
+      responde que s\xE3o seres humanos, com a beleza ef\xEAmera deles\r\n\u2026Por
+      que ele t\xE1 falando de humanos na terceira pessoa?\r"
   - tipo: 2
-    fala: Falar sobre uma banda de rock
-    resposta: "Voc\xEA diz que gosta de uma banda famosa que sempre aparece no seu
-      celular\r\nEla te zoa por nem conhecer a m\xFAsica mais famosa dessa banda
-      \r"
+    fala: Falar sobre o show de Henrico
+    resposta: "Voc\xEA diz que o show est\xE1 um m\xE1ximo\r\nEle fica um pouco ofendido
+      que n\xE3o \xE9 o foco de sua aten\xE7\xE3o!\r"
   - tipo: 2
-    fala: Apontar para baixo
-    resposta: "Voc\xEA aponta para ela e mente que h\xE1 uma mancha em sua blusa\r\n\u2026\r\nEla
-      n\xE3o vai cair nessa\r"
+    fala: "Falar sobre dan\xE7a"
+    resposta: "Voc\xEA diz que Antoine dan\xE7a de um jeito muito dram\xE1tico\r\nEle
+      resmunga e diz que \xE9 arte!\r"
   - tipo: 2
-    fala: "Ignorar a exist\xEAncia dela\r"
-    resposta: "Voc\xEA finge que n\xE3o tem ningu\xE9m na sua frente\r\nFoi efetivo
-      at\xE9 demais e voc\xEA acaba pisando no p\xE9 dela!\r\nVoc\xEA escuta coisas
-      que poderiam fazer qualquer um levar advert\xEAncia\u2026\r"
+    fala: "Roubar o nariz\r"
+    resposta: "Voc\xEA brinca de roubar o nariz de Antoine\r\nEle n\xE3o entende
+      a brincadeira e implora para voc\xEA devolver!\r"
   - tipo: 2
-    fala: Fazer uma pose maneira
-    resposta: "Voc\xEA faz uma pose exagerada bem no meio de um monte de gente\u2026\r\n\u2026\r\nIsso
-      foi demais at\xE9 mesmo pra ela\u2026\r\nE pra voc\xEA tamb\xE9m\u2026\r"
+    fala: "Perguntar sobre fam\xEDlia"
+    resposta: "Voc\xEA pergunta se os pais de Antoine tamb\xE9m fazem teatro\r\nEle
+      fica muito nervoso de repente\r\nTalvez ele seja \xF3rf\xE3o\u2026\r"
   - tipo: 2
-    fala: Elogiar o cabelo dela
-    resposta: "Voc\xEA diz que o cabelo dela \xE9 muito bonito e queria que o seu
-      fosse igual ao dela\r\nFoi muito efetivo! Ou ao menos seria se voc\xEA parasse
-      sua frase no meio e falasse de tudo que voc\xEA j\xE1 tentou fazer no cabelo\r"
+    fala: Pedir pra cantar
+    resposta: "Voc\xEA pede Antoine para dar um show e cantar para voc\xEA\r\nEle
+      aceita e come\xE7a a cantar\u2026\u2026.. horrivelmente\r\nVoc\xEA pede para
+      ele parar e ele fica triste\r"
   - tipo: 2
-    fala: Dar um toca aqui nela
-    resposta: "Voc\xEA levanta a m\xE3o para fazer um toca aqui \xE9pico!\r\nEla
-      leva a m\xE3o dela ao alto tamb\xE9m\u2026\r\nE ela erra de prop\xF3sito! Voc\xEA
-      cai no truque mais velho de todos os tempos!\r"
+    fala: Perguntar sobre cabelo
+    resposta: "Voc\xEA pergunta a Antoine se o cabelo dele \xE9 natural\r\nEle se
+      sente ofendido e detalha passo a passo como ele deixa seu cabelo t\xE3o lindo
+      e sedoso!\r"
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0

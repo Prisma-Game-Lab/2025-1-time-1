@@ -62,4 +62,88 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beta/RebeldePlaytest.unity
     guid: 77d19222c4274e9488d841869a669e90
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.unity
+    guid: d158c190a53da1f46a81d460396b82d9
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.1.unity
+    guid: 31e3f999b3b4ebc48a0e587f6324db15
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.1.1.unity
+    guid: ffe7e1f25a513e4429fe94f235bd4c7a
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.2.unity
+    guid: 4e6152b6e3230834194d7a4836e4a7c0
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.A.unity
+    guid: af2cc60981b5b864cb7c2ec41bb4774b
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.A.1.unity
+    guid: e809c161bfe56c64aae5a3c2780cfac7
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.H.unity
+    guid: 8cdf476dba4107244adbc3247fbcacbc
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.H.1.unity
+    guid: e9ffc28a71f4e8547923072dabef8d67
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.R.unity
+    guid: f4b3aa60ef7c8d74dba165289a325c92
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo3.R.1.unity
+    guid: 01e180ad3cb626242b88c8c0d754e0cc
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.A.unity
+    guid: 50ada6763813e9b44a87bd70af8410b1
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.A.1.unity
+    guid: 92b57f8aafb272c4ba6e9b6176590473
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.A.2.unity
+    guid: 7d24727a3a1a0a64a878a5f9f2a3e439
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.A.2.1.unity
+    guid: e85c4ed07ddc2734fb590aaa19bff738
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.H.unity
+    guid: 51c06294056807d4f88ddf97a76a8a3b
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.H.1.unity
+    guid: fb537a1509155dd4a8848f399ece0939
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.H.2.unity
+    guid: d80ff42177111fb4890b36ff2190a40e
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.H.2.1.unity
+    guid: 9c4c2a51d4d2f8346ac10ed1be393ec5
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.R.unity
+    guid: 0a7c8c92d375e4940b0b8aa66264557f
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.R.1.unity
+    guid: a80dcf6c1d5b0dc449436409e3b80c30
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.R.2.unity
+    guid: 268323036f609cc4cbd477267905ac78
+  - enabled: 1
+    path: Assets/Scenes/Beta/Capitulo4.R.2.1.unity
+    guid: 6ac9539ee287f1344bf518e9e4f0534b
+  - enabled: 1
+    path: Assets/Scenes/Beta/Escolha.unity
+    guid: c6ed9c23717fea54cb5b2c55fae2e2bc
+  - enabled: 1
+    path: Assets/Scenes/Beta/Fim.unity
+    guid: 7eb6c268e6645814fa4b8087a6c0c02f
+  - enabled: 1
+    path: Assets/Scenes/Beta/NerdFinal.unity
+    guid: 47e4175d3fb556b40b1e389354010d68
+  - enabled: 1
+    path: Assets/Scenes/Beta/RebeldeFinal.unity
+    guid: 921f40dbde5059c45af6f994fd7ed0ba
+  - enabled: 1
+    path: Assets/Scenes/Beta/AtorFinal.unity
+    guid: 24058e8f9647e95458e94d32020137d0
+  - enabled: 1
+    path: Assets/Scenes/Beta/AtorPlaytest.unity
+    guid: 14ab55117318d7e4ea8efda6ab1e31af
   m_configObjects: {}

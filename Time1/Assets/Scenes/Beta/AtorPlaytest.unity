@@ -1159,82 +1159,80 @@ MonoBehaviour:
   pretendenteSelecionado: 2
   opcoesDeDialogo:
   - tipo: 0
-    fala: "Encar\xE1-la profundamente"
-    resposta: "Voc\xEA olha no fundo dos olhos dela\u2026\r\nEla te encara de volta\u2026
-      \r\nE ela piscou! Que luta \xE9pica!\r\r"
+    fala: "Fazer uma pose dram\xE1tica"
+    resposta: "Voc\xEA se esfor\xE7a ao m\xE1ximo e faz uma pose dram\xE1tica\r\nE
+      a plateia (Antoine) vai \xE0 loucura com sua atua\xE7\xE3o!\r"
   - tipo: 0
-    fala: Elogiar patch de caveira
-    resposta: "Voc\xEA diz que a caveira no uniforme dela \xE9 maneira\r\nEla d\xE1
-      um leve sorriso e diz que ela mesma costurou!\r"
+    fala: Mandar ele quebrar a perna
+    resposta: "Voc\xEA diz para ele quebrar a perna\r\nAntoine fica emocionado com
+      sua dedica\xE7\xE3o!\r"
   - tipo: 0
-    fala: Chamar ela por um apelido carinhoso
-    resposta: "Voc\xEA chama ela de docinho de coco estragado\r\nEla ri e retribui
-      o \u201Celogio\u201D te chamando de florzinha murcha\r"
+    fala: "Convid\xE1-lo para uma dan\xE7a"
+    resposta: "Voc\xEA convida Antoine para praticar para o baile\r\nEle diz que
+      j\xE1 consegue at\xE9 escutar os aplausos depois de sua dan\xE7a\r"
   - tipo: 0
-    fala: "Cham\xE1-la pro baile"
-    resposta: "Voc\xEA cria coragem e chama ela pro baile\r\nEla ri bastante da sua
-      piada!\r\nDeu certo, s\xF3 n\xE3o do jeito que voc\xEA esperava\u2026\r"
+    fala: Recontar a batalha contra o Dummy
+    resposta: "Voc\xEA conta para Antoine sobre uma luta \xE9pica que teve contra
+      um boneco que est\xE1 no fundo do teatro\u2026\r\nOs detalhes! As emo\xE7\xF5es!
+      Antoine se pergunta por que voc\xEA n\xE3o faz teatro\r"
   - tipo: 0
-    fala: Oferecer chocolate para ela
-    resposta: "Voc\xEA oferece a ela uma barrinha de chocolate que tinha comprado
-      antes\r\nEla aceita\u2026 \r\nE sua m\xE3o quase \xE9 perdida no processo!\r"
+    fala: Pedir ajuda ao Dummy
+    resposta: "Voc\xEA observa o Dummy no fundo do teatro e espera que ele te ajude\r\nAntoine
+      fica impressionado com o seu interesse pelo cen\xE1rio e voc\xEA sente uma
+      for\xE7a misteriosa ajudando voc\xEA\u2026\r"
   - tipo: 0
-    fala: "Perguntar sobre a m\xFAsica que ela gosta"
-    resposta: "Voc\xEA pergunta sobre as m\xFAsicas que ela escuta\r\nSeu n\xEDvel
-      de rock n\xE3o \xE9 t\xE3o alto pra entender a resposta, mas parece que deu
-      certo!\r"
+    fala: "Dar um aut\xF3grafo"
+    resposta: "Voc\xEA escreve seu nome no pano sobre a mesa\r\nAntoine fica surpreso
+      a n\xE3o ser a pessoa que deu o aut\xF3grafo!\r"
   - tipo: 1
-    fala: Fazer cara de brava
-    resposta: "Voc\xEA tenta parecer intimidadora\r\nRebeca acha que voc\xEA t\xE1
-      imitando ela\u2026\r"
+    fala: Fazer uma pose chamativa
+    resposta: "Voc\xEA coloca uma rosa na boca e tenta fazer uma pose como a de Antoine\r\nApesar
+      de ter sido uma boa tentativa, nunca ser\xE1 capaz de chegar no original\r"
   - tipo: 1
-    fala: Se apresentar
-    resposta: "Voc\xEA se apresenta pra ela como se voc\xEAs nunca tivessem se visto\r\nMas
-      voc\xEA esqueceu que voc\xEAs j\xE1 se viram at\xE9 demais\u2026\r"
+    fala: Fazer cara de beijinho
+    resposta: "Voc\xEA faz uma cara de quem t\xE1 esperando um beijo\r\nAntoine acha
+      engra\xE7ado!\r"
   - tipo: 1
-    fala: "Elogiar alguma coisa\r"
-    resposta: "Voc\xEA tenta elogiar alguma coisa dela\r\nS\xF3 que voc\xEA esquece
-      o que ia falar no meio da frase e acaba dizendo nada com nada\r"
+    fala: "Elogiar a comida\r"
+    resposta: "Voc\xEA fala que a comida est\xE1 boa\r\nAntoine fala que n\xE3o pode
+      aceitar o elogio j\xE1 que n\xE3o foi ele quem fez\r"
   - tipo: 1
-    fala: Perguntar sobre os estudos
-    resposta: "Voc\xEA pergunta como ela est\xE1 indo nos estudos\r\nDe acordo com
-      as palavras dela, ela \xE9 maneira demais pra isso\r"
+    fala: Subir no palco
+    resposta: "Voc\xEA sobe ao palco e pensa no que fazer\r\nMas voc\xEA s\xF3 consegue
+      se lembrar do que aconteceu na apresenta\xE7\xE3o do ano passado\u2026\r"
   - tipo: 1
-    fala: "Pedir ajuda com a sua tarefa\r"
-    resposta: "Voc\xEA pede ajuda para arrumar as coisas do baile\r\nEla pergunta
-      quanto vai ganhar pra fazer isso\r"
+    fala: "Piscar para ele\r"
+    resposta: "Voc\xEA pisca para Antoine\r\nMas parece que ele piscou ao mesmo tempo
+      e n\xE3o percebeu seu movimento\u2026\r"
   - tipo: 1
-    fala: "Dar um aperto de m\xE3o\r"
-    resposta: "Voc\xEA d\xE1 um aperto de m\xE3o nele\r\n\u2026\r\r\nPor quanto tempo
-      voc\xEA pretende ficar segurando a m\xE3o dele!?"
+    fala: "Oferecer de dividir a conta\r"
+    resposta: "Voc\xEA fala que vai dividir a conta do \u201Cpiquenique secreto\u201D
+      com Antoine\r\nMas parece que ele j\xE1 pagou tudo\u2026\r"
   - tipo: 2
-    fala: Falar sobre uma banda de rock
-    resposta: "Voc\xEA diz que gosta de uma banda famosa que sempre aparece no seu
-      celular\r\nEla te zoa por nem conhecer a m\xFAsica mais famosa dessa banda
-      \r"
+    fala: "Fazer uma rever\xEAncia para a plateia"
+    resposta: "Voc\xEA faz uma rever\xEAncia pela sua performance\r\nMas a batalha
+      mal come\xE7ou!\r"
   - tipo: 2
-    fala: Apontar para baixo
-    resposta: "Voc\xEA aponta para ela e mente que h\xE1 uma mancha em sua blusa\r\n\u2026\r\nEla
-      n\xE3o vai cair nessa\r"
+    fala: Se lembrar das suas aulas de teatro
+    resposta: "Voc\xEA tenta se lembrar das frases de uma pe\xE7a que atuou no fundamental\r\nMas
+      voc\xEA n\xE3o consegue nem lembrar do nome da protagonista\r"
   - tipo: 2
-    fala: "Ignorar a exist\xEAncia dela\r"
-    resposta: "Voc\xEA finge que n\xE3o tem ningu\xE9m na sua frente\r\nFoi efetivo
-      at\xE9 demais e voc\xEA acaba pisando no p\xE9 dela!\r\nVoc\xEA escuta coisas
-      que poderiam fazer qualquer um levar advert\xEAncia\u2026\r"
+    fala: "Dar um presente\r"
+    resposta: "Voc\xEA revira sua bolsa procurando um presente para Antoine\r\n\u2026E
+      d\xE1 uma bala Juquinha para ele!\r\nH\xE1 quanto tempo isso tava na sua bolsa?\r"
   - tipo: 2
-    fala: Fazer uma pose maneira
-    resposta: "Voc\xEA faz uma pose exagerada bem no meio de um monte de gente\u2026\r\n\u2026\r\nIsso
-      foi demais at\xE9 mesmo pra ela\u2026\r\nE pra voc\xEA tamb\xE9m\u2026\r"
+    fala: Entregar uma rosa
+    resposta: "Voc\xEA entrega uma rosa para ele\r\nE voc\xEA se esqueceu que ele
+      que te deu a rosa em primeiro lugar!\r"
   - tipo: 2
-    fala: Elogiar o cabelo dela
-    resposta: "Voc\xEA diz que o cabelo dela \xE9 muito bonito e queria que o seu
-      fosse igual ao dela\r\nFoi muito efetivo! Ou ao menos seria se voc\xEA parasse
-      sua frase no meio e falasse de tudo que voc\xEA j\xE1 tentou fazer no cabelo\r"
+    fala: Aplaudir
+    resposta: "Voc\xEA come\xE7a a aplaudir a performance de Antoine\r\nE acabou
+      sendo efetivo at\xE9 demais! Parece que seu brilho aumentou depois disso!\r"
   - tipo: 2
-    fala: Dar um toca aqui nela
-    resposta: "Voc\xEA levanta a m\xE3o para fazer um toca aqui \xE9pico!\r\nEla
-      leva a m\xE3o dela ao alto tamb\xE9m\u2026\r\nE ela erra de prop\xF3sito! Voc\xEA
-      cai no truque mais velho de todos os tempos!\r"
+    fala: Mostrar a maquiagem do Dummy
+    resposta: "Voc\xEA fala que fez a maquiagem do Dummy para impression\xE1-lo\r\nMas
+      sem querer voc\xEA trope\xE7a e acaba derrubando o Dummy\u2026\r\nTalvez seja
+      melhor n\xE3o mentir da pr\xF3xima vez, Hana ir\xE1 se lembrar disso\u2026\r"
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0

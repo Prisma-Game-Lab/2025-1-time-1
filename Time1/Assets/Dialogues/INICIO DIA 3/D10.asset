@@ -15,11 +15,12 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 101590b92b105a247bf8bd0063261c98, type: 3}
   fadeInBackground: 0
   text: "Se eu for legal com voc\xEA, vai acabar acostumando, sabe?"
-  char_sprite: {fileID: 21300000, guid: 81b0c091487d59e4884d513b2674f36c, type: 3}
+  char_sprite: {fileID: 21300000, guid: b8f6040b516ab774180756a42bae0863, type: 3}
   fadeInCharacter: 0
   char_name: Rebeca
   next: 11
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

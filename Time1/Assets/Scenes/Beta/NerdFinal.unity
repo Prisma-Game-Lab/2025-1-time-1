@@ -838,83 +838,78 @@ MonoBehaviour:
   pretendenteSelecionado: 0
   opcoesDeDialogo:
   - tipo: 0
-    fala: Pedir ajuda nos estudos
-    resposta: "Voc\xEA pede ajuda com os estudos\r\nOs \xF3culos dele brilham em
-      empolga\xE7\xE3o \r"
+    fala: "Elogiar apar\xEAncia"
+    resposta: "Voc\xEA diz que Henrique est\xE1 muito bonitinho hoje\r\nEle fica
+      muito envergonhado, mas parece mais confort\xE1vel em ser elogiado!\r"
   - tipo: 0
-    fala: "Falar que o irm\xE3o verde \xE9 melhor do que o vermelho"
-    resposta: "Voc\xEA fala que o irm\xE3o verde \xE9 o melhor dos dois\r\nEle fica
-      impressionado com sua sabedoria"
+    fala: Convidar para jogar Monstrobolso
+    resposta: "Voc\xEA convida Henrique para jogar Monstrobolso depois do baile na
+      sua casa\r\nEle mal parece conter sua anima\xE7\xE3o!\r"
   - tipo: 0
-    fala: Oferecer seu lanche para ele
-    resposta: "Voc\xEA tenta dividir seu lanche com ele\r\nEle parece relutante em
-      aceitar at\xE9 que o est\xF4mago dele diz o contr\xE1rio"
+    fala: Perguntar sobre livros
+    resposta: "Voc\xEA pergunta se ele anda lendo algum livro\r\nEle fica entusiasmado
+      e conta sobre os 17 livros diferentes que ele t\xE1 lendo!\r"
   - tipo: 0
-    fala: Falar sobre um jogo desconhecido
-    resposta: "Voc\xEA tenta inventar um jogo desconhecido e se mostrar\r\nMisteriosamente
-      1% Suco de Ma\xE7\xE3 \xE9 um dos jogos favoritos dele!\r"
+    fala: Elogiar gravata
+    resposta: "Voc\xEA elogia a gravata de Henrique\r\nEle fica feliz que algu\xE9m
+      finalmente aprecia a genialidade da gravata matem\xE1tica!\r"
   - tipo: 0
-    fala: Falar sobre as estrelas
-    resposta: "Voc\xEA fala que gosta de ver o c\xE9u estrelado durante a noite\r\nEle
-      se empolga bastante e come\xE7a a contar fatos aleat\xF3rios sobre o espa\xE7o"
+    fala: "Fazer dan\xE7a de jogo online"
+    resposta: "Voc\xEA chama Henrique pra fazer uma dan\xE7a rid\xEDcula que voc\xEA
+      viu em algum jogo online\r\nEle se impressiona muito com seus movimentos!\r"
   - tipo: 0
-    fala: "Abra\xE7\xE1-lo"
-    resposta: "Voc\xEA d\xE1 um abra\xE7o nele\r\nO golpe parece ter sido efetivo
-      at\xE9 demais!\r\nEle ficou sem rea\xE7\xE3o!"
+    fala: Chamar para ir ao cinema
+    resposta: "Voc\xEA convida Henrique para ir ao cinema amanh\xE3 ver o lan\xE7amento
+      de um filme gen\xE9rico de super her\xF3i\r\nEle aceita e come\xE7a a explicar
+      a linha do tempo da franquia!\r"
   - tipo: 1
-    fala: "Encar\xE1-lo profundamente\r"
-    resposta: "Voc\xEA o encara profundamente\u2026\r\nO reflexo do Sol em seus \xF3culos
-      atrapalha seu ataque"
+    fala: Oferecer ponche
+    resposta: "Voc\xEA pergunta se ele quer um gole do ponche\r\nEle ainda morre
+      de vergonha de beber do copo compartilhado\r"
   - tipo: 1
-    fala: 'Perguntar sobre suas notas
-
-'
-    resposta: "Voc\xEA pergunta como ele est\xE1 indo nas provas\r\nEle fala que
-      est\xE1 indo bem\u2026 e voc\xEAs n\xE3o falam mais nada"
+    fala: Olhar intensamente
+    resposta: "Voc\xEA olha fixamente para os \xF3culos dele\r\nE percebe que ele
+      tem os olhos mais glamorosos do mundo!\r"
   - tipo: 1
-    fala: "Ficar em sil\xEAncio\r"
-    resposta: "Voc\xEA fica em sil\xEAncio\u2026\r\nEle n\xE3o aguenta o sil\xEAncio
-      constrangedor e volta o olhar para seu videogame"
+    fala: "Dizer que a lua est\xE1 bonita"
+    resposta: "Voc\xEA diz que a lua est\xE1 linda hoje\r\n\u2026\r\nVoc\xEAs est\xE3o
+      em um ambiente fechado\r\nN\xE3o d\xE1 pra ver a lua\r"
   - tipo: 1
-    fala: 'Perguntar sobre faculdade
-
-'
-    resposta: "Voc\xEA pergunta para ele qual faculdade ele pretende cursar no futuro\r\nEle
-      fica sem resposta, essa pergunta n\xE3o \xE9 f\xE1cil pra ningu\xE9m"
+    fala: Sugerir outro lugar
+    resposta: "Voc\xEA sugere outro lugar para voc\xEAs dois ficarem\r\nMas voc\xEAs
+      acabaram de lutar por um lugar perto do palco!\r"
   - tipo: 1
-    fala: "Dar um aperto de m\xE3o\r"
-    resposta: "Voc\xEA d\xE1 um aperto de m\xE3o nele\r\n\u2026\r\r\nPor quanto tempo
-      voc\xEA pretende ficar segurando a m\xE3o dele!?"
+    fala: "Perguntar sobre seu progresso em Deltarune\r\r"
+    resposta: "Voc\xEA pergunta para ele sobre seu progresso em Deltarune\r\nEle
+      fica meio triste por ter que esperar mais um ano\u2026\r"
   - tipo: 1
-    fala: Perguntar sobre grade de aulas
-    resposta: "Voc\xEA pergunta sobre os hor\xE1rios de aula dele...\r\nAcho que
-      ele j\xE1 foi stalkeado o suficiente "
+    fala: Perguntar sobre clima
+    resposta: "Voc\xEA diz que o tempo est\xE1 bom hoje\r\nEle te d\xE1 uma explica\xE7\xE3o
+      detalhada entre a diferen\xE7a entre tempo e clima\r"
   - tipo: 2
-    fala: Perguntar o signo dele
-    resposta: "Voc\xEA pergunta qual o signo dele\r\nO clima ficou pesado\u2026"
+    fala: Falar cantada
+    resposta: "Voc\xEA diz que Henrique tem uma beleza de outro mundo\r\nPor algum
+      motivo ele ficou com cara de quem vai vomitar.\r"
   - tipo: 2
-    fala: "Fazer uma refer\xEAncia \xE0 Guerras Estelares\r"
-    resposta: "Voc\xEA faz uma refer\xEAncia \xE0 Guerras Estelares\r\nEle come\xE7a
-      a explicar detalhadamente o motivo do som n\xE3o se propagar no espa\xE7o \t"
+    fala: "Dan\xE7ar mais"
+    resposta: "Voc\xEA puxa Henrique para outra dan\xE7a\r\nMas ele acaba se desequilibrando
+      e cai no ch\xE3o!\r"
   - tipo: 2
-    fala: 'Falar algo inteligente
-
-'
-    resposta: "Voc\xEA fala algo que viu nas redes sociais\r\nEle volta a jogar seu
-      videogame depois que voc\xEA questionou teorias j\xE1 provadas"
+    fala: Dar salgadinhos
+    resposta: "Voc\xEA tira um punhado de salgadinhos do seu bolso\r\nHenrique fica
+      se perguntando porqu\xEA voc\xEA guardou eles ali\r"
   - tipo: 2
-    fala: Falar uma curiosidade
-    resposta: "Voc\xEA aponta para um formigueiro pr\xF3ximo e come\xE7a a falar
-      coisas sobre formigas\r\nVoc\xEA percebe que ele est\xE1 tremendo de medo desde
-      que voc\xEA apontou o formigueiro"
+    fala: Comparar nome com Henrico
+    resposta: "Voc\xEA brinca dizendo que Henrique tem o nome parecido com o do cantor\r\nEle
+      n\xE3o aguenta mais ouvir isso\u2026\r"
   - tipo: 2
-    fala: Perguntar sobre roupas
-    resposta: "Voc\xEA pergunta onde ele comprou suas roupas\nEle parece confuso
-      e diz que esse \xE9 o uniforme da escola"
+    fala: Puxar pra mais perto
+    resposta: "Voc\xEA puxa Henrique pela gravata pra chegar mais perto\r\n\u2026\r\nVoc\xEA
+      quase enforca ele sem querer!\r"
   - tipo: 2
-    fala: "Experimentar \xF3culos"
-    resposta: "Voc\xEA rouba os \xF3culos dele e os coloca na sua cara\nEle fica
-      furioso, mas de um jeito inofensivo"
+    fala: Falar sobre relacionamentos
+    resposta: "Voc\xEA pergunta como v\xE3o as namoradinhas\r\n\u2026\r\nO que tem
+      de errado com voc\xEA!?\r"
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0

@@ -268,24 +268,33 @@ public class DialogueHandler : MonoBehaviour
 
     void FinalOption(int index)
     {
+        int items = 0;
+        for (int i = 0; i < GameManager.instance.itemsAcquired.Length; ++i)
+        {
+            if (GameManager.instance.itemsAcquired[i] == true)
+            {
+                items++;
+            }
+
+        }
         switch (index)
         {
             case 0:
-                if (GameManager.instance.lovePoints[0] > 0)
+                if (GameManager.instance.lovePoints[0] > 0 && items > 1)
                 {
                     SceneManager.LoadScene("Capitulo3.R");
                 }
                 SceneManager.LoadScene("Capitulo3.R.1");
                 break;
             case 1:
-                if (GameManager.instance.lovePoints[1] > 0)
+                if (GameManager.instance.lovePoints[1] > 0 && items > 1)
                 {
                     SceneManager.LoadScene("Capitulo3.H");
                 }
                 SceneManager.LoadScene("Capitulo3.H.1");
                 break;
             case 2:
-                if (GameManager.instance.lovePoints[2] > 0)
+                if (GameManager.instance.lovePoints[2] > 0 && items > 1)
                 {
                     SceneManager.LoadScene("Capitulo3.A");
                 }

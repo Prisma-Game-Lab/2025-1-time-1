@@ -84,6 +84,10 @@ public class SaveManager : MonoBehaviour
         GameManager.instance.timePlayed = Time.time;
         string[] saveText = readSave(save);
         string sceneName = saveText[0].Split(": ")[1];
+        if (sceneName == "")
+        {
+            return;
+        }
         for (int i = 0; i < 3; i++)
         {
             Int32.TryParse(saveText[3].Split(':')[i + 1], out GameManager.instance.lovePoints[i]);

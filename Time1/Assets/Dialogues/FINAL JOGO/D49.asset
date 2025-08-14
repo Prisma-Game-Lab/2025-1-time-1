@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: f2f0350073aa99146ac15f99da3bab93, type: 3}
   fadeInBackground: 0
   text: "- FIM DO CAP\xCDTULO 4 -"
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 50

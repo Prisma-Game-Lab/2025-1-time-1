@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
   fadeInBackground: 0
-  text: "(E a noite termina de um jeito que eu nunca esperaria que acontecesse. Espero
-    que minha hist\xF3ria com a Rebeca n\xE3o tenha acabado ainda)"
+  text: "(Acabamos dan\xE7ando o resto da noite, s\xF3 parando para beber ou comer
+    alguma coisa)"
   char_sprite: {fileID: 21300000, guid: 142dc225961d5a241b8f2c9fc5c47931, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 8
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

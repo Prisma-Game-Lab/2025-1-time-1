@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
   fadeInBackground: 0
-  text: "Quer continuar? Tenho que assumir que n\xE3o t\xF4 pronta pra parar de dan\xE7ar.
-    ANNA: Vamos ver quem aguenta mais tempo, ent\xE3o. "
+  text: "Quer continuar? Tenho que assumir que n\xE3o t\xF4 pronta pra parar de dan\xE7ar. "
   char_sprite: {fileID: 21300000, guid: bf15aef7db1daa9408a2e4c146f76f6c, type: 3}
   fadeInCharacter: 0
   char_name: Rebeca
   next: 6
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

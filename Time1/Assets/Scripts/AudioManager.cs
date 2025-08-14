@@ -95,26 +95,23 @@ public class AudioManager : MonoBehaviour
     {
         Debug.Log("Cena carregada: " + scene.name);
 
-        switch (scene.name)
+        if (scene.name.StartsWith("Capitulo") || scene.name == "Fim" || scene.name == "Escolha")
         {
-            case "Menu":
-                PlayIfNotPlaying("MenuMusic");
-                StopSound("BattleMusic");
-                break;
-
-            case "DialoguePlaytest":
-                // Mantém a música do menu tocando — não faz nada
-                break;
-
-            case "BattlePlaytest":
-                StopSound("MenuMusic");
-                PlayIfNotPlaying("BattleMusic");
-                break;
-
-            default:
-                StopSound("MenuMusic");
-                StopSound("BattleMusic");
-                break;
+            StopSound("MenuMusic");
+            StopSound("BattleMusic");
+        }
+        else if (scene.name.EndsWith("Playtest") || (scene.name.EndsWith("Final")))
+        {
+            StopSound("MenuMusic");
+            PlayIfNotPlaying("BattleMusic");
+        }
+        else if (scene.name == "Menu")
+        {
+            PlayIfNotPlaying("MenuMusic");
+            StopSound("BattleMusic");
+            StopSound("Dia1");
+            StopSound("Dia2");
+            StopSound("Baile");
         }
     }
 

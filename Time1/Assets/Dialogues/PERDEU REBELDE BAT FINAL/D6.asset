@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2b31bbe119234aaeaaf61fd248d2b, type: 3}
   m_Name: D6
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 66d0c97dc4924e34cbcd9162bdb471e9, type: 3}
   fadeInBackground: 0
   text: "Vamos ver quem aguenta mais tempo, ent\xE3o."
-  char_sprite: {fileID: 0}
+  char_sprite: {fileID: 21300000, guid: bf15aef7db1daa9408a2e4c146f76f6c, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 7

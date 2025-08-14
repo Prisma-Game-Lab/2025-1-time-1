@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
-  text: "N\xE3o! Por favor, n\xE3o grite! Eu n\xE7ao vou te machucar"
+  text: "N\xE3o! Por favor, n\xE3o grite! Eu n\xE3o vou te machucar"
   char_sprite: {fileID: 21300000, guid: d966d68cfd18413458f674c57911dfb3, type: 3}
   fadeInCharacter: 0
   char_name: Alien Fofo

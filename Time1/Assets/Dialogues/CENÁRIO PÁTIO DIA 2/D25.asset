@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 8f15f167ba8acc240af0a4a2db8606ba, type: 3}
   fadeInBackground: 0
-  text: "(Mas a\xED a aten\xE7\xE3o dele se volta pra mim e pra Hana de repente)."
+  text: "(Mas a\xED a aten\xE7\xE3o dele se volta pra mim e pra Hana de repente.)"
   char_sprite: {fileID: 21300000, guid: 99a711491ffadca439e24ddf7249b145, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 26
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

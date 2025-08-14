@@ -16,12 +16,13 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "(Ele rapidamente se levanta e come\xE7a a ajeitar a roupa da forma mais
     graciosa que consegue, ainda com um sorriso carism\xE1tico no rosto, como se
-    nada tivesse acontecido). "
+    nada tivesse acontecido.)"
   char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 25
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

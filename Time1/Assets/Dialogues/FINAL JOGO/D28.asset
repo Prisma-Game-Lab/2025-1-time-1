@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: df941ed55aea6de4aafb1350a242e873, type: 3}
   fadeInBackground: 0
-  text: "Mas prometo que tudo o que eu mais quero e viver esse sonho com voc\xEA
+  text: "Mas prometo que tudo o que eu mais quero \xE9 viver esse sonho com voc\xEA
     do meu lado. Quero continuar nosso amor. Ele foi real!"
   char_sprite: {fileID: 21300000, guid: 096bc842b2e843445a30692da8ae2c04, type: 3}
   fadeInCharacter: 0

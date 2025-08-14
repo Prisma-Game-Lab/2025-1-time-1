@@ -718,9 +718,9 @@ MonoBehaviour:
     resposta: "Voc\xEA pede ajuda para arrumar as coisas do baile\r\nEla pergunta
       quanto vai ganhar pra fazer isso\r"
   - tipo: 1
-    fala: "Dar um aperto de m\xE3o\r"
-    resposta: "Voc\xEA d\xE1 um aperto de m\xE3o nele\r\n\u2026\r\r\nPor quanto tempo
-      voc\xEA pretende ficar segurando a m\xE3o dele!?"
+    fala: "Pedir pra ela abaixar a m\xFAsica"
+    resposta: "Voc\xEA fala pra ela abaixar a m\xFAsica\r\nEla n\xE3o entende do
+      que voc\xEA est\xE1 falando\r"
   - tipo: 2
     fala: Falar sobre uma banda de rock
     resposta: "Voc\xEA diz que gosta de uma banda famosa que sempre aparece no seu

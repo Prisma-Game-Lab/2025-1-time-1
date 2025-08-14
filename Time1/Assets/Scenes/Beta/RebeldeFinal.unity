@@ -1231,82 +1231,82 @@ MonoBehaviour:
   pretendenteSelecionado: 1
   opcoesDeDialogo:
   - tipo: 0
-    fala: "Encar\xE1-la profundamente"
-    resposta: "Voc\xEA olha no fundo dos olhos dela\u2026\r\nEla te encara de volta\u2026
-      \r\nE ela piscou! Que luta \xE9pica!\r\r"
+    fala: Falar sobre Henrico
+    resposta: "Voc\xEA pede pra Rebeca mostrar mais m\xFAsicas de Henrico\r\nEla
+      logo divide um fone de ouvido com voc\xEA e coloca a discografia inteira de
+      Henrico para voc\xEAs ouvirem pro resto da noite!\r"
   - tipo: 0
-    fala: Elogiar patch de caveira
-    resposta: "Voc\xEA diz que a caveira no uniforme dela \xE9 maneira\r\nEla d\xE1
-      um leve sorriso e diz que ela mesma costurou!\r"
+    fala: Chamar para um encontro
+    resposta: "Voc\xEA chama Rebeca para um encontro oficial\r\nEla ri e pergunta
+      se isso j\xE1 n\xE3o \xE9 um encontro\r"
   - tipo: 0
-    fala: Chamar ela por um apelido carinhoso
-    resposta: "Voc\xEA chama ela de docinho de coco estragado\r\nEla ri e retribui
-      o \u201Celogio\u201D te chamando de florzinha murcha\r"
+    fala: Oferecer salgadinhos
+    resposta: "Voc\xEA oferece salgadinhos para Rebeca\r\nEla diz pra voc\xEA d\xE1-los
+      na boca dela!\r"
   - tipo: 0
-    fala: "Cham\xE1-la pro baile"
-    resposta: "Voc\xEA cria coragem e chama ela pro baile\r\nEla ri bastante da sua
-      piada!\r\nDeu certo, s\xF3 n\xE3o do jeito que voc\xEA esperava\u2026\r"
+    fala: Perguntar sobre o dia
+    resposta: "Voc\xEA pergunta como est\xE1 indo o dia de Rebeca\r\nEla diz que
+      est\xE1 melhor ainda agora que est\xE3o juntas!\r"
   - tipo: 0
-    fala: Oferecer chocolate para ela
-    resposta: "Voc\xEA oferece a ela uma barrinha de chocolate que tinha comprado
-      antes\r\nEla aceita\u2026 \r\nE sua m\xE3o quase \xE9 perdida no processo!\r"
+    fala: Oferecer mais ponche
+    resposta: "Voc\xEA oferece mais ponche para Rebeca\r\nEla aceita dizendo que
+      s\xF3 gosta porque parece sangue\r"
   - tipo: 0
-    fala: "Perguntar sobre a m\xFAsica que ela gosta"
-    resposta: "Voc\xEA pergunta sobre as m\xFAsicas que ela escuta\r\nSeu n\xEDvel
-      de rock n\xE3o \xE9 t\xE3o alto pra entender a resposta, mas parece que deu
-      certo!\r"
+    fala: Elogiar unhas
+    resposta: "Voc\xEA elogia as unhas de Rebeca\r\nNem parece que ela demorou 5
+      horas pra pintar a m\xE3o esquerda\u2026\r"
   - tipo: 1
-    fala: Fazer cara de brava
-    resposta: "Voc\xEA tenta parecer intimidadora\r\nRebeca acha que voc\xEA t\xE1
-      imitando ela\u2026\r"
+    fala: Dar uma cantada
+    resposta: "Voc\xEA diz uma cantada para Rebeca\r\nN\xE3o pareceu muito efetivo,
+      mas ela soltou uma risadinha\r"
   - tipo: 1
-    fala: Se apresentar
-    resposta: "Voc\xEA se apresenta pra ela como se voc\xEAs nunca tivessem se visto\r\nMas
-      voc\xEA esqueceu que voc\xEAs j\xE1 se viram at\xE9 demais\u2026\r"
+    fala: "Tirar foto juntas\r"
+    resposta: "Voc\xEA pede o telefone de Rebeca para tirar uma foto juntas\r\nMas
+      o Twitter dela estava aberto\u2026\r\nE voc\xEA descobre que ela \xE9 dona
+      da p\xE1gina mais famosa de f\xE3s do Henrico.\r"
   - tipo: 1
-    fala: "Elogiar alguma coisa\r"
-    resposta: "Voc\xEA tenta elogiar alguma coisa dela\r\nS\xF3 que voc\xEA esquece
-      o que ia falar no meio da frase e acaba dizendo nada com nada\r"
-  - tipo: 1
-    fala: Perguntar sobre os estudos
-    resposta: "Voc\xEA pergunta como ela est\xE1 indo nos estudos\r\nDe acordo com
-      as palavras dela, ela \xE9 maneira demais pra isso\r"
-  - tipo: 1
-    fala: "Pedir ajuda com a sua tarefa\r"
-    resposta: "Voc\xEA pede ajuda para arrumar as coisas do baile\r\nEla pergunta
-      quanto vai ganhar pra fazer isso\r"
-  - tipo: 1
-    fala: "Dar um aperto de m\xE3o\r"
-    resposta: "Voc\xEA d\xE1 um aperto de m\xE3o nele\r\n\u2026\r\r\nPor quanto tempo
-      voc\xEA pretende ficar segurando a m\xE3o dele!?"
-  - tipo: 2
-    fala: Falar sobre uma banda de rock
-    resposta: "Voc\xEA diz que gosta de uma banda famosa que sempre aparece no seu
-      celular\r\nEla te zoa por nem conhecer a m\xFAsica mais famosa dessa banda
-      \r"
-  - tipo: 2
-    fala: Apontar para baixo
-    resposta: "Voc\xEA aponta para ela e mente que h\xE1 uma mancha em sua blusa\r\n\u2026\r\nEla
-      n\xE3o vai cair nessa\r"
-  - tipo: 2
-    fala: "Ignorar a exist\xEAncia dela\r"
-    resposta: "Voc\xEA finge que n\xE3o tem ningu\xE9m na sua frente\r\nFoi efetivo
-      at\xE9 demais e voc\xEA acaba pisando no p\xE9 dela!\r\nVoc\xEA escuta coisas
-      que poderiam fazer qualquer um levar advert\xEAncia\u2026\r"
-  - tipo: 2
     fala: Fazer uma pose maneira
-    resposta: "Voc\xEA faz uma pose exagerada bem no meio de um monte de gente\u2026\r\n\u2026\r\nIsso
-      foi demais at\xE9 mesmo pra ela\u2026\r\nE pra voc\xEA tamb\xE9m\u2026\r"
+    resposta: "Voc\xEA faz uma pose exagerada bem no meio de um monte de gente\u2026\r\n\u2026\r\nMas
+      \xE9 uma festa e ningu\xE9m ligou!\r"
+  - tipo: 1
+    fala: Perguntar sobre nome
+    resposta: "Voc\xEA pergunta se o nome Rebeca \xE9 baseado no fato dela ser Rebelde\r\n\u2026\r\nEla
+      se recusa a responder essa pergunta idiota\r"
+  - tipo: 1
+    fala: "Apontar cadar\xE7os desamarrados\r"
+    resposta: "Voc\xEA diz pra Rebeca que os cadar\xE7os dela est\xE3o desamarrados\r\nEles
+      n\xE3o est\xE3o.\r\nEla n\xE3o sabe por que voc\xEA disse isso.. e nem voc\xEA
+      sabe.\r"
+  - tipo: 1
+    fala: "Elogiar decora\xE7\xE3o da festa\r"
+    resposta: "Voc\xEA fala que ela decorou bem a festa\r\nApesar do elogio, ela
+      se lembra de todo o tempo na deten\xE7\xE3o\u2026\r"
   - tipo: 2
-    fala: Elogiar o cabelo dela
-    resposta: "Voc\xEA diz que o cabelo dela \xE9 muito bonito e queria que o seu
-      fosse igual ao dela\r\nFoi muito efetivo! Ou ao menos seria se voc\xEA parasse
-      sua frase no meio e falasse de tudo que voc\xEA j\xE1 tentou fazer no cabelo\r"
+    fala: Puxar ela mais pra perto
+    resposta: "Voc\xEA puxa Rebeca para mais perto de voc\xEA\r\nMas voc\xEA acaba
+      pisando no p\xE9 dela!\r"
   - tipo: 2
-    fala: Dar um toca aqui nela
-    resposta: "Voc\xEA levanta a m\xE3o para fazer um toca aqui \xE9pico!\r\nEla
-      leva a m\xE3o dela ao alto tamb\xE9m\u2026\r\nE ela erra de prop\xF3sito! Voc\xEA
-      cai no truque mais velho de todos os tempos!\r"
+    fala: Oferecer bebida
+    resposta: "Voc\xEA oferece um drink pra Rebeca\r\nEla recusa dizendo que n\xE3o
+      quer \u201Cvirar uma adolescente levemente alterada\u201D\r"
+  - tipo: 2
+    fala: "Elogiar t\xEAnis"
+    resposta: "Voc\xEA tenta elogiar o t\xEAnis que ela t\xE1 usando\r\n\u2026\r\nEle
+      com certeza j\xE1 viu dias melhores\u2026\r"
+  - tipo: 2
+    fala: Convidar para uma batalha de rap
+    resposta: "Voc\xEA convida Rebeca para uma batalha de rap\r\nE surpreendentemente
+      ela aceita!\r\nMas voc\xEA n\xE3o sabe rimar nada com nada\u2026\r"
+  - tipo: 2
+    fala: Chamar para show
+    resposta: "Voc\xEA chama Rebeca para um show de uma banda de rock gen\xE9rica
+      daqui a uma semana\r\nEla diz que eles s\xE3o \u201Cposers\u201D e \u201Cque
+      n\xE3o fazem m\xFAsica de verdade\u201D\r"
+  - tipo: 2
+    fala: Elogiar mecha de cabelo
+    resposta: "Voc\xEA diz que as partes vermelhas do cabelo dela parecem que foram
+      pintadas com sangue de pessoas inocentes e que \xE9 muito radical!\r\n\u2026\r\nIsso
+      foi totalmente for\xE7ado\r"
 --- !u!4 &404035471
 Transform:
   m_ObjectHideFlags: 0

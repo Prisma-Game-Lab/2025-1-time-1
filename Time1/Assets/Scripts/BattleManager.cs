@@ -134,6 +134,7 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
+
         pretendenteAtual = pretendenteSelecionado;
         AudioManager.instance.StopSound("Dia1");
         AudioManager.instance.StopSound("Dia2");

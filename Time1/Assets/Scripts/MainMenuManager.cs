@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 public class MainMenuManager : MonoBehaviour
 {
     [Header("Panels")]
-    public GameObject mainMenuPanel;     // Botões do menu principal
-    public GameObject mainMenuVisuals;   // Título, personagens, etc.
+    public GameObject mainMenuPanel;
+    public GameObject mainMenuVisuals;
     public GameObject optionsPanel;
     public GameObject creditsPanel;
 
@@ -32,29 +32,39 @@ public class MainMenuManager : MonoBehaviour
 
     void Awake()
     {
-        StartCoroutine(Start());
-    }
-
-    IEnumerator Start()
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        currentVolume = PlayerPrefs.GetFloat("volume", 1f);
-
-        volumeSlider.value = currentVolume;
-        volumeSlider.onValueChanged.AddListener(SetVolume);
-        SetVolume(currentVolume);
-
-        fullscreenToggle.onValueChanged.RemoveAllListeners();
-        fullscreenToggle.isOn = Screen.fullScreen;
-        fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
-
         optionsPanel.SetActive(false);
         creditsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
         mainMenuVisuals.SetActive(true);
 
+        volumeSlider.onValueChanged.RemoveAllListeners();
+
+        float loadedVolume = PlayerPrefs.GetFloat("volume", 1f);
+   
+
+        if (loadedVolume == 0f)
+        {
+            
+            loadedVolume = 1f;
+        }
+
+        volumeSlider.value = loadedVolume;
+        SetVolume(loadedVolume);
+
+        volumeSlider.onValueChanged.AddListener(SetVolume);
+
+        
+
+        fullscreenToggle.onValueChanged.RemoveAllListeners();
+        fullscreenToggle.isOn = Screen.fullScreen;
+        fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
+
         InicializarPainel(mainMenuPanel, ref menuButtons, ref selectedMenuIndex);
+    }
+
+    void Start()
+    {
+        
     }
 
     void Update()
@@ -141,21 +151,20 @@ public class MainMenuManager : MonoBehaviour
     public void StartNewGame()
     {
         GameManager.instance.index = 0;
-        AudioManager.instance.SetMusicVolume(volumeSlider.value);
         GameManager.instance.timePlayed = Time.time;
         SceneManager.LoadScene(1);
     }
 
     public void LoadGame()
     {
-        Debug.Log("Load Game clicked");
+     
     }
 
     public void OpenOptions()
     {
         optionsPanel.SetActive(true);
-        mainMenuPanel.SetActive(false);    // Esconde botões
-        mainMenuVisuals.SetActive(true);   // Mantém título/personagens
+        mainMenuPanel.SetActive(false);
+        mainMenuVisuals.SetActive(true);
         InicializarPainel(optionsPanel, ref optionButtons, ref selectedOptionIndex);
         lastInputTime = Time.time;
     }
@@ -172,8 +181,8 @@ public class MainMenuManager : MonoBehaviour
     public void OpenCredits()
     {
         creditsPanel.SetActive(true);
-        mainMenuPanel.SetActive(false);    // Esconde botões
-        mainMenuVisuals.SetActive(false);  // Esconde título/personagens
+        mainMenuPanel.SetActive(false);
+        mainMenuVisuals.SetActive(false);
         InicializarPainel(creditsPanel, ref creditButtons, ref selectedCreditIndex);
         lastInputTime = Time.time;
     }
@@ -192,6 +201,8 @@ public class MainMenuManager : MonoBehaviour
         currentVolume = volume;
         AudioManager.instance.SetMusicVolume(volume);
         PlayerPrefs.SetFloat("volume", volume);
+        PlayerPrefs.Save();
+        
     }
 
     public void SetFullscreen(bool isFullscreen)

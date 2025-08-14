@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -20,19 +21,45 @@ public class PauseMenu : MonoBehaviour
 
     private bool isPaused = false;
 
-    void Start()
+    void Awake()
     {
+     
+
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
 
-        float volume = PlayerPrefs.GetFloat("volume", 1f); 
-        volumeSlider.value = volume;
-        fullscreenToggle.isOn = Screen.fullScreen;
+        volumeSlider.onValueChanged.RemoveAllListeners();
+
+        float loadedVolume = PlayerPrefs.GetFloat("volume", 1f);
+      
+
+        if (loadedVolume == 0f)
+        {
+         
+            loadedVolume = 1f;
+        }
+
+        volumeSlider.value = loadedVolume;
+        SetVolume(loadedVolume);
 
         volumeSlider.onValueChanged.AddListener(SetVolume);
-        fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
 
-        AudioManager.instance.SetMusicVolume(volume);
+        fullscreenToggle.onValueChanged.RemoveAllListeners();
+        fullscreenToggle.isOn = Screen.fullScreen;
+        fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
+    }
+
+    void Start()
+    {
+       
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
     }
 
     public void PauseGame()
@@ -40,6 +67,7 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+
         string itemText;
         Texture2D texture;
         for (int i = 0; i < itemImages.Length; i++)
@@ -96,7 +124,9 @@ public class PauseMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         AudioManager.instance.SetMusicVolume(volume);
-        PlayerPrefs.SetFloat("volume", volume); 
+        PlayerPrefs.SetFloat("volume", volume);
+        PlayerPrefs.Save();
+       
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -111,5 +141,4 @@ public class PauseMenu : MonoBehaviour
         else
             PauseGame();
     }
-
 }

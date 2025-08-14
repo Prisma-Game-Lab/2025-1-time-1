@@ -1941,6 +1941,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1525412518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8311009610327571508, guid: 78dcba32f891e9e48a3cb7c0509a0a1b, type: 3}
+  m_PrefabInstance: {fileID: 501202579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1543362956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,6 +3552,14 @@ PrefabInstance:
     - target: {fileID: 1688692351374064880, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101277010245358981, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1525412518}
+    - target: {fileID: 2101277010245358981, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2179416938669583247, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_SizeDelta.x

@@ -261,6 +261,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1204354552383214293, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
   m_PrefabInstance: {fileID: 5746280129723768425}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &55565022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8311009610327571508, guid: 78dcba32f891e9e48a3cb7c0509a0a1b, type: 3}
+  m_PrefabInstance: {fileID: 1407833557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &167835768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8361773959806727980, guid: 9060aa0cc19130a4b841c6dfbecbaccd, type: 3}
@@ -3551,6 +3556,10 @@ PrefabInstance:
     - target: {fileID: 2101277010245358981, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 55565022}
+    - target: {fileID: 2101277010245358981, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2179416938669583247, guid: 128330aa4f8174f43a4ebc27a53a7100, type: 3}
       propertyPath: m_SizeDelta.x

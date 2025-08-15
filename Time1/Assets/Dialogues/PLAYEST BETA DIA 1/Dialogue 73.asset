@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 705507f9e2cec394687230468a03fafe, type: 3}
   fadeInBackground: 0
-  text: "Ela pega minha m\xE3o e me puxa em dire\xE7\xE3o ao teatro da escola."
+  text: "(Ela pega minha m\xE3o e me puxa em dire\xE7\xE3o ao teatro da escola)"
   char_sprite: {fileID: 21300000, guid: f196889e66bfaaf42ad6a4df2a0cb841, type: 3}
   fadeInCharacter: 0
   char_name: Anna
   next: 73
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

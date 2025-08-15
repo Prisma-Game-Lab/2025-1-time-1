@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: d89d1fa4dbf7b1344b71c2988fb3cfd6, type: 3}
   fadeInBackground: 0
-  text: "Mas t\xF4 t\xE3o orgulhosa de voc\xEA! Tipo, eu sabia que ia dar tudo certo
-    mas pelo menos 50% do plano dependia da sua compet\xEAncia."
+  text: "Mas eu t\xF4 t\xE3o orgulhosa de voc\xEA! Tipo, eu sabia que ia dar tudo
+    certo mas pelo menos 50% do plano dependia da sua compet\xEAncia."
   char_sprite: {fileID: 21300000, guid: 26c5782e112f713458021668719979a0, type: 3}
   fadeInCharacter: 0
   char_name: Hana
   next: 12
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

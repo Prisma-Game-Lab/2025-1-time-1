@@ -112,11 +112,6 @@ public class DialogueHandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            pauseMenu.TogglePause();
-
-        }
 
         if (options.activeSelf)
         {

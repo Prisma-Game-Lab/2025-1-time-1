@@ -23,19 +23,15 @@ public class PauseMenu : MonoBehaviour
 
     void Awake()
     {
-     
-
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
 
         volumeSlider.onValueChanged.RemoveAllListeners();
 
         float loadedVolume = PlayerPrefs.GetFloat("volume", 1f);
-      
 
         if (loadedVolume == 0f)
         {
-         
             loadedVolume = 1f;
         }
 
@@ -51,15 +47,17 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-       
+
     }
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
         }
+
     }
 
     public void PauseGame()
@@ -97,6 +95,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
         Time.timeScale = 1f;
@@ -126,7 +125,7 @@ public class PauseMenu : MonoBehaviour
         AudioManager.instance.SetMusicVolume(volume);
         PlayerPrefs.SetFloat("volume", volume);
         PlayerPrefs.Save();
-       
+
     }
 
     public void SetFullscreen(bool isFullscreen)

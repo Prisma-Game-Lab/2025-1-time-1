@@ -281,23 +281,26 @@ public class DialogueHandler : MonoBehaviour
         switch (index)
         {
             case 0:
-                if (GameManager.instance.lovePoints[0] > 0 && items > 1)
+                if (GameManager.instance.lovePoints[0] > 0 && items > 3)
                 {
                     SceneManager.LoadScene("Capitulo3.R");
+                    break;
                 }
                 SceneManager.LoadScene("Capitulo3.R.1");
                 break;
             case 1:
-                if (GameManager.instance.lovePoints[1] > 0 && items > 1)
+                if (GameManager.instance.lovePoints[1] > 0 && items > 3)
                 {
                     SceneManager.LoadScene("Capitulo3.H");
+                    break;
                 }
                 SceneManager.LoadScene("Capitulo3.H.1");
                 break;
             case 2:
-                if (GameManager.instance.lovePoints[2] > 0 && items > 1)
+                if (GameManager.instance.lovePoints[2] > 0 && items > 3)
                 {
                     SceneManager.LoadScene("Capitulo3.A");
+                    break;
                 }
                 SceneManager.LoadScene("Capitulo3.A.1");
                 break;

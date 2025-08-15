@@ -81,13 +81,19 @@ public class DialogueHandler : MonoBehaviour
 
         dialogue.text = dialogues[dialogueIndex].text;
         charName.text = dialogues[dialogueIndex].char_name;
+        currIndex = dialogueIndex;
 
         if (dialogues[dialogueIndex].options)
         {
             AtualizarTextoBotoes(dialogueIndex);
+            options.SetActive(true);
+            dialogueBox.SetActive(false);
+            selectedOptionIndex = 0;
+            AtualizarSelecaoVisual();
+            AtualizarSetaAvanco(false); // N�o mostra a seta de avan�o enquanto op��es est�o abertas
+            return;
         }
 
-        currIndex = dialogueIndex;
         dialoguesLog.Add(dialogues[dialogueIndex]);
         showLog();
         dialogueIndex = dialogues[dialogueIndex].next;
@@ -303,6 +309,7 @@ public class DialogueHandler : MonoBehaviour
         if (dialogues[currIndex].final_option)
         {
             FinalOption(index);
+            return;
         }
         dialogueIndex = dialogues[currIndex].option[index].next;
         dialogues[currIndex].text = dialogues[currIndex].option[index].opText;
@@ -323,6 +330,7 @@ public class DialogueHandler : MonoBehaviour
 
         if (dialogueIndex < 0)
         {
+            GameManager.instance.index = 0;
             LevelLoader levelLoader = FindObjectOfType<LevelLoader>();
             if (levelLoader != null)
             {
@@ -420,6 +428,7 @@ public class DialogueHandler : MonoBehaviour
         }
         else
         {
+            GameManager.instance.index = 0;
             LevelLoader levelLoader = FindObjectOfType<LevelLoader>();
             if (levelLoader != null)
             {

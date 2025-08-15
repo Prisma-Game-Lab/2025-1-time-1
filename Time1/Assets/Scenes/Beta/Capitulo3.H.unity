@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipObject: {fileID: 422832018}
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 1617783974}
   pauseIconImage: {fileID: 1337596292}
   pauseSprite: {fileID: 21300000, guid: 473509a294e933441afbe5f5b5d3fdb4, type: 3}
   lockSprite: {fileID: 21300000, guid: af8cea0c08b76e942ab48b7aab24a373, type: 3}

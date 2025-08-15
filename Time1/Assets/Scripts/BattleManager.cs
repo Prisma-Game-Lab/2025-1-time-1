@@ -52,6 +52,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private GameObject setaSelecionada;
     [SerializeField] private GameObject setaAvanco;
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private GameObject item;
     [SerializeField] private PauseMenu pauseMenu;
 
     public Image playerHPFillImage;
@@ -808,16 +809,12 @@ public class BattleManager : MonoBehaviour
 
     void ShowRewardItem()
     {
-        if (itemViewer != null)
-        {
-            // Exemplo: mostrar o bombom
-            itemViewer.ShowItem("bombom");
-        }
-        else
-        {
-            Debug.LogWarning($"Missing itemViewer reference: {itemViewer}");
-            StartCoroutine(ReturnToMenuAfterDelay(winScene));
-        }
+        item.SetActive(true);
+    }
+
+    public void LoadWinScene()
+    {
+        SceneManager.LoadScene(winScene);
     }
 
     void OnRewardViewFinished()

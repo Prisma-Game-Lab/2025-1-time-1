@@ -112,6 +112,9 @@ public class AudioManager : MonoBehaviour
         {
             StopSound("MenuMusic");
             StopSound("BattleMusic");
+            StopSound("Dia1");
+            StopSound("Dia2");
+            StopSound("Baile");
         }
         else if (scene.name.EndsWith("Playtest") || (scene.name.EndsWith("Final")))
         {

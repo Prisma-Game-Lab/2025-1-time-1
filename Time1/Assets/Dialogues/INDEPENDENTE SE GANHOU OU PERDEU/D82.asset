@@ -16,11 +16,12 @@ MonoBehaviour:
   fadeInBackground: 0
   text: "Essa caixa ta cheia de decora\xE7\xF5es pro baile, voc\xEA n\xE3o quer arranjar
     problema com o comit\xEA quebrando alguma coisa deles."
-  char_sprite: {fileID: 21300000, guid: 1f660848651f44b42b48a918dd2cd5ba, type: 3}
+  char_sprite: {fileID: 21300000, guid: bf15aef7db1daa9408a2e4c146f76f6c, type: 3}
   fadeInCharacter: 0
   char_name: Rebeca
   next: 83
   chapter_end: 0
+  final_option: 0
   options: 0
   option: []
   hasReward: 0

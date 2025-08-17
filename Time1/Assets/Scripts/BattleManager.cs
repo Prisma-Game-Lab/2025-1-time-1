@@ -166,7 +166,7 @@ public class BattleManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (podePausar)
+            if (!podePausar)
             {
                 Debug.Log("ESC pressionado - pausando");
                 pauseMenu.TogglePause();
